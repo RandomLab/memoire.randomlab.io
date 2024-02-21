@@ -1,8 +1,10 @@
+/* custom font */
 @font-face {
   font-family: le-murmure;
   src: url(../fonts/le-murmure.otf), url('../fonts/le-murmure.woff2') format('woff2');
 }
 
+/* variables */
 :root {
   --padding: 1.5rem;
   --main-font-size: 1.2rem;
@@ -63,6 +65,7 @@ article {
   counter-reset: footnotes;
 }
 
+/* only footnotes */
 a[aria-describedby="footnote-label"] {
   counter-increment: footnotes;
   text-decoration: none;
