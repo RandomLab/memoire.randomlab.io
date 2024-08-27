@@ -1,4 +1,14 @@
 
+Poids final du dossier max : 3mo
+Structure :
+ index.html
+ assets/
+    css/
+        reset.css
+        style.css
+    fonts/
+        <font>.woff2
+
 -----
 Avant
 -----
