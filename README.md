@@ -24,9 +24,15 @@ https://www.npmjs.com/package/live-server
 images
 ------
 
+Pour compresser les images en webp:
 https://developers.google.com/speed/webp/docs/cwebp?hl=fr
 
-`cwebp -q 5 neom-CzwL_vn445k-unsplash.jpg -o neom-CzwL_vn445k-unsplash.webp`
+`cwebp -q 80 neom-CzwL_vn445k-unsplash.jpg -o neom-CzwL_vn445k-unsplash.webp`
+
+Pour compresser par lot avec une commande bash:
+`for file in *; do
+cwebp -q 80 $(file) -o $(file)
+done`
 
 
 ------
