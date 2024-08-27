@@ -1,0 +1,215 @@
+@font-face {
+  font-family: Helvetica;
+  src: url(../fonts/Helvetica.woff2);
+}
+
+.header1 {
+  /* 第一个段落的样式 */
+  margin-bottom: 40px; /* 设置下边距为20像素 */
+}
+
+.header2 {
+  /* 第一个段落的样式 */
+  margin-top: 20px;
+  font-family: "Helvetica";
+  color: white;
+  font-size: 95%;
+}
+
+.header3 {
+  /* 第一个段落的样式 */
+  color: rgb(109, 109, 109);
+  font-size: 80%;
+  margin-bottom: 40px; /* 设置下边距为20像素 */
+}
+
+.black-background-white-text {
+  background-color: black;
+  color: white;
+}
+
+:root {
+  --padding: 1.5rem;
+  --main-font-size: 1.2rem;
+  --color-grey: #333;
+  --color-light: #efefef;
+  --color-text: var(--color-grey);
+  --color-background: var(--color-light);
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-custom: "le-murmure", serif;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+html {
+  max-width: 70%;
+  padding: var(--padding);
+  margin: auto;
+  color: var(--color-text);
+  font-size: var(--main-font-size);
+}
+
+.strong {
+  font-weight: bold; /* 设置字体加粗 */
+}
+
+body {
+  font-family: "Times New Roman";
+  font-size: 115%;
+  background-color: var(--color-background);
+}
+
+
+figure {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.6em;
+ 
+}
+
+img {
+  width: 70%;
+  display: block; /* 使图像成为块级元素 */
+  margin: 0 auto; 
+}
+
+h1 {
+  font-family: "Helvetica";
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+header {
+  font-family: "Helvetica";
+  color: rgb(93, 93, 93);
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+}
+
+article {
+  counter-reset: footnotes;
+}
+
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+a[aria-describedby="footnote-label"]::after {
+  content: counter(footnotes);
+  vertical-align: super;
+  font-size: 0.7em;
+  margin-left: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.element-with-padding {
+  padding-left: 20px; /* 在元素的左侧添加 20px 的空白区域 */
+  padding-right: 20px;
+ 
+  padding-bottom: 20px;
+}
+
+footer > ol {
+  font-size: 0.8rem;
+}
+
+.container {
+
+  margin: 0 auto;
+
+}
+
+.tooltip {
+  position: relative;
+  cursor: help;
+  display: inline-block;
+}
+
+.tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  width: 500px;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.highlight {
+  color: rgb(156, 6, 6);
+}
+
+.container1 {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  border: 2px solid black; /* 添加黑色边框 */
+}
+
+@media only screen and (min-width:1px) and (max-width: 920px) {
+
+  html {
+    max-width: 100%;
+    padding: 0;
+    font-size: 1rem;
+    margin:0;
+  }
+
+  
+
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+
+  img {
+width: 100%;
+
+  }
+  figcaption {
+    font-size: 0.7em;
+   
+  }
+  
+  .container {
+    margin: 0 auto;
+  }
+
+  .tooltip::before {
+    width: 300px;
+  }
+  a {
+    overflow-wrap: break-word; /* 强制链接换行 */
+  }
+  
+
+}
+
+

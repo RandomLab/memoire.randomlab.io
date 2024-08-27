@@ -1,0 +1,180 @@
+@font-face {
+  font-family: LynoStan;
+  
+  src: url(../fonts/LynoStan.woff2)format('woff2');
+}
+
+@font-face {
+  font-family: Adelphe-Fructidor;
+  
+  src: url(../fonts/Adelphe-FructidorRegular.woff2) format('woff2');
+}
+
+
+
+
+
+
+:root {
+  --padding: 1.5rem;
+  --main-font-size: 1.2rem;
+  --color-grey: #333;
+  --color-light: #efefef;
+  --color-text: var(--color-grey);
+  --color-background: var(--color-light);
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-custom: "le-murmure", serif;
+}
+
+ * {
+  margin: 0;
+  padding: 0;
+} 
+
+html {
+  padding: var(--padding);
+  margin: auto;
+  color: var(--color-text);
+  font-size: var(--main-font-size);
+}
+
+body {
+  /* max-width: 60%;  */
+  font-family: var(--font-family-sans);
+  font-size: 115%;
+  background-color: var(--color-background);
+}
+
+.container {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidestar {
+  position: fixed;
+}
+
+.right {
+  right: 0;
+  margin-right: 20px;
+}
+
+.sidestar img {
+  width: 300px;
+}
+
+
+figure {
+  padding: 4rem;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.6em;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-family: "adelphe";
+  font-size: 3rem;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+h2 {
+  font-family: "LynoStan";
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+
+header {
+  color: darkblue;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+}
+
+p {
+  font-family: "Adelphe" ;
+  font-size: 1rem;
+  
+
+}
+
+sup {
+  vertical-align: super;
+  font-size: 0.65rem;
+  color:darkmagenta;
+
+}
+
+.notes {
+  padding: 4%;
+  font-family: "Adelphe";
+  font-size: 0.7rem;
+  color:darkmagenta;
+  width: 50%;
+}
+
+.mon_titre {
+  color: aquamarine;
+
+}
+
+article {
+  counter-reset: footnotes;
+}
+
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+a[aria-describedby="footnote-label"]::after {
+  content: counter(footnotes);
+  vertical-align: super;
+  font-size: 0.7em;
+  margin-left: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+footer > ol {
+  font-size: 0.8rem;
+}
+
+
+
+@media only screen and (min-width:1px) and (max-width: 720px) {
+
+  html {
+    max-width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+  }
+  .container{
+    width: 100%;
+  }
+.sidestar{
+  display: none;
+}
+
+.notes {
+  width: 100%;
+  font-size: 0.7rem;
+  padding: 0%;
+  
+}
+
+  figure {
+    padding: 0;
+  }
+
+}

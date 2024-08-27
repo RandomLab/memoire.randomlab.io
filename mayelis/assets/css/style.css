@@ -1,0 +1,218 @@
+@font-face {
+  font-family: InputMonoBlack;
+  src: url(../fonts/InputMono-Black.ttf) ;
+  font-weight: black;
+}
+
+@font-face {
+  font-family:InputMonoBold;
+  src: url(../fonts/InputMono-Bold.ttf) ;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: InputMono;
+  src: url(../fonts/InputMono-Medium.ttf) ;
+  
+}
+
+@font-face {
+  font-family: InputMonoItalic;
+  src: url(../fonts/InputMono-Italic.ttf) ;
+  font-style: italic;
+  
+}
+
+@font-face {
+  font-family: InputMonoLight;
+  src: url(../fonts/InputMono-Light.ttf) ;
+  font-weight: light;
+}
+
+@font-face {
+  font-family: InputMonoLightItalic;
+  src: url(../fonts/InputMono-LightItalic.ttf) ;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: InputMonoThinItalic;
+  src: url(../fonts/InputMono-ThinItalic.ttf) ;
+  font-style: italic;
+  font-weight: thin;
+}
+
+
+:root {
+  --padding: 1.5rem;
+  --main-font-size: 1.2rem;
+  --color-grey: #333;
+  --color-light: #efefef;
+  --color-text: var(--color-grey);
+  --color-background: var(--color-light);
+  --font-family-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-custom: "le-murmure", serif;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+} */
+
+html {
+  max-width: 70%;
+  padding: var(--padding);
+  margin: auto;
+  color: var(--color-text);
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: var(--font-family-sans);
+  font-size: 115%;
+  background-color: var(--color-background);
+}
+
+
+figure {
+  padding: 4rem;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-size: 0.6em;
+}
+
+img {
+  width: 100%;
+}
+
+
+h1 {
+  font-family: "InputMonoBlack";
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: rgb(255,150,0);
+}
+
+h2 {
+  font-family: "InputMonoBold";
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color : rgb(131,139,115);
+}
+
+p{
+
+  margin: 0 0 20px 0;
+  padding: 0;
+  column-count:1
+}
+
+
+
+
+header {
+  color: darkblue;
+  font-size: 1.8rem;
+  line-height: 1rem;
+}
+
+
+.sous_titre_pcp {
+  font-family: "InputMono";
+  font-size: 0.8rem;
+  color: rgb(169,107,0);
+}
+
+.sous_titre {
+  font-family: "InputMono";
+  font-size: 0.9rem;
+  color: rgb(169,107,0)
+}
+
+.note {
+  font-family: "InputMonoLightItalic";
+  font-size: 0.7rem;
+  color: rgb(131,139,115)
+}
+
+.safety {
+  font-family: "InputMonoItalic";
+  font-size:0.9rem;
+  color:rgb(255,150,0)
+}
+
+/*.pcp{
+  font-family: "InputMonoLight";
+  font-size: 0.8rem ;
+}
+*/
+
+
+.def {
+  font-family: "InputMonoLight";
+  font-size: 0.6rem;
+  vertical-align: super;
+  color:rgb(255,150,0)
+  
+}
+
+.def:hover .def_show{
+  display :inline;
+ 
+
+
+}
+
+.def_show {
+  text-decoration: none;
+  color: blue;
+  display: none;
+}
+
+article {
+  counter-reset: footnotes;
+  font-family: "InputMonoLight";
+  font-size: 0.8rem;
+  text-indent: 4em;
+}
+
+a[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+a[aria-describedby="footnote-label"]::after {
+  content: counter(footnotes);
+  vertical-align: super;
+  font-size: 0.7em;
+  margin-left: 2px;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+footer > ol {
+  font-size: 0.8rem;
+}
+
+
+
+@media only screen and (min-width:1px) and (max-width: 720px) {
+
+  html {
+    max-width: 100%;
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+
+  figure {
+    padding: 0;
+  }
+
+}
