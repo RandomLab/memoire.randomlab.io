@@ -1,0 +1,29 @@
+body {
+    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    font-weight: normal;
+}
+
+
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+
+    min-height: 100%;
+}
+
+.navigation {
+    grid-area: header;
+    position: fixed;
+    height: 50px;
+    background: white;
+}
+
+.content {
+    grid-area: main;
+    margin-top: 50px;
+}
