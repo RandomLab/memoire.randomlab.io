@@ -1,0 +1,32 @@
+@font-face {
+  font-family: DejavuSerif;
+  src: url("./fonts/DejaVuSerif-Italic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: CommitMono;
+  src: url("./fonts/CommitMono.woff2") format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: CommitMono;
+  src: url("./fonts/CommitMonoBold.woff2") format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: CommitMono;
+  src: url("./fonts/CommitMonoItalic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: CommitMono;
+  src: url("./fonts/CommitMonoBoldItalic.woff2") format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}

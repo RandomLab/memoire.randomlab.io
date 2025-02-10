@@ -1,0 +1,2497 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Author Name" />
+    <meta name="description" content="This a boilerplate HTML template" />
+    <meta name="keywords" content="boilerplate, html, website, development" />
+    <title>Tu prendrais bien un cookie ? Exploration des identités numériques et de l’impact des cookies.</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/fonts.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/print.css" />
+</head>
+
+<body>
+
+    <header class="titre-fixe">
+        <h1>Tu prendrais bien un cookie ?</h1>
+        <p>Exploration des identités numériques et de l’impact des cookies.</p>
+    </header>
+
+    <main id="main" role="main" class="container">
+
+
+        <section id="header" class="header">
+
+            <h1>Tu prendrais bien un cookie ?</h1>
+            <p>
+            <h3 class="petittitre">Exploration des identités numériques et de l’impact des cookies.</h3>
+            </p>
+
+
+            <p class="sous-titre">
+                Je souhaite adresser mes sincères remerciements à tous celles et ceux qui ont participé à la
+                réalisation de ce mémoire. Tout d’abord, je tiens à exprimer ma profonde reconnaissance à Damien Bais,
+                qui m’a apporté une aide précieuse et un soutien indéfectible durant toute la durée de ce projet. Mes
+                remerciements vont également à l'équipe du RandomLAB.
+                Je tiens par ailleurs à adresser mes remerciements aux individus que j’ai eu l’occasion de rencontrer
+                lors de mon stage, ainsi qu’à la personne qui s’est prêtée à une entrevue. Enfin, je souhaite exprimer
+                ma gratitude envers mes proches, qui m’ont constamment encouragé et soutenu dans cette démarche.
+            </p>
+
+            <p class="sous-titre">
+                Mémoire rédigé sous la supervision de Damien Bais <br>
+                Présenté et soutenu par Maxence Mardargent <br>
+                Année : 2024 / 2025
+            </p>
+
+
+            <blockquote>
+                "Avec la mise en réseau de tous nos ordinateurs, nos vies seraient numérisées,
+                réduites à une somme de données qu'il suffirait de collecter, d'additionner.
+                Chaque mot, chaque geste, chaque transaction.
+                Internet perdait peu à peu son statut de fenêtre sur le monde pour devenir un outil de contrôle,
+                une nouvelle économie naissait, nous en serions la matière première. Le Nouveau Monde bousculait tout,
+                nos échanges, nos droits, notre vie privée. Préserver sa vie privée à l'ère de l'exposition de soi,
+                c'est un acte révolutionnaire, peu importe que vous ayez, une affaire privée c'est ce que le monde ne
+                veut pas que le monde entier sache.
+                Un secret, c'est ce qu'on ne veut pas que quiconque sache. La vie privée, c'est la liberté de choisir ce
+                qu'on dévoile au monde, la liberté."
+                <br>
+                <div class="signature">
+                    <a href="https://www.arte.tv/fr/videos/RC-021581/le-mystere-satoshi/" target="_blank">Le mystère
+                        Satoshi, aux origines du Bitcoin</a> <sup><a href="#fn:1">[1]</a></sup>, transcription épisode
+                    01, Arte.
+                </div>
+            </blockquote>
+
+        </section>
+
+        <!-- ============================================================================================================ -->
+        <!-- 🔹 SOMMAIRE -->
+        <!-- ============================================================================================================ -->
+
+        <ol id="sommaire" class="sommaire">
+            <li><a href="#introduction"><span class="titre">Introduction</span></a></li>
+            <li>
+                <a href="#nos.identités.plurielles.et.volontaires.la.construction.de.soi.en.ligne">
+                    <span class="titre">1. Nos identités plurielles et volontaires : la construction de soi en
+                        ligne</span>
+                </a>
+                <ul>
+                    <li><a href="#l'identité.plurielle">1.1. L'identité plurielle</a></li>
+                    <li><a href="#s'incrémenter.sur.le.web">1.2. S'incrémenter sur le web</a></li>
+                    <li><a href="#le.web.2.0">1.3. Le web 2.0</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#les.identités.sociétales.l'identité.numérique.encadrée">
+                    <span class="titre">2. Les identités sociétales : l'identité numérique encadrée</span>
+                </a>
+                <ul>
+                    <li><a href="#l'identité.numérique.civile">2.1. L'identité numérique civile</a></li>
+                    <li><a href="#l'identité.numérique.et.le.statut.social">2.2. L'identité numérique et le statut
+                            social</a></li>
+                    <li><a href="#l'identité.numérique.entre.préservation.et.dépossession">2.3. L'identité numérique
+                            entre préservation et dépossession</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#nos.identités.martyres">
+                    <span class="titre">3. Nos identités martyres</span>
+                </a>
+                <ul>
+                    <li><a href="#les.identités.subies.exploitation.et.marchandisation.de.l'individu">3.1. Les identités
+                            subies : exploitation et marchandisation de l'individu</a></li>
+                    <li><a href="#l'identité.numérique.militante.la.lutte.pour.l'intégrité.et.la.protection.de.soi">3.2.
+                            L'identité numérique militante : la lutte pour l'intégrité et la protection de soi</a></li>
+                    <li><a href="#interview">3.3. Interview</a></li>
+                </ul>
+            </li>
+            <li><a href="#conclusion"><span class="titre">Conclusion</span></a></li>
+            <li><a href="#notes"><span class="titre">Notes</span></a></li>
+            <li><a href="#annexe"><span class="titre">Annexe</span></a></li>
+        </ol>
+
+        <!-- ============================================================================================================ -->
+        <!-- 🔹 INTRODUCTION -->
+        <!-- ============================================================================================================ -->
+
+        <section id="chapitre:1" content="chapitre" class="chapitre">
+
+            <h2>Introduction</h2>
+
+            <p>
+                <a href="https://www.youtube.com/watch?v=F4WZ_k0vUDM" target="_blank">Nachricht von Ella.</a> <sup><a
+                        href="#fn:2">[2]</a></sup>
+            </p>
+
+            <p>
+                Ce mémoire fait état de convictions personnelles jugées importantes au regard du rôle croissant
+                que joue le numérique dans notre quotidien, touchant une amplitude démographique plus importante
+                avec ses points forts et ses faiblesses. L’importance de concepts tels que la vie privée et la
+                dépossession,
+                corroborées à notre personne exige notre attention et nous incite à l’action.
+            </p>
+
+            <p>
+                Dans un monde où la présence numérique devient indispensable, chaque utilisateur se voit attribuer,
+                de manière choisie ou subie, une ou plusieurs identités numériques. Ces identités se déclinent en divers
+                types et sont régulées par des contraintes sociétales, marchandes et technologiques. Nous allons entamer
+                un voyage pour mieux comprendre les conséquences de nos choix et actions avec ou contre notre gré.
+            </p>
+
+            <p>
+                Pour bien comprendre ce qu'est l'identité numérique et son importance dans notre société actuelle,
+                commençons
+                par définir l'identité, dont la symbolique correspond à un caractère permanent et fondamental de
+                quelqu'un,
+                d'un groupe,
+                qui fait son individualité, sa singularité. <sup><a href="#fn:3">[3]</a></sup>
+            </p>
+
+            <p>
+                Le numérique, qui ici correspond au web, représente quant à lui un ensemble d'appareils connectés en
+                réseau. Apparu en 1993 avec le World Wide Web. Nous y observons pour la première fois de nouvelles
+                manières de communiquer, de se soustraire aux lois, mais aussi aux corps et à une société.
+            </p>
+
+            <p>
+                C'est à ce stade que l'identité numérique se présente à nous comme un clone, un doppelgänger (défini
+                comme un double imaginaire de soi-même), de notre identité d'État. Elle correspond aux liens immatériels
+                entre une entité réelle et virtuelle. L'entité représente à la fois l'ensemble, la masse d'individus et
+                de données, mais aussi la singularité, symbolisée par chaque personne.
+            </p>
+
+            <p>
+                L'apparition de ce double se fait à l'aide des cookies, représentés pour le plus grand nombre en Europe
+                par une fenêtre de consentement ou de refus. Cette trace numérique est décrite par "un petit fichier
+                stocké par un serveur dans le terminal (ordinateur, téléphone, etc.) d’un utilisateur et associé à un
+                domaine Web (c’est-à-dire dans la majorité des cas à l’ensemble des pages d’un même site web). Ce
+                fichier est automatiquement renvoyé lors de contacts ultérieurs avec le même domaine." <sup><a
+                        href="#fn:4">[4]</a></sup>
+            </p>
+
+            <p>
+                Les cookies représentent un paradoxe en Europe avec le RGPD (règlement général de protection des données) <sup><a href="#fn:5">[5]</a></sup>, ils sont
+                essentiels pour
+                sauvegarder nos
+                préférences. Pourtant, sans eux, aucune trace de nos choix n’est conservée ni enregistrée. Nous
+                reviendrons sur ce point plus tard. En outre, notre emplacement régit leur utilisation, les lois
+                l’imposant aux entreprises, notamment dans le cadre du RGPD, qui exige une certaine
+                transparence.
+            </p>
+
+            <p>
+                Si nous définissons et captons tous les enjeux autour de l'identité numérique, à cette frontière
+                où
+                l'humain ne devient que donné, il ne reste plus, aux yeux de certains, de place à
+                l'individualité et à
+                la vie privée. L’être humain devient alors un simple produit de consommation, sans âme ni
+                conscience,
+                répondant à des critères définis par des entreprises et des logiques capitalistes.
+            </p>
+
+            <p>
+                Notre nom, notre prénom sont une porte d'entrée vers ce sosie numérique. Dès lors, une sélection
+                se met
+                en place : le nom Martin est le plus commun en France, tandis que le mien se situe en bas de
+                cette
+                liste. Un bruit s’opère autour de l’information existante, laissant un champ ouvert sur la
+                manière dont
+                nous nous prémunissons, mais aussi dont nous en prenons conscience.
+            </p>
+
+            <p>
+                Nous allons examiner les diverses manifestations de l’identité numérique, leur genèse à partir
+                de nos
+                informations personnelles et de nos décisions concernant les témoins, ainsi que leurs
+                conséquences et
+                répercussions sur les utilisateurs, tout en abordant la sensibilisation croissante à ce propos.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 PROBLÉMATIQUE -->
+            <!-- ============================================================================================================ -->
+
+            <h2>Problématiques :</h2>
+
+            <h3>Comment les cookies participent-ils à la dépossession de soi au profit de notre identité
+                numérique ? Et comment la circulation mène-t-elle à la création d'un double de soi
+                numérique ?</h3>
+
+            <figure id="image">
+                <img src="images/dog-on-the-internet-by-peter-steiner.webp" alt="Logo" />
+                <figcaption><em>Sur Internet, personne ne sait que vous êtes un chien<sup><a href="#fn:6">[6]</a></sup>,</em>
+                    05/07/1993, Peter Steiner.
+                </figcaption>
+            </figure>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 1 -->
+            <!-- ============================================================================================================ -->
+
+            <h2 id="nos.identités.plurielles.et.volontaires.la.construction.de.soi.en.ligne">
+                Nos identités plurielles et volontaires : la construction de soi en ligne
+            </h2>
+
+            <em>
+                <p class="special-text">
+                    <strong>Précipitation.</strong>
+                </p>
+
+                <p class="special-text">
+                    Musique dans les oreilles, le rythme délicat contrastait avec les lumières du métro clignotantes,
+                    déchirant l’obscurité des tunnels et les crissements du véhicule sur les rails. Louis, les yeux
+                    mi-clos, s’abandonnait à une torpeur matinale. Fatigué de son week-end festif, la routine du matin
+                    s’étirait sans éclat. Son agenda n’était pas chargé aujourd’hui. Il était tôt, et autour de lui,
+                    chacun semblait figé, les regards rivés sur leur téléphone.
+                </p>
+
+                <p class="special-text">
+                    Dans la rue, le vent soufflait. À peine avait-il franchi la porte de l’open space qu’un mouvement
+                    brusque le tira de sa torpeur. Sophie, une collègue et amie, se tenait là, immobile comme une
+                    statue. Elle tendait un papier plié, sans un mot.
+                </p>
+
+                <p class="special-text">
+                    – Qu’est-ce que… ?
+                </p>
+
+                <p class="special-text">
+                    Elle détourna les yeux sans répondre et s’éloigna d’un pas rapide. Louis resta planté là, stupéfait,
+                    avant d’ouvrir la note. Une phrase unique, écrite à la hâte :
+                </p>
+
+                <p class="special-text">
+                    « Bureau du directeur. Maintenant. »
+                </p>
+
+                <p class="special-text">
+                    Ne prenant pas le temps de poser sa veste, il se dirigea vers le bureau. Le trajet lui sembla
+                    anormalement long, déformé par une angoisse rampante qu’il ne parvenait pas à nommer. Lorsqu’il
+                    ferma la porte derrière lui, l'atmosphère était pesante.
+                </p>
+
+                <p class="special-text">
+                    – Louis, nous devons mettre fin à notre collaboration, lâcha le directeur d’un ton tranchant.
+                </p>
+
+                <p class="special-text">
+                    – Mettre fin ? Mais… pourquoi ?
+                </p>
+
+                <p class="special-text">
+                    – La décision est prise. Votre attitude… Un manquement professionnel. Je n’en dirai pas plus.
+                </p>
+
+                <p class="special-text">
+                    Le silence s’installa, lourd comme du plomb. Décontenancé, Louis n’osa rien répondre. Le regard du
+                    directeur, impénétrable, semblait l’évaluer. Puis, d’un geste bref, il désigna la porte.
+                </p>
+
+                <p class="special-text">
+                    En sortant, Louis sentit son cœur battre dans ses tempes. Il tenta de recoller les morceaux, de
+                    comprendre ce qu’il avait bien pu faire pour mériter un licenciement aussi abrupt. Mais aucune
+                    réponse ne lui vint.
+                </p>
+
+                <p class="special-text">
+                    Dans le métro, il s’installa dans un coin, le regard perdu. Son téléphone devint son refuge. Comme
+                    un réflexe, il fit défiler ses réseaux sociaux, espérant se distraire. Mais, au milieu des photos
+                    anodines, un souvenir l’assaillit : Sophie. Ce regard froid, presque craintif. Une image imprécise,
+                    comme un rêve oublié, s’imposa à lui : des mots griffonnés sur un écran, une colère sourde qu’il ne
+                    s’expliquait pas. Il chassa cette idée d’un geste agacé.
+                </p>
+            </em>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 1.1 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="l'identité.plurielle">
+                1.1. L'identité plurielle
+            </h3>
+            </p>
+
+            <p>
+                En ligne, l'une des premières choses qui nous est demandée lorsque nous voulons communiquer quelque part
+                est de nous créer un compte. Pour ce faire, nous jugeons de l'importance ou non de délivrer des
+                informations de soi au reste de la communauté. Cela nous permet de refléter une partie de soi ou à
+                l'opposé, d'en explorer d'autres.
+            </p>
+
+            <p>
+            <blockquote id="citation">
+                "Depuis les années 1990, Internet est devenu un cadre de présentation de soi, de mise en scène de
+                l’identité personnelle, sociale et civile des individus." <br>
+                <div class="signature">
+                    <a href="https://hal.science/hal-01575171v1" target="_blank">
+                        <em>Éternités numériques</em></a> <sup><a href="#fn:7">[7]</a></sup>, Fanny Georges, 09/2021,
+                    page 01.
+                </div>
+            </blockquote>
+            </p>
+
+            <p>
+                Cette mise en scène est fortement influencée par les sites ou applications utilisées. Nous pouvons les
+                qualifier d'"user-friendly", nous incitant à publier du contenu, que ce soit des messages visibles par
+                tous sur Twitter, ou des photos sur Instagram. <sup><a href="#fn:8">[8]</a></sup> Les interfaces
+                numériques participent à l'altérité de soi et font émerger l’héxis numérique :
+            </p>
+
+            <p>
+            <blockquote id="citation">
+                "L’héxis numérique peut se définir en 3 dimensions : <br>
+                <br>
+                - L’identité déclarative, renseignée directement par l'utilisateur. <br>
+                - L’identité agissante, renseignée indirectement. <br>
+                - L’identité calculée, produite par un traitement des données de l’identité agissante par le système."
+                <br>
+                <div class="signature">
+                    <a href="https://hal.science/hal-01575199v1" target="_blank">
+                        <em>L’identité numérique dans le web 2.0</em></a> <sup><a href="#fn:9">[9]</a></sup>, Fanny
+                    Georges, 2008, page 01.
+                </div>
+            </blockquote>
+            </p>
+
+
+
+            <p>
+                Selon Fanny Georges, l'identité déclarative possède des usages et des utilités, tant positives
+                que négatives. Le web s'impose face aux discriminations, permettant, par exemple, à
+                l'utilisateur d'un blogue de se définir uniquement par les messages qu'il laisse. Au-delà des
+                stéréotypes liés à l’apparence, il est possible de dévoiler une facette de soi, comme un pas
+                vers une nouvelle identité de genre. Bien loin des corps genrés, le web offre des moyens de se
+                définir avec un pseudo, une photo et une communauté.
+            </p>
+
+            <p>
+                Martine Neddam est une artiste qui, depuis 1996, explore à l'aide d'Internet, la question de
+                l'identité en ligne. À travers plusieurs projets, elle crée des sites Internet qui proposent des
+                identités distinctes et surtout anonymes. Parmi les sites créés, nous en retiendrons deux,
+                Mouchette et David Still.
+            </p>
+
+            <p>
+                <a href="https://mouchette.org/" target="_blank">Mouchette.org</a> <sup><a href="#fn:10">[10]</a></sup>
+                est le journal fictif en
+                ligne (blogue) d'une jeune artiste de 13 ans, axée sur des sujets tels que le suicide, la mort,
+                la violence ou encore qui fait des allusions sexuelles. Ce projet voit le jour en 1996,
+                l'artiste ne révélera son identité derrière ce profil que 14 ans plus tard.
+            </p>
+
+            <p>
+                Sur la page d’accueil, nous nous trouvons face à une interface kitsch, remplie de couleurs et
+                d'hyperliens, définit par un élément de contenu qui nous renvoi vers une autre page. Grâce à ça,
+                Martine Neddam perd les dizaines d'explorateurs qui, curieux de découvrir mouchette, se
+                retrouvent dans un labyrinthe de pages et de données. Dévoilant à chacun une face différente de
+                cette personne et de ses pensées.
+            </p>
+
+            <figure id="image">
+                <img src="images/mouchette_1.webp" alt="Logo" />
+                <figcaption>Page d'accueil.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/mouchette_2.webp" alt="Logo" />
+                <figcaption>Qu'est-ce qu'un kit de suicide ?</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/mouchette_4.webp" alt="Logo" />
+                <figcaption>Page d'accueil des produits dérivés.</figcaption>
+            </figure>
+
+            <p>
+                <a href="https://davidstill.org/" target="_blank">DavidStill.org</a> <sup><a
+                        href="#fn:11">[11]</a></sup>
+                a été fondé en 2001 et fonctionne
+                selon un principe bien différent. Tout le monde peut devenir David Still, un avatar numérique qui est
+                disponible pour tous les internautes via l’adresse courriel suivante : ds@davidstill.org
+
+            </p>
+
+            <p>
+                Le site se distingue par une interface plus simple, bien loin du chaos de Mouchette. Sur la page
+                d’accueil, un simple formulaire permet d’envoyer des courriels sous l’identité de David. Cependant, des
+                liens situés dans le coin supérieur droit du site fournissent suffisamment d’informations pour qu’un
+                individu quelconque puisse se faire passer pour lui. Personne n'est vraiment David Still, mais, plus
+                précisément, tout le monde le possède.
+            </p>
+
+            <figure id="image">
+                <img src="images/davidstill_1.webp" alt="Logo" />
+                <figcaption>Page d'accueil.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/davidstill_2.webp" alt="Logo" />
+                <figcaption>Séléction des informations que nous souhaitons connaître.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/davidstill_3.webp" alt="Logo" />
+                <figcaption>L'enfance de David Still.</figcaption>
+            </figure>
+
+            <p>
+                Yanis Ayari, surnommé <a href="https://www.youtube.com/@DefendIntelligence" target="_blank">Defend
+                    Intelligence</a> <sup><a href="#fn:12">[12]</a></sup>, ingénieur en intelligence artificielle, a
+                réalisé une vidéo tutoriel intitulée
+                <a href="https://www.youtube.com/watch?v=dVVsadPMNNg&t=78s" target="_blank"><em>Comment disparaître
+                        d'Internet
+                        ?</em></a> <sup><a href="#fn:13">[13]</a></sup>. Il affirme que, lorsqu’il est impossible de
+                supprimer nos traces numériques, le
+                moyen le plus simple est d’en créer une multitude.
+            </p>
+
+            <p>
+                Au lieu de lier une seule identité à une personne, il en crée plusieurs, chacune avec des
+                caractéristiques uniques. En créant et en modifiant plusieurs profils avec des informations
+                sociodémographiques différentes, mais en conservant le même nom et prénom, il génère ce qu’il appelle du
+                "bruit numérique". Cette méthode est à la fois efficace et économique en termes de temps. Tout cela
+                repose sur les réseaux sociaux comme point de départ.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 1.2 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="s'incrémenter.sur.le.web">
+                1.2. S'incrémenter sur le web
+            </h3>
+            </p>
+
+            <section class="data-container" id="image">
+
+                <table id="data" class="data">
+
+                    <thead>
+                        <tr>
+                            <th><strong>Plateforme</strong></th>
+                            <th><strong>Tranche d'âge dominante</strong></th>
+                            <th><strong>Catégorie sociale</strong></th>
+                            <th><strong>Similitudes/Liens</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Facebook</strong></td>
+                            <td>25-45 ans</td>
+                            <td>Tout public, famille, entreprises</td>
+                            <td>Réseau social généraliste, partage multimédia et messagerie privée (comme Instagram).
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Instagram</strong></td>
+                            <td>18-34 ans</td>
+                            <td>Jeunes adultes, influenceurs, créatifs</td>
+                            <td>Focalisé sur les visuels (comme Pinterest), avec stories et messagerie privée.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WhatsApp</strong></td>
+                            <td>Tout âge</td>
+                            <td>Tout public</td>
+                            <td>Messagerie instantanée (similaire à Telegram et WeChat).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>X (Twitter)</strong></td>
+                            <td>18-45 ans</td>
+                            <td>Professionnels, journalistes, activistes</td>
+                            <td>Discussions publiques ouvertes (comme Reddit).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TikTok</strong></td>
+                            <td>13-24 ans</td>
+                            <td>Jeunes, créatifs</td>
+                            <td>Contenus vidéos courts et divertissants (comme YouTube mais en format court).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Discord</strong></td>
+                            <td>13-30 ans</td>
+                            <td>Gamers, communautés en ligne</td>
+                            <td>Messagerie et appels pour communautés spécifiques (similaire à jeuxvideo.com).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JeuxVideo.com</strong></td>
+                            <td>15-35 ans</td>
+                            <td>Gamers</td>
+                            <td>Forums publics, discussions communautaires (comme 4chan, Reddit).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4chan</strong></td>
+                            <td>18-35 ans</td>
+                            <td>Communautés anonymes</td>
+                            <td>Discussions anonymes ouvertes (comme Reddit mais sans modération).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reddit</strong></td>
+                            <td>18-35 ans</td>
+                            <td>Étudiants, jeunes adultes</td>
+                            <td>Forums communautaires, échange d'informations (comme jeuxvideo.com).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Linkedin</strong></td>
+                            <td>25-50 ans</td>
+                            <td>Professionnels, recruteurs</td>
+                            <td>Réseau orienté carrière.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Snapchat</strong></td>
+                            <td>13-24 ans</td>
+                            <td>Jeunes, lycéens, étudiants</td>
+                            <td>Partage instantané de photos et vidéos (comme BeReal, Instagram).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>YouTube</strong></td>
+                            <td>Tout âge</td>
+                            <td>Créateurs, éducateurs, divertissement</td>
+                            <td>Vidéos longues, contenus variés (similaire à TikTok).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Telegram</strong></td>
+                            <td>18-45 ans</td>
+                            <td>Tout public, communautés</td>
+                            <td>Messagerie sécurisée, groupes et chaînes (comme WhatsApp, WeChat).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BeReal</strong></td>
+                            <td>13-25 ans</td>
+                            <td>Jeunes, étudiants</td>
+                            <td>Partage authentique de photos, approche minimaliste (similaire à Natascha).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>WeChat</strong></td>
+                            <td>Tout âge</td>
+                            <td>Asiatiques, utilisateurs multifonctionnels</td>
+                            <td>Plateforme tout-en-un (comme WhatsApp mais avec paiements, commandes, etc.).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google</strong></td>
+                            <td>Tout âge</td>
+                            <td>Tout public</td>
+                            <td>Recherche et services web (différent des réseaux sociaux).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Pinterest</strong></td>
+                            <td>18-45 ans</td>
+                            <td>Créatifs</td>
+                            <td>Plateforme visuelle (comme Instagram mais axée sur l'inspiration).</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <figcaption>Tableau comparatif des plateformes numériques.</figcaption>
+            </section>
+
+            <p>
+                Ce tableau illustre les principales plateformes numériques actuelles. Il montre une segmentation marquée
+                par les tranches d'âge et les centres d'intérêt. Nous observons une montée des contenus visuels,
+                avec une prédominance des vidéos sur les images fixes.
+            </p>
+
+            <p>
+                Qu’il s’agisse de réseaux sociaux, de forums anonymes, de messageries instantanées ou de plateformes
+                multimédias, ces espaces sont devenus bien plus que de simples outils de communication. Ils sont aussi
+                des lieux d'exposition publique et personnelle.
+            </p>
+
+            <p>
+                Bien que les objectifs initiaux soient distincts (par exemple, l’approche professionnelle de LinkedIn
+                par
+                rapport à l’attitude détachée d’un blogue), elles tendent toutes deux vers des interfaces similaires.
+                Cela se traduit par l’ajout de fonctionnalités empruntées, comme les stories sur WhatsApp, inspirées
+                d’Instagram et Snapchat. Cette uniformité soulève des questions quant à sa pertinence, en particulier
+                lorsqu’un usage plus limité est favorisé.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Bien que Facebook ait tenté d'imposer l'usage d'une identité conforme à l'état
+                    civil, il se développe une pléthore de plateformes permettant aux collégiens de s'échapper de
+                    cette surveillance"
+                <div class="signature">
+                    <em>L'Internet des enfants</em> <sup><a href="#fn:14">[14]</a></sup>, David-Julien Rahmil, 2024,
+                    page
+                    168.
+                </div>
+
+                </p>
+            </blockquote>
+
+            <p>
+                Pourtant, si nous prenons l’exemple de collégiens pour qui la recherche d’autonomie et d’identité se
+                fait
+                à travers les applications, ils trouvent des moyens de se soustraire au regard de tous.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Le nombre d'enfants dans la plus jeune catégorie (9-11 ans) qui vont en ligne depuis leur
+                    smartphone chaque jour est compris entre 14% en France et 56% en Lituanie. Cependant, dans la
+                    plupart des pays, moins d'un enfant sur trois de 9 à 11 ans a accès à Internet depuis un
+                    smartphone plusieurs fois par jour"
+                <div class="signature">
+                    <a href="https://www.lse.ac.uk/media-and-communications/assets/documents/research/eu-kids-online/reports/EU-Kids-Online-2020-10Feb2020.pdf" target="_blank"><em>EU kids online 2020</em></a> <sup><a href="#fn:15">[15]</a></sup>, 2020, page 21.
+                </div>
+
+                </p>
+            </blockquote>
+            <p>
+                La tendance actuelle fait que les jeunes se retrouvent très vite sur les réseaux sociaux. Dès 9 ans, un
+                peu moins d'un enfant sur trois a accès à de multiples reprises à Internet à l'aide d'un
+                smartphone chaque jour. Le seul pays ayant fait une loi stricte à ce sujet est l'<a
+                    href="https://www.lemonde.fr/pixels/article/2024/11/28/l-australie-interdit-l-acces-aux-reseaux-sociaux-aux-moins-de-16-ans_6418619_4408996.html">Australie</a>
+                avec la mise en place d'une vérification de l'âge. Interdit aux moins de 16 ans, le parlement à
+                inciter les plateformes à s'assurer du respect de la loi.
+            </p>
+
+            <p>
+                Le web regorge de dangers, et le projet <a
+                    href="https://fr.wikipedia.org/wiki/Op%C3%A9ration_Doppelg%C3%A4nger">Doppelgänger</a> <sup><a
+                        href="#fn:16">[16]</a></sup>, mis en
+                lumière dans un rapport de HarfangLab, en est un exemple concret. Lancée en 2014, cette opération de
+                désinformation d’origine russe consiste à créer des faux numériques. Ce procédé rappelle, d’une certaine
+                manière, le projet David Still de Martine Neddam. L’idée est de fabriquer de toutes pièces des identités
+                fictives, mais ici avec un objectif bien plus sombre : influencer l’opinion publique.
+            </p>
+
+            <p>
+                L’entité malveillante connue sous le nom de Doppelgänger a réussi à dupliquer des médias de divers pays,
+                ce qui a permis la diffusion de fausses informations alignées sur la propagande russe. Ces contenus
+                étaient ensuite massivement relayés par des bots, des programmes automatisés imitant des comportements
+                humains sur les réseaux sociaux. Par conséquent, ces fausses informations, élaborées pour sembler
+                véridiques, ont induit en erreur les internautes les moins expérimentés.
+            </p>
+
+            <p>
+                Ce type de manipulation est loin d’être un cas isolé. David Chavalarias, dans son ouvrage <em>Toxic
+                    Data</em> <sup><a href="#fn:17">[17]</a></sup> décrit l’ampleur du phénomène. Il débute son livre
+                par
+                la guerre des mèmes, revenant sur
+                les dernières élections présidentielles françaises. À cette occasion, des activistes d’extrême droite,
+                rassemblés sur le forum 4chan, ont inondé la scène française avec un flot de fausses informations, de
+                faux profils et d’images trompeuses dans l’espoir de manipuler les discussions politiques nationales et
+                de diffuser leurs convictions.
+            </p>
+
+            <p>
+                Face à ces stratégies invisibles pour la plupart des utilisateurs, il est facile de manipuler l’opinion,
+                soit en modifiant sa perception, soit en renforçant ses convictions.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 1.3 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="le.web.2.0">
+                1.3. Le web 2.0
+            </h3>
+            </p>
+
+            <p>
+                Du <a href="https://home.web.cern.ch/fr/science/computing/birth-web">World Wide Web</a> <sup><a
+                        href="#fn:18">[18]</a></sup> au Web 2.0,
+                l’histoire du web a connu une révolution dans la construction des interactions sociales. Initialement
+                développé en 1989 au CERN (conseil européen pour la recherche nucléaire) pour les chercheurs et universitaires, Internet a vu émerger le concept de Web
+                2.0 en 2003. Cette évolution se caractérise par l’apparition des réseaux sociaux, la production
+                participative et une accessibilité accrue pour les non-initiés à l'informatique.
+            </p>
+
+            <blockquote>
+                <p>
+                    "La principale inflexion qu'il imprime au web est d'articuler étroitement
+                    l'exposition de soi et la conversation entre proches qui s'étaient jusqu'alors déployées
+                    dans des espaces distincts."
+                <div class="signature">
+                    <em>La démocratie Internet, promesses et limites</em> <sup><a href="#fn:19">[19]</a></sup>,
+                    Dominique
+                    Cardon, 2010, page 55.
+                </div>
+                </p>
+
+            </blockquote>
+
+            <p>
+                Cette tendance est renforcée par l’attrait croissant pour l’image, alimenté par l’arrivée des téléphones
+                dotés d’appareils photo dès 1999. Nokia, avec son premier modèle doté d’un capteur
+                photographique, ne se doutait pas que cette innovation transformerait les interactions humaines.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Les premières formes d'exposition de soi sur le web étaient comme des bouteilles à la
+                    mer."
+                <div class="signature">
+                    <em>La démocratie Internet, promesses et limites</em> <sup><a href="#fn:20">[20]</a></sup>,
+                    Dominique Cardon, 2010, page 57.
+                </div>
+                </p>
+            </blockquote>
+
+            <p>
+                Ainsi, le Web 2.0 a profondément transformé les outils de communication et a façonné une nouvelle
+                dynamique identitaire où l’exposition de soi est au cœur de l’expérience numérique.
+            </p>
+
+            <figure id="image">
+                <img src="images/Nokia-7650.webp" alt="Logo" />
+                <figcaption>Nokia 7650 <sup><a href="#fn:21">[21]</a></sup>.</figcaption>
+            </figure>
+
+            <p>
+                Animée par l’aspiration à se mettre en évidence, la technologie a connu des progrès remarquables, tant
+                sur le plan technique que dans l’orientation des objets du quotidien. Les téléphones, par exemple, sont
+                devenus de plus en plus intuitifs, simplifiant leur interface au fil des années. L’apparition de la
+                caméra frontale, vers 2008, a marqué un tournant avec la démocratisation du selfie, alors que la
+                navigation sur Internet s’est considérablement enrichie.
+            </p>
+
+            <p>
+                Sur le Web, il existe deux types de communication : l’une favorise les échanges entre individus, et
+                l’autre, la diffusion d’informations à grande échelle.
+            </p>
+
+            <blockquote>
+                <p>
+                    "La première, à travers le courrier postal, le téléphone ou le mail, permet à chacun de
+                    s'adresser à un ou plusieurs interlocuteurs désignés. La seconde, avec la presse, la radio ou la
+                    télévision, destine les messages de quelques-uns à un public vaste et indifférencié... En réunissant
+                    sur la même interface les outils de l'échange interpersonnel et ceux de la communication de
+                    masse, Internet instaure un nouveau type de relation entre la sphère de la conversation et celle de
+                    l'information."
+                <div class="signature">
+                    <em>La démocratie Internet, promesses et limites</em> <sup><a href="#fn:22">[22]</a></sup>,
+                    Dominique
+                    Cardon, 2010, page 09.
+                </div>
+                </p>
+
+            </blockquote>
+            <p>
+                Le 8 décembre 2005, l'artiste Cory Arcangel a performé un "Friendster Suicide". Il s’agit
+                d’un suicide numérique sur le site Friendster. Ce dernier fait partie des premiers sites de réseautage
+                social. Bien que de plus en plus courant de nos jours, cette pratique de disparaître d'Internet si tôt
+                est presque précurseur. L'artiste a marqué un pan de ce nouveau web au travers de cette phrase postée
+                sur son compte quelques jours avant de supprimer définitivement son compte.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Cher Internet, je t'écris pour t'annoncer que je vais me suicider sur Friendster jeudi, --->
+                    c'est-à-dire supprimer mon compte Friendster. Yep, je n'en peux plus..."
+                <div class="signature">
+                    Cory Arcangel <sup><a href="#fn:23">[23]</a></sup>, 2005.
+                    </p>
+            </blockquote>
+
+            <p>
+                D'autres pratiques quant à elles, ont connu une expansion significative. Le projet <a
+                    href="https://en.wikipedia.org/wiki/Yellow_Arrow" target="_blank">YellowArrow</a> <sup><a
+                        href="#fn:24">[24]</a></sup>,
+                lancé en 2004 par Christopher Allen, Brian House et Jesse Shapins, a duré deux ans. Durant cette
+                période, ces flèches se sont retrouvées dans 38 pays différents.
+            </p>
+
+            <p>
+                Le projet fut le précurseur d’un web géospatial, le projet préfigurait Google Maps, Flickr, MySpace,
+                Facebook et des applications de géolocalisation sur les smartphones. Il a suggéré que les logiciels
+                sociaux, en association avec les appareils mobiles et la photographie, pouvaient radicalement
+                transformer notre perception du lieu.
+            </p>
+
+            <p>
+                L'initiative du projet est que les participants plaçaient des autocollants en forme de flèche jaune
+                avec un code unique pour attirer l'attention sur des lieux et des objets. Les passants pouvaient
+                envoyer un SMS au numéro qui figurait sur l'autocollant avec le code sur la flèche. Puis nous
+                recevions un SMS en retour avec un texte écrit par quelqu'un d'autre. Ce projet a mis en
+                évidence une connexion entre des inconnus, au moyen du téléphone, sans qu’il soit nécessaire de se
+                rencontrer.
+            </p>
+        </section>
+
+        <!-- ============================================================================================================ -->
+        <!-- 🔹 SECTION 2 -->
+        <!-- ============================================================================================================ -->
+
+        <section id="chapitre:2" content="chapitre" class="chapitre">
+
+            <figure id="image">
+                <img src="images/coooookie.webp" alt="Logo" />
+                <figcaption>Sans cookies, aucune information n'est enregistrée ou sauvegardée, notamment nos
+                    préférences <sup><a href="#fn:25">[25]</a></sup>.</figcaption>
+            </figure>
+
+            <h2 id="nos.identités.plurielles.et.volontaires.la.construction.de.soi.en.ligne">
+                Nos identités plurielles et volontaires : la construction de soi en ligne
+            </h2>
+
+            <p class="special-text">
+                <strong>Fascination.</strong>
+            </p>
+
+            <p class="special-text">
+                Chez lui, l’esprit encore embrumé, il alluma son ordinateur, mû par une impulsion qu’il ne
+                comprenait pas lui-même. En ouvrant son navigateur, l’un des onglets déjà présents de sa dernière
+                visite était le réseau interne de son entreprise. Peut-être y trouverait-il une explication. Il
+                parcourut les échanges récents, jusqu’à tomber sur une capture d’écran partagée avec l’ensemble de
+                l’équipe. Sa respiration se bloqua.
+            </p>
+
+            <p class="special-text">
+                Le message, publié depuis son propre compte sur un réseau social, était une attaque cruelle contre
+                Sophie. Mais il n’avait aucun souvenir d’avoir écrit ces mots. Ses doigts tremblaient alors qu’il
+                regardait l’horodatage : samedi soir. L’alcool bu ce soir-là brouillait ses souvenirs, mais… non,
+                cela ne lui ressemblait pas. Rien de tout cela n’avait de sens.
+            </p>
+
+            <p class="special-text">
+                Les jours suivants furent marqués par une inertie oppressante. Il tenta de contacter Sophie, mais
+                elle était introuvable sur les réseaux, sûrement l'avait-elle bloquée, et l'adresse courriel
+                professionnelle de Louis avait été supprimée. Il se noyait dans un mélange de colère et
+                d’incompréhension. Le message, les discussions dans son dos, son licenciement… Tout cela formait une
+                toile d’événements qu’il n’arrivait pas à démêler. Mais quelque chose clochait, il en était
+                certain.
+            </p>
+
+            <p class="special-text">
+                Il passa des heures sur son téléphone, obsédé par des détails qu’il n’aurait jamais remarqués
+                autrement. Les publicités. Les recommandations. Elles étaient si précises, si adaptées qu’elles
+                semblaient lire dans ses pensées. Une publicité pour un livre qu’il avait seulement évoqué en
+                passant, une offre pour un restaurant près de chez lui qu’il n’avait jamais mentionné… La sensation
+                d’être observé, manipulé, grandissait en lui comme une herbe folle.
+            </p>
+
+            <p class="special-text">
+                Louis commença à chercher des réponses. Ses recherches le menèrent à des forums et des articles
+                techniques qu’il peinait à comprendre. Un soir, il tomba sur un lien menant à un navigateur
+                alternatif. On disait qu’il permettait d’échapper aux algorithmes. Il remarqua que les résultats
+                étaient significativement différents, mais les publicités semblaient encore plus précises. C’est là
+                qu’il découvrit un article dénonçant la collecte massive de données personnelles et la manière dont
+                elles étaient utilisées pour construire des « profils comportementaux ».
+            </p>
+
+            <p class="special-text">
+                – Ce n’est pas possible, murmura-t-il en lisant.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 2.1 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="l'identité.numérique.civile">
+                2.1. L'identité numérique civile
+            </h3>
+            </p>
+
+            <p>
+                L'identité civile numérique désigne les liens entre :
+            </p>
+
+            <p>
+                "Un cadre législatif qui régit l'enregistrement des naissances, mariages, décès, de même que
+                les autres faits relatifs à l'état des personnes (divorces, reconnaissances, légitimations,
+                adoptions). C'est sur cette base que s'est élaboré le recueil de données pour
+                l'établissement des statistiques de l'état civil" <sup><a href="#fn:26">[26]</a></sup>. Cette définition
+                rend compte
+                des informations qui pourraient être stockées avec le <a
+                    href="https://www.thalesgroup.com/fr/europe/france/dis/gouvernement/identite/digital-id-wallet">Digital
+                    ID Wallet</a> <sup><a href="#fn:27">[27]</a></sup>, un projet du groupe Thales d'identité mobile qui
+                rappelle l'application phare
+                de la pandémie, TousAntiCovid. Que pouvons-nous espérer de la part d'une entreprise privée qui
+                stocke et gère nos données les plus sensibles ?
+            </p>
+
+            <p>
+                Nous retrouvons également cette part de nous sur des plateformes sociales, telles que Facebook ou
+                LinkedIn, qui nous incitent à mettre notre nom et prénom civil avec un degré d'informations
+                personnelles ou professionnelles différent en fonction de l'entourage et de l'usage que nous en
+                faisons.
+            </p>
+
+            <p>
+                Mais avant même la création de notre premier compte sur le web, nous retrouvons des traces "ante
+                    natam" :
+            </p>
+
+            <blockquote>
+                <p>
+                    "Des identités numériques ante natam, créées par des parents avant même la naissance de leur
+                    enfant."
+                <div class="signature">
+                    <a href="https://hal.science/hal-01575171v1"><em>Éternités numériques</em></a> <sup><a
+                            href="#fn:28">[28]</a></sup>, Fanny Georges, 09/2021, page 01.
+                </div>
+                </p>
+            </blockquote>
+
+            <p>
+                Elles représentent des dossiers médicaux contenant des échographies, des données sur le poids ou encore
+                la taille, sur des serveurs malheureusement peu sécurisés et soumis à des <a
+                    href="https://www.academie-medecine.fr/les-attaques-des-systemes-informatiques-des-hopitaux-mettent-en-danger-la-vie-des-patients/">cyberattaques</a>
+                <sup><a href="#fn:29">[29]</a></sup>
+                récurrentes. Mais avant d'être préoccupé par des fuites potentielles, il existe depuis plusieurs
+                années une tendance sur les réseaux sociaux : le gender reveal. C'est une pratique consistant à
+                dévoiler le genre de son ou ses futur(s) enfant(s) au travers d'une fête avec ses proches, qui se
+                retrouve souvent publiée sur des plateformes non adéquates, visant tout un chacun. Cette forme de
+                contenu illustre comment des traces de soi peuvent précéder l'existence physique.
+            </p>
+
+            <p>
+                Cette identité civile numérique apparaît à d'autres moments de la vie d'une personne :
+            </p>
+
+            <ul>
+                <li>
+                    <p>
+                        Un compte sur un réseau social implique, lorsqu'on signe
+                        les conditions générales d'utilisation :
+                        "Le nom de votre profil doit correspondre au nom que vous utilisez dans la vie
+                        courante. Ce nom doit également figurer sur une pièce d'identité ou un document de
+                        notre liste de pièces d'identité." <sup><a href="#fn:30">[30]</a></sup>
+                    </p>
+                    </blockquote>
+
+                </li>
+                <li>
+                    <p>
+                        Les adresses courriel professionnelles et institutionnelles conduisent à acter le passé. Par
+                    exemple, le nom de famille, appelé aussi nom de naissance, généralement présent sur un courriel
+                    professionnel (prénom.nom@outlook.com), se trouve souvent modifié après un mariage afin
+                    d'adopter le nom d'usage du ou de la conjointe. Les adresses courriel étudiantes ont
+                    montré à de multiples reprises l'utilisation de l'ancien prénom de la personne qui a
+                    changé pour des convictions ou des raisons personnelles. C'est une pratique nommée le
+                    <em>dead name</em> qui n'a pas toujours de solution, laissant la personne identifiée dans un
+                    genre qui n'est plus le sien.
+                    </p>
+                </li>
+            </ul>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 2.2 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="l'identité.numérique.et.le.statut.social">
+                2.2. L'identité numérique et le statut social
+            </h3>
+            </p>
+
+            <p>
+                L’importance de la hiérarchie dans nos sociétés se manifeste de manière saillante sur le web, où se
+                profilent des personnalités influentes, souvent perçues comme des exemples de réussite à suivre pour
+                atteindre le succès. Ces figures publiques sont considérées par une grande majorité d’utilisateurs comme
+                des modèles à imiter. Cette hiérarchisation ne se limite pas seulement à l’influence personnelle, elle
+                touche aussi la manière dont nos données, particulièrement celles liées à notre statut social, sont
+                traitées sur le web. En effet, les algorithmes favorisent l’homophilie de statut, où les individus sont
+                regroupés en fonction de caractéristiques similaires, ce qui renforce cette hiérarchie numérique.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Les principales dimensions sociodémographiques qui stratifient la société - les
+                    caractéristiques attribuées comme l'origine ethnique, le sexe et l'âge, et les
+                    caractéristiques acquises comme la religion, l'éducation et la profession."
+                <div class="signature">
+                    <em>Toxic Data</em> <sup><a href="#fn:31">[31]</a></sup>, David Chavalarias, 2022, page 46.
+                </div>
+                </p>
+            </blockquote>
+
+            <p>
+                Ces données sociodémographiques, qui représentent des aspects profondément ancrés de notre identité,
+                sont
+                constamment utilisées sur les réseaux sociaux. Les influenceurs, en choisissant d’exposer une partie
+                importante de leur vie privée – leurs goûts, leurs opinions, leur parcours – créent une forme de modèle
+                social visible et souvent idolâtré. En dévoilant leur intimité, ces figures publiques influencent
+                directement leurs communautés. Leur statut en ligne devient un reflet de leur vie personnelle, et à
+                travers cette exposition, ils façonnent les comportements de leurs abonnés. Ceux qui les suivent peuvent
+                être poussés à adopter les mêmes modes de vie ou à imiter leurs actions pour s’intégrer ou pour
+                atteindre un statut social comparable à celui des influenceurs.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Les comptes certifiés sur les réseaux sociaux confèrent un statut social."
+                <div class="signature">
+                    <em>La démocratie Internet</em> <sup><a href="#fn:32">[32]</a></sup>, Dominique Cardon, 2010, page
+                    30.
+                    </p>
+            </blockquote>
+
+            <p>
+                Le web se transforme en un terrain où la recherche de reconnaissance s’accompagne d’une hiérarchisation
+                sociale véritable. Les influenceurs occupent le sommet de cette pyramide virtuelle, et leurs choix
+                d’exposer leur vie personnelle alimentent ce processus de stratification. La popularité des influenceurs
+                est un indicateur de statut social. À travers leurs publications, ils créent un sentiment de
+                désirabilité chez les abonnés, qui cherchent à leur ressembler afin d’accroître eux aussi leur
+                visibilité ou leur notoriété. L'image qu’ils projettent devient un modèle à atteindre, non seulement
+                dans le contenu qu’ils créent mais aussi dans la façon dont ils gèrent leur vie privée. Cette exposition
+                n'est pas sans conséquences : elle incite leurs abonnés à suivre le même chemin, à adopter les mêmes
+                comportements et à accorder plus d’importance à leur propre image virtuelle. Cela crée un cercle
+                vertueux où chacun se place par rapport aux autres, dans un jeu de miroir constant.
+            </p>
+
+            <p>
+                Le phénomène ne se limite pas seulement à l’influence sociale ; il s’étend aussi à la gestion des
+                données
+                personnelles, qui sont devenues un outil puissant pour établir ces hiérarchies. Les informations
+                personnelles, comme le sexe, l'âge, l'origine ethnique, ou encore le statut socio-économique,
+                sont utilisées par les entreprises pour créer des profils extrêmement détaillés, appelés
+                personas. Ces données, collectées par les réseaux sociaux et les entreprises, alimentent des
+                stratégies de ciblage et de publicité qui renforcent ces divisions sociales, en fonction des préférences
+                et comportements en ligne. Par exemple, une entreprise peut créer des segments d'utilisateurs en
+                fonction de leur statut social perçu, et ces segments peuvent ensuite être utilisés pour affiner le
+                contenu diffusé, souvent en exploitant les envies de reconnaissance et les comportements mimétiques des
+                individus.
+            </p>
+
+            <p>
+                Les données sociodémographiques sont utilisées par les entreprises comme données
+                marchandes. Ce processus est amplifié par les algorithmes qui privilégient des
+                contenus similaires, favorisant ainsi l’homophilie de statut. En Europe, des lois comme le RGPD
+                encadrent l’utilisation de ces données, mais avant leur mise en place, les entreprises pouvaient
+                collecter des informations extrêmement personnelles, telles que le revenu, et les utiliser pour ajuster
+                leurs stratégies marketing, contribuant à renforcer ces hiérarchies invisibles.
+            </p>
+
+            <p>
+                Ainsi, les influenceurs et les données personnelles partagent un même rôle dans la construction d’un web
+                stratifié. L’exposition des vies privées des personnes influentes influence leurs abonnés, qui cherchent
+                à s’identifier à ces modèles pour améliorer leur propre statut social. Cela alimente une économie de
+                données où leur identité devient une marchandise. Ce phénomène, qui semble offrir une certaine liberté
+                d’expression et de choix, s'accompagne en réalité d'une soumission à une hiérarchie numérique où
+                les individus sont constamment poussés à se conformer à des modèles de réussite préexistants.
+            </p>
+
+            <p>
+                Joana Moll, en collaboration avec Tactical Tech, a lancé un projet intitulé <a
+                    href="https://datadating.tacticaltech.org/">The Dating Brokers</a> <sup><a
+                        href="#fn:33">[33]</a></sup>. Pour la somme de 136 dollars,
+                ils ont acquis une base de données d’un million de profils de sites de rencontres.
+            </p>
+
+            <p>Ces profils pouvaient contenir jusqu’à cinq images, un pseudonyme, une adresse courriel, une nationalité,
+                un genre, un âge ainsi que des informations personnelles telles que l’orientation sexuelle, les centres
+                d’intérêt, la profession et des détails physiques.
+            </p>
+
+            <p>
+                Toute personne ayant utilisé une application de rencontres ces dernières années reconnaîtra ces éléments
+                : ce sont les informations que l’on nous encourage vivement à remplir pour créer un profil complet,
+                censé être mieux mis en avant par l’algorithme. C'est ce que nous répètent sans cesse les sites de
+                rencontres.
+            </p>
+
+            <figure id="image">
+                <img src="images/thebroker_1.webp" alt="Logo" />
+                <figcaption>Page d'accueil.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/thebroker_2.webp" alt="Logo" />
+                <figcaption>Les 300 profils en vente à un instant variable.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/thebroker_3.webp" alt="Logo" />
+                <figcaption>Sélection d'un profil afin de montrer les informations détenues.</figcaption>
+            </figure>
+
+            <p>
+                L’achat de ces données a mis en évidence l’existence d’un vaste marché de revente d’informations
+                personnelles, souvent sans le consentement explicite des utilisateurs. Ce projet a donné naissance à un
+                site de mise aux enchères de lots de profils. Il dénonce les pratiques opaques des plateformes de
+                rencontres et leur exploitation commerciale des données personnelles.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 2.3 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="l'identité.numérique.entre.préservation.et.dépossession">
+                2.3. L'identité numérique entre préservation et dépossession
+            </h3>
+            </p>
+
+            <section class="data-container" id="image">
+                <table id="data" class="data">
+                    <thead>
+                        <tr>
+                            <th><strong>Clé</strong></th>
+                            <th><strong>Valeur</strong></th>
+                            <th><strong>Description</strong></th>
+                            <th><strong>Informations supplémentaires</strong></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>612</td>
+                            <td>Identifiant unique de la requête ou du processus.</td>
+                            <td>Aucun lien avec un utilisateur spécifique, il s'agit d'un ID généré automatiquement pour
+                                traquer cet événement.</td>
+                        </tr>
+                        <tr>
+                            <td>initiator</td>
+                            <td><a href="https://www.decathlon.fr">Decathlon</a></td>
+                            <td>L'URL d'origine qui a déclenché cette requête.</td>
+                            <td>Permets d'identifier quelle action ou ressource ont déclenché cette requête (utile pour
+                                l'analyse de performances).</td>
+                        </tr>
+                        <tr>
+                            <td>method</td>
+                            <td>GET</td>
+                            <td>Méthode HTTP utilisée pour envoyer cette requête (<code>GET</code> pour la récupération
+                                de données).</td>
+                            <td>Utilisé uniquement pour récupérer des données sans modification sur le serveur.</td>
+                        </tr>
+                        <tr>
+                            <td>postData</td>
+                            <td></td>
+                            <td>Données post-envoyées avec la requête (ici vide).</td>
+                            <td>Aucune donnée envoyée via la méthode POST pour cette requête.</td>
+                        </tr>
+                        <tr>
+                            <td>postError</td>
+                            <td></td>
+                            <td>Erreur éventuelle liée aux requêtes post.</td>
+                            <td>Aucun problème signalé, car aucune donnée POST n'est envoyée.</td>
+                        </tr>
+                        <tr>
+                            <td>tab</td>
+                            <td>1157259117</td>
+                            <td>Identifiant du contexte de navigation (onglet).</td>
+                            <td>Aide à lier cette requête à une session utilisateur ou une activité spécifique dans
+                                l'onglet du navigateur.</td>
+                        </tr>
+                        <tr>
+                            <td>timestamp</td>
+                            <td>1732718040131.78</td>
+                            <td>Moment précis où l'événement s'est produit, en millisecondes Unix.</td>
+                            <td>Utilisé pour chronométrer et corréler des événements dans des analyses plus larges.</td>
+                        </tr>
+                        <tr>
+                            <td>type</td>
+                            <td>image</td>
+                            <td>Type de ressource chargée (ici <code>image</code>, pour le suivi des pixels).</td>
+                            <td>Représente un pixel de suivi, souvent invisible pour l'utilisateur.</td>
+                        </tr>
+                        <tr>
+                            <td>url</td>
+                            <td><a href="https://www.facebook.com/...">Facebook</td>
+                            <td>URL complète avec des paramètres d'analyse et de suivi.</td>
+                            <td>Inclus des paramètres pour identifier des campagnes ou comportements spécifiques.</td>
+                        </tr>
+                        <tr>
+                            <td>Account ID</td>
+                            <td>187144539068993</td>
+                            <td>Identifiant du compte associé à l'événement de tracking (Facebook Pixel).</td>
+                            <td>Ce numéro est unique à l'organisation ou au site utilisant le pixel Facebook.</td>
+                        </tr>
+                        <tr>
+                            <td>Event Type</td>
+                            <td>PageView</td>
+                            <td>Type d'événement enregistré (<code>PageView</code> suit une visite de page).</td>
+                            <td>Enregistre un événement basique indiquant une simple visualisation de la page.</td>
+                        </tr>
+                        <tr>
+                            <td>Page URL</td>
+                            <td><a href="https://www.decathlon.fr/tous-les-sports/trottinettes">Decathlon</a>
+                            </td>
+                            <td>URL complète de la page visitée par l'utilisateur.</td>
+                            <td>Permets de savoir exactement quelle page produit des interactions ou des visites.</td>
+                        </tr>
+                        <tr>
+                            <td>Referring URL</td>
+                            <td><a href="https://www.decathlon.fr">Decathlon</a></td>
+                            <td>URL d'où provient l'utilisateur avant d'arriver sur la page.</td>
+                            <td>Fournis des informations sur les sources de trafic ou les campagnes de référencement.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pixel Version</td>
+                            <td>2.9.176</td>
+                            <td>Version spécifique du pixel utilisé.</td>
+                            <td>Indique les capacités ou les fonctionnalités disponibles pour ce pixel de suivi.</td>
+                        </tr>
+                        <tr>
+                            <td>Screen Height</td>
+                            <td>1440</td>
+                            <td>Hauteur de l'écran, utile pour analyser l'expérience utilisateur.</td>
+                            <td>Peut être utilisé pour identifier des différences de comportement selon les appareils
+                                (mobile, desktop, etc.).</td>
+                        </tr>
+                        <tr>
+                            <td>Screen Width</td>
+                            <td>2560</td>
+                            <td>Largeur de l'écran, nécessaire pour adapter le contenu.</td>
+                            <td>Aide à optimiser l'affichage pour les différentes résolutions d'écran.</td>
+                        </tr>
+                        <tr>
+                            <td>hmd</td>
+                            <td>858d0aed70928<br>
+                                11e28a0bb6e</td>
+                            <td>Identifiant unique du dispositif ou utilisateur (souvent anonymisé).</td>
+                            <td>Garantis un suivi sans compromettre directement l'identité de l'utilisateur.</td>
+                        </tr>
+                        <tr>
+                            <td>coo</td>
+                            <td>false</td>
+                            <td>Indique si les cookies sont activés (<code>false</code> signifie qu'ils ne sont pas
+                                utilisés).</td>
+                            <td>Un indicateur que seuls des cookies essentiels peuvent être utilisés pour cette session.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>csest</td>
+                            <td>true</td>
+                            <td>Indique si la collecte des cookies essentiels est activée.</td>
+                            <td>Signale que le consentement minimal pour les cookies a été donné par l'utilisateur.</td>
+                        </tr>
+                        <tr>
+                            <td>tm</td>
+                            <td>1</td>
+                            <td>Timestamp supplémentaire pour synchroniser les événements.</td>
+                            <td>Synchronise les données entre divers outils d'analyse ou suivi.</td>
+                        </tr>
+                        <tr>
+                            <td>cdl</td>
+                            <td>APIunavailable</td>
+                            <td>Statut de l'API, indique si elle est disponible.</td>
+                            <td>Montre que l'API n'est pas accessible ou ne peut pas répondre pour cette requête.</td>
+                        </tr>
+                        <tr>
+                            <td>rqm</td>
+                            <td>GET</td>
+                            <td>Méthode de requête utilisée (<code>GET</code>).</td>
+                            <td>Confirme l'utilisation d'une requête non intrusive pour récupérer les données.</td>
+                        </tr>
+                        <tr>
+                            <td>pl</td>
+                            <td>Trottinettes</td>
+                            <td>Chemin relatif de la page visitée.</td>
+                            <td>Sers à classer les pages selon leur structure ou hiérarchie sur le site.</td>
+                        </tr>
+                        <tr>
+                            <td>fbp</td>
+                            <td>fb.1.17320256<br>79558.
+                                34021<br>0043538252559</td>
+                            <td>Identifiant unique pour le suivi des événements Facebook.</td>
+                            <td>Permes de lier cette session utilisateur à des campagnes publicitaires spécifiques.</td>
+                        </tr>
+                        <tr>
+                            <td>ler</td>
+                            <td>other</td>
+                            <td>Code pour différencier l'origine des événements.</td>
+                            <td>Facilite la catégorisation des sources des événements dans des rapports.</td>
+                        </tr>
+                        <tr>
+                            <td>o</td>
+                            <td>12318</td>
+                            <td>Code déclencheur spécifique de l'événement.</td>
+                            <td>Identifie les événements spécifiques déclenchés par cette requête.</td>
+                        </tr>
+                        <tr>
+                            <td>Event Count</td>
+                            <td>0</td>
+                            <td>Nombre des événements collectés.</td>
+                            <td>Aucune interaction utilisateur enregistrée pour cet événement particulier.</td>
+                        </tr>
+                        <tr>
+                            <td>In an iFrame</td>
+                            <td>false</td>
+                            <td>Indique si l'événement a lieu dans une iframe.</td>
+                            <td>Cela signifie que l'événement s'est produit directement sur la page principale.</td>
+                        </tr>
+                        <tr>
+                            <td>Initialized Timestamp</td>
+                            <td>1732718039836</td>
+                            <td>Timestamp d'initialisation.</td>
+                            <td>Aide à mesurer le délai entre l'initialisation et l'enregistrement de l'événement.</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <figcaption>Données relatives à un cookie après l'avoir accepté et cliqué sur un produit tiers.
+                </figcaption>
+            </section>
+
+            <p>
+                Avant de rentrer dans les détails de ce que signifient les informations ci-dessus, expliquons comment
+                nous pouvons obtenir ce résultat. Un add-on, ici du nom d'Omnibug <sup><a href="#fn:34">[34]</a></sup>,
+                a
+                été installé sur mon navigateur de
+                recherche, Google Chrome, et enregistre les cookies lorsque nous les avons acceptés. Il montre en détail
+                toutes les informations contenues dans la première et deuxième colonne, la troisième permettant
+                d'expliquer sommairement l'utilité de chaque fonction. L'expérience réalisée a été d'aller sur le site
+                Decathlon, d'accepter les cookies et de cliquer sur le premier produit proposé.
+            </p>
+
+            <figure id="image">
+                <img src="images/decat1.webp" alt="Logo" />
+                <figcaption>Après avoir accepté les cookies.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/decat2.webp" alt="Logo" />
+                <figcaption>Après avoir cliqué sur un lien en page d'accueil.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/decat3.webp" alt="Logo" />
+                <figcaption>Après avoir sélectionné un produit.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/decat4.webp" alt="Logo" />
+                <figcaption>Contenu d'un cookie Facebook.</figcaption>
+            </figure>
+
+            <p>
+                Le cookie est ici un outil de suivi marketing, qui sert à créer notre identité numérique auprès des
+                entreprises qui collectent et revendent ces données utiles au traçage de l'utilisateur afin de lui
+                proposer du contenu publicitaire ciblé. Il est produit par Facebook Pixel et permet de suivre les
+                activités sur le site marchand. Cela inclut les pages visitées, l’origine de la visite et les
+                caractéristiques techniques du dispositif de navigation.
+            </p>
+
+            <p>
+                Par ce simple exemple qui n'a représenté que 5% des cookies apparus lors de ma visite sur ce site,
+                nous percevons le potentiel qu'ont les industries à nous transformer en produits, revendus par la
+                suite. Sans humanité, nos données errent dans des espaces où l'homme ne peut mettre les pieds.
+            </p>
+
+            <p>
+                Nous sommes appauvris de nos droits privés, chaque fait et geste est épié. Si, par exemple, je continue
+                de défiler la page, de nouveaux cookies apparaîtront. Heureusement, des lois telles que le RGPD existent
+                et nous permettent de nous prémunir d'une meilleure manière que dans d'autres régions moins
+                soucieuses de l'identité numérique. Mais cet acquis n'est que temporaire, rien ne garantit
+                qu'il le restera.
+            </p>
+
+            <p>
+                Parmi les données que nous pouvons retrouver dans un cookie, il y a l'homophilie de statut définie
+                précédemment :
+            </p>
+            
+            <ul>
+                <li>
+                    <p>
+                        <strong>Données sociodémographiques</strong> :
+                    </p>
+
+                    <ul>
+                        <li>Âge</li>
+                        <li>Genre</li>
+                        <li>Localisation (+ adresse IP nécessite un consentement clair)</li>
+                        <li>Langue</li>
+                    </ul>
+                </li>
+                <li>
+                    <p>
+                        <strong>Données comportementales</strong> :
+                    </p>
+
+                    <ul>
+                        <li>Historique de navigation</li>
+                        <li>Catégories - contenu visité</li>
+                        <li>Interactions avec des publicités</li>
+                        <li>Fréquence des visites</li>
+                    </ul>
+                </li>
+                <li>
+                    <p><strong>Données contextuelles</strong> :</p>
+                    <ul>
+                        <li>Contenu de la page</li>
+                        <li>Heure de la journée</li>
+                        <li>Type d'appareil utilisé</li>
+                        <li>Système d'exploitation / navigateur" <sup><a href="#fn:35">[35]</a></sup></li>
+                    </ul>
+                </li>
+            </ul>
+            <p>
+
+            </p>
+
+            <p>
+                Il est intéressant de remettre en question le terme "portrait", qui, à la fois, désigne la
+                représentation de quelqu’un par un médium, mais qui, dans ce contexte, décrit plutôt ses
+                caractéristiques numériques. Ce profil se détache sur l’écran.
+            </p>
+
+            <p>
+                Cette vision de la personne comme produit est un reflet direct du cadre régissant notre doppelgänger.
+                Une
+                analyse détaillée de ce cookie montre clairement qu’il y a une absence de consentement éclairé dans
+                cette situation, soulignant ainsi que nos données sont une véritable monnaie virtuelle. Les acteurs de
+                ce milieu ont réussi à transformer ces informations en produits commerciaux dans le but de nous faire
+                consommer plus.
+            </p>
+
+            <p>
+                La CNIL (Commission nationale de l'informatique et des libertés) <sup><a href="#fn:36">[36]</a></sup> a mené une étude intitulée <a
+                    href="https://www.cnil.fr/fr/evolution-des-pratiques-du-web-en-matiere-de-cookies-la-cnil-evalue-limpact-de-son-plan-daction">Évolution
+                    des pratiques du web en matière de cookies</a> <sup><a href="#fn:37">[37]</a></sup>, qui comporte un
+                document intéressant à analyser.
+            </p>
+
+            <figure id="image">
+                <img src="images/Graphique_2_cookies_evolution-taux-refus_0.webp" alt="Logo" />
+                <figcaption>Graphique de la CNIL.</figcaption>
+            </figure>
+
+            <p>
+                Ce graphique, qui repose sur une base de données créée à partir de sondages et d’analyses internes,
+                montre que, en France, 59% de la population acceptait les cookies en juin 2022. Une tendance semble
+                indiquer une augmentation progressive du refus de ces traceurs.
+            </p>
+
+            <p>
+                Cependant, il faut considérer avec prudence ces statistiques. Parmi mes connaissances, bien informées
+                sur les questions numériques, plusieurs continuent d’accepter volontiers les cookies, principalement
+                pour gagner du temps. Ce groupe dominant, qui choisit souvent la voie de moindre résistance, constitue
+                un facteur majeur dans ma réflexion.
+            </p>
+
+        </section>
+
+
+        <!-- ============================================================================================================ -->
+        <!-- 🔹 SECTION 3 -->
+        <!-- ============================================================================================================ -->
+
+        <section id="chapitre:3" content="chapitre" class="chapitre">
+
+            <figure id="image">
+                <img src="images/Fun.webp" alt="Logo" />
+            </figure>
+
+            <h2 id="nos.identités.plurielles.et.volontaires.la.construction.de.soi.en.ligne">
+                Nos identités plurielles et volontaires : la construction de soi en ligne
+            </h2>
+
+            <p h3 class="special-text">
+                <strong>Destitution.</strong>
+            </p>
+
+            <p class="special-text">
+                Au détour d’un forum, il osa enfin poser une question. Parmi les quelques messages reçus, un
+                utilisateur mystérieux lui répondit enfin.
+            </p>
+
+            <p class="special-text">
+                – Les traces que tu laisses sont plus puissantes que tu ne le crois, écrivit “petithommevert”.
+            </p>
+
+            <p class="special-text">
+                Ils échangèrent longuement. Puis, sans préavis, “petithommevert” lui envoya un lien accompagné de ces
+                mots :
+            </p>
+
+            <p class="special-text">
+                – Regarde.
+            </p>
+
+            <p class="special-text">
+                Ce qu’il découvrit dépassait tout ce qu’il avait imaginé. Une interface étrange affichait un double
+                numérique de lui-même : un doppelgänger, un modèle comportemental bâti à partir de ses données. Tout
+                ce qu’il faisait, tout ce qu’il était, était réduit à une série de chiffres et d’algorithmes.
+            </p>
+
+            <p class="special-text">
+                L’existence de ce double le hantait. Était-il responsable de tout ce qui lui arrivait ? Pouvait-il
+                même distinguer ses propres actions de celles attribuées à cet alter ego ?
+            </p>
+
+            <p class="special-text">
+                Il lui demanda si cet alter ego était capable de plus. La réponse fut incertaine, mais laissait
+                planer un doute... Peut-être n'était-ce pas lui qui avait posté les insultes.
+            </p>
+
+            <p class="special-text">
+                Pris de peur, il décida de ne plus utiliser son smartphone, mais faible face à cette décision et aux
+                impacts sur sa vie, son quotidien devenait impensable. Il décida de le rallumer et posa une question
+                simple à “petithommevert” :
+            </p>
+
+            <p class="special-text">
+                – Que dois-je faire ?
+            </p>
+
+            <p class="special-text">
+                – Crée du bruit. Perds-les dans une cacophonie.
+            </p>
+
+            <p class="special-text">
+                – … Tu ne peux pas effacer tes traces, mais tu peux les rendre inutilisables.
+            </p>
+
+            <p class="special-text">
+                Louis suivit cette idée désespérée. Il brouilla ses habitudes, se créa de fausses identités, visita
+                des sites improbables. Peu à peu, son doppelgänger perdit de sa cohérence. Mais l’effort l’isolait,
+                l’épuisait.
+            </p>
+
+            <p class="special-text">
+                Une nuit, il se confia une dernière fois à l’inconnu :
+            </p>
+
+            <p class="special-text">
+                – Est-ce que ça vaut vraiment la peine ?
+            </p>
+
+            <p class="special-text">
+                – Ça, seul toi peux le savoir, répondis “petithommevert”.
+            </p>
+
+            <p class="special-text">
+                Ces mots résonnèrent longtemps dans l’esprit de Louis. Alors qu’il contemplait le vide de sa vie, il
+                réalisa que la bataille n’était pas seulement contre un système, mais contre sa propre soumission.
+                Et cette fois, il ne comptait pas céder.
+            </p>
+
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 3.1 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="les.identités.subies.exploitation.et.marchandisation.de.l'individu">
+                3.1. Les identités subies : exploitation et marchandisation de l'individu
+            </h3>
+            </p>
+
+            <p>
+                Comme nous l’avons déjà vu, les cookies et les pixels sont des outils utilisés à diverses fins. Ici,
+                nous
+                nous attarderons à la marchandisation de soi consentie, mais non éclairée, ou non désirée, mais
+                obligatoire. Les conditions générales d’utilisation, obligatoires lors de l’utilisation de cookies, de
+                la création d’un compte ou de l’abonnement à un service, ne garantissent pas que nos données ne seront
+                pas utilisées ou revendues par l’entreprise.
+            </p>
+
+            <blockquote>
+                <p>
+                    "Il y a toujours plus de données à capturer dans le coffre aux trésors planétaires
+                    incommensurable d'Internet et des plateformes de médias sociaux."
+                <div class="signature">
+                    <em>Contre-atlas de l'intelligence artificielle</em> <sup><a href="#fn:38">[38]</a></sup>, Kate
+                    Crawford, 2021, page 112.
+                </div>
+                </p>
+
+            </blockquote>
+            <p>
+                Bien que l'exemple que prend Kate Crawford dans son livre concerne les photos d'identité
+                judiciaire, elle instaure une notion de contexte qui n'est pas prise en compte par les algorithmes,
+                en mettant en lumière un pragmatisme capitaliste.
+            </p>
+
+            <p>
+                Considérons le service de diffusion en continu de musique Spotify. En examinant sa <a
+                    href="https://www.spotify.com/fr/legal/privacy-policy/">politique de
+                    confidentialité</a> <sup><a href="#fn:39">[39]</a></sup>, à compter du 10 octobre 2024, il servira
+                d’exemple illustrant la monétisation des informations
+                personnelles. Du point de vue de l'utilisateur, il est possible de souscrire ou non un abonnement
+                premium supprimant les publicités. En l’absence de cette précaution, "Spotify peut utiliser vos
+                informations personnelles pour vous présenter des publicités ciblées."
+            </p>
+
+            <p>
+                Il existe plusieurs degrés de la marchandisation :
+            </p>
+
+            <ul>
+                <li>Une collecte détaillée des données personnelles et sociodémographiques vues précédemment, ainsi que
+                    l'activité d'écoute, les appareils utilisés, et les fournisseurs de réseaux.</li>
+                <li>Une personnalisation et un ciblage publicitaire visant les utilisateurs gratuits.</li>
+                <li>Un partage des ressources avec des tiers, "partager vos données avec des partenaires
+                    commerciaux, tels que des fournisseurs de services de paiement ou des fournisseurs
+                    d'analyses."</li>
+            </ul>
+
+            <p>
+                Le but de tout cela vise-t-il vraiment à améliorer les services proposés ? Ou la personnalisation n’est-elle
+                qu’un leurre marketing ? L’analyse de nos habitudes de consommation se révèle à la fin de l’année lors
+                de la découverte de notre wrapped <sup><a href="#fn:40">[40]</a></sup>, un résumé annuel détaillé qui
+                révèle des informations telles
+                que notre temps d’écoute, nos artistes et morceaux préférés, ainsi que nos genres musicaux favoris. Ici,
+                la personnalisation est un outil à double tranchant : d'un côté, une écoute et une navigation plus
+                optimisées pour l'utilisateur, de l'autre, elle permet d'industrialiser la musique à
+                l'aide des labels et des listes d'écoute pour mettre en avant un contenu spécifique.
+            </p>
+
+            <p>
+                En élargissant notre perspective, il est indéniable que les GAFAM (Google, Apple, Facebook, Amazon et Microsoft) sont les entreprises les plus
+                prospères
+                grâce aux revenus publicitaires. La masse de personnes utilisant quotidiennement le moteur de recherche
+                Google et Facebook pour les réseaux sociaux est colossale. De plus, en croisant ces informations avec
+                celles données précédemment, le suivi actif leur permet de générer des revenus considérables. Pour
+                Google Search & Others, qui représente 56,93% du revenu total en 2023, il s'agit de <a
+                    href="https://www.doofinder.com/en/statistics/google-revenue-breakdown">175,04 milliards de
+                    dollars</a> <sup><a href="#fn:41">[41]</a></sup>.
+            </p>
+
+            <p>
+                Un autre exemple de cookies non désirés mais obligatoires se trouve sur les pages web telles que <a
+                    href="https://www.marmiton.org/">Marmiton</a> <sup><a href="#fn:42">[42]</a></sup>. Conformément à
+                la
+                loi RGPD, dès l'arrivée sur le
+                site, il nous est proposé d'accepter ou de refuser les cookies. Cependant, dès que l'on clique
+                sur le refus des cookies, il nous est proposé :
+            </p>
+
+            <ul>
+                <li>S'abonner pour un mois.</li>
+                <li>Changer d'avis et accepter tous les cookies.</li>
+            </ul>
+
+            <figure id="image">
+                <img src="images/Marmitton1.webp" alt="Logo" />
+                <figcaption>Page d'accueil.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <img src="images/Marmitton2.webp" alt="Logo" />
+                <figcaption>Après avoir cliqué sur "Je n'accepte rien".</figcaption>
+            </figure id="image">
+
+            <figure id="image">
+                <img src="images/Marmitton3.webp" alt="Logo" />
+                <figcaption>Sélection des autorisations.</figcaption>
+            </figure>
+
+            <figure id="image">
+                <div class="images-inline">
+                    <img src="images/Marmitton4.webp" alt="Logo" />
+                    <img src="images/Marmitton5.webp" alt="Logo" />
+                    <img src="images/Marmitton6.webp" alt="Logo" />
+                </div>
+                <figcaption>Après avoir été forcé d'accepter si nous ne voulons pas payer.</figcaption>
+            </figure>
+            <!-- <figcaption>Suite des cookies.</figcaption> -->
+            <!-- <figcaption>Fin des cookies.</figcaption> -->
+
+            <p>
+                Ce système est à la fois compréhensible, car le site héberge des recettes culinaires partagées par les
+                utilisateurs sans contenu payant. Pourtant, il met en lumière le prix que vaut l'acceptation des
+                cookies : <strong>0,49 euro</strong> par mois.
+            </p>
+
+            <p>
+                Ce contexte est compliqué, car il pointe de façon précise la manière qu'ont certains sites pour se
+                rémunérer. Le tarif nous laisse supposer que les revenus faits avec un utilisateur occasionnel sont
+                minimes, mais l'échelle est importante. Ce sont donc certainement des dizaines de milliers de personnes
+                qui concèdent chaque mois des informations.
+            </p>
+
+            <p>
+                L’article <a href="http://arxiv.org/pdf/2209.09946">"Votre consentement vaut 75 euros par an"</a>
+                <sup><a href="#fn:43">[43]</a></sup>
+                explore la rémunération des sites Web grâce à l’analyse des paywalls. Les chercheurs ont examiné la
+                présence et la légalité de ces pratiques sur 1000 sites Web autrichiens et 150 autres dans l’Union
+                européenne.
+            </p>
+
+            <p>
+                Les résultats montrent que 2,72 % des sites utilisent des paywalls traditionnels, tandis que 0,13 %
+                d’entre eux ont recours à des cookies paywalls. La différence entre les deux repose sur le modèle
+                d’accès : le premier exige un paiement pour consulter le contenu, tandis que le second propose un choix
+                entre accepter les cookies ou refuser et devoir payer.
+            </p>
+
+            <blockquote>
+                <p>
+                    "L'ONG autrichienne NOYB a déposé des plaintes contre les paywalls de sept grands sites
+                    d'information allemands et autrichiens en 2021, estimant que le consentement n'est pas donné
+                    librement si l'alternative au suivi est de "payer 100 fois le prix du marché des données
+                    personnelles de l'utilisateur.""
+                <div class="signature">
+                    <em>Your Consent Is Worth 75 Euros A Year – Measurement
+                        and Lawfulness of Cookie Paywalls</em> <sup><a href="#fn:44">[44]</a></sup>, 2022, page 2.
+                </div>
+
+                </p>
+
+            </blockquote>
+            <p>
+                L’étude conclut qu’un refus de tracking peut entraîner des frais variant entre 36 et 75 euros par année,
+                selon la manière dont nous utilisons Internet. Ce chiffre révèle l’intérêt capitaliste des sites web à
+                nous faire accepter les cookies, quel que soit le moyen employé. Même si celle-ci est discutable.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 3.2 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="l'identité.numérique.militante.la.lutte.pour.l'intégrité.et.la.protection.de.soi">
+                3.2. L'identité numérique militante : la lutte pour l'intégrité et la protection de soi
+            </h3>
+            </p>
+
+            <p>Le cadre juridique peut être analysé sous trois angles principaux : étatique, continental et local.
+                Chaque région à travers le monde a traité à sa manière les recours pour l’intégrité et la protection des
+                données. Cette liste, bien que non exhaustive, illustre les disparités auxquelles font face les
+                habitants selon leur localisation :</p>
+            <p>
+
+            <ul>
+                <li>Europe : RGPD</li>
+                <li>États-Unis : CCPA (Californie), lois d’États (ex. Colorado, Virginie)</li>
+                <li>Canada : PIPEDA</li>
+                <li>Amérique latine : LGPD (Brésil), Loi fédérale (Mexique)</li>
+                <li>Chine : PIPL</li>
+                <li>Japon : APPI</li>
+                <li>Inde : Digital Personal Data Protection Act (projet)</li>
+                <li>Afrique du Sud : POPIA</li>
+                <li>Australie : Privacy Act 1988</li>
+                <li>Nouvelle-Zélande : Privacy Act 2020</li>
+            </ul>
+            </p>
+
+
+            <p>
+                L’Europe est régie par le RGPD, entré en
+                vigueur en 2018. Ce règlement consacre le principe de protection des données comme un droit fondamental
+                et introduit des obligations strictes pour les entreprises. Considéré comme une référence mondiale, il
+                influence d’autres pays, tel que le Brésil. Bien que les pays de l’UE soient confrontés à une
+                uniformisation croissante, ce phénomène n’est pas universel.
+            </p>
+
+            <p>
+                Aux États-Unis, chaque État dicte ses propres règles. L’absence de législation fédérale entraîne un
+                paysage législatif fragmenté, avec de grandes disparités qui minent l’Américain moyen. De plus, avec
+                l’exemple de la CCPA (<em>California Consumer Privacy Act</em>), il est connu que l’encadrement en
+                matière de consentement préalable est amoindri comparé à l’Europe.
+            </p>
+
+            <p>
+                Ces lois présentent de nombreuses divergences dues à leur contexte politique, économique et culturel.
+                Leur seul point commun est de proposer un cadre juridique autour de la protection des données.
+                Heureusement, en France,
+                d’autres institutions, d'État ou associatives, mettent en lumière les dysfonctionnements et les
+                mauvaises applications des lois.
+            </p>
+
+            <p>
+                La CNIL, créée en 1978 pour donner suite au projet SAFARI <sup><a href="#fn:45">[45]</a></sup>, a vu le
+                jour en réponse à une contestation globale des citoyens et des
+                politiques. Elle fit partie des premières entités autonomes à s’opposer à la surveillance généralisée
+                des données personnelles.
+            </p>
+
+            <p>
+                Bien qu’elle ait contribué à établir un environnement numérique sécuritaire, son influence est
+                maintenant
+                réduite. Ses prises de position sont parfois jugées insuffisantes <sup><a href="#fn:46">[46]</a></sup>.
+                D’autres acteurs ont maintenant une place centrale dans la défense des droits numériques. (<a
+                    href="https://www.laquadrature.net/2024/12/04/vsa-et-biometrie-la-cnil-demissionnaire/">La CNIL
+                    démissionnaire</a> <sup><a href="#fn:47">[47]</a></sup>)
+            </p>
+
+            <p>
+                Félix Tréguer, membre de l’association La Quadrature du Net, met en évidence le rôle crucial des
+                organisations dans la défense des libertés numériques. Fondée en 2008, cette association indépendante
+                n’a pas obtenu le statut d’utilité publique malgré ses actions remarquables. Elle a su s’adapter à un
+                paysage en constante évolution, marqué par des progrès technologiques et une sécurité accrue.
+            </p>
+
+            <blockquote>
+                <p>
+                    "La Quadrature du Net a été créée en 2008 et l’un de ses premiers combats fut contre la loi
+                    HADOPI. Depuis, le paysage dans lequel elle évolue s’est largement transformé. Il est marqué
+                    notamment par une accélération du durcissement sécuritaire et un resserrement de l’espace
+                    démocratique, mais aussi par la fuite en avant de l’informatique centralisée et
+                    technocratique."
+                <div class="signature">
+                    <a href="https://www.laquadrature.net/nous/" target="_blank"><em>Qui sommes-nous ?</em></a> <sup><a href="#fn:48">[48]</a></sup>, La Quadrature du Net.
+                </div>
+                </p>
+            </blockquote>
+
+            <p>
+                Parmi les actions phares de l’association, nous trouvons plusieurs succès liés à la lutte contre la
+                surveillance :
+            </p>
+
+            <ul>
+                <li><a
+                        href="https://www.laquadrature.net/2024/10/25/linkedin-condamnee-a-310-millions-deuros-suite-a-notre-plainte-collective/">LinkedIn
+                        condamnée à 310 millions d’euros suite à notre plainte collective.</a> <sup><a
+                            href="#fn:49">[49]</a></sup></li>
+                <li><a
+                        href="https://www.laquadrature.net/2021/07/30/amende-de-746-millions-deuros-contre-amazon-suite-a-nos-plaintes-collectives/">Amende
+                        de 746 millions d’euros contre Amazon suite à nos plaintes collectives.</a> <sup><a
+                            href="#fn:50">[50]</a></sup></li>
+            </ul>
+            <p>
+                Leur site offre aussi une section consacrée aux <a
+                    href="https://www.laquadrature.net/donnees_perso/">données personnelles</a> <sup><a
+                        href="#fn:51">[51]</a></sup>, qui répertorie diverses
+                mesures et articles à ce propos.
+            </p>
+
+            <p>
+                En parallèle des grandes institutions, comme la CNIL ou des associations nationales, telle que <em>La
+                    Quadrature du Net</em>, des acteurs locaux émergent pour éduquer et agir au plus près des citoyens.
+                À Saint-Étienne, par exemple, l’association <a href="https://halteaucontrolenumerique.fr/">Halte au
+                    contrôle numérique</a> <sup><a href="#fn:52">[52]</a></sup> a vu le jour en 2019. Ce collectif s’est
+                formé
+                en opposition au projet de loi
+                <em>Serenity</em>, qui visait à déployer un système de surveillance dans certains quartiers de la ville.
+            </p>
+            <p>
+                Ce type d'initiative démontre que la résistance citoyenne face à des technologies souvent imposées
+                peut naître à tous les niveaux, du national au local.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 SECTION 3.3 -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="#interview">
+                3.3. Interview </h3>
+            </p>
+
+            <p>
+                Marie Moulin (son identité est modifiée pour cause de confidentialité) a travaillé dans trois
+                entreprises différentes. Dans la première, elle s’occupait principalement de campagnes publicitaires
+                en ligne. Son rôle consistait à créer des personas : des profils types de clients pour un produit
+                donné. Par exemple, dans le cas d’une raquette de tennis vendue par Decathlon, elle imaginait un
+                homme d’environ 25 ans, sportif occasionnel, pour orienter les publicités vers ce type de profil.
+            </p>
+
+            <p>
+                Dans sa deuxième expérience, elle a continué dans le domaine du marketing, mais cette fois avec un
+                focus sur les jeux concourt. Ces campagnes utilisaient des données dites <em>first-party</em> :
+                celles que les utilisateurs partagent volontairement via des formulaires. C’est dans ce contexte
+                qu’elle a pu observer des dysfonctionnements liés à l’application des lois sur la protection des
+                données. Par exemple, certaines entreprises sélectionnaient uniquement les participants ayant
+                accepté de partager leurs données (case <em>opt-in</em>), écartant systématiquement ceux qui avaient
+                refusé. Elle a aussi remarqué des pratiques interdites, comme des cases <em>opt-in</em> précochées
+                ou des bannières de cookies frauduleuses : que nous les acceptons ou que nous les refusons, les
+                cookies s’installaient quand même sur l’appareil de l’utilisateur. Dans certains cas, ces problèmes
+                étaient connus, mais délibérément ignorés.
+            </p>
+
+            <p>
+                Actuellement, elle travaille comme support technique dans une équipe marketing. Elle s’occupe
+                principalement de mettre en place le tracking des utilisateurs à l’aide de cookies. Son entreprise
+                collabore avec des marques importantes, souvent cotées en bourse. Le respect des lois dans ce
+                domaine est crucial, surtout lorsque l'entreprise a une grande visibilité, d’autant plus que la
+                législation évolue sans cesse.
+            </p>
+
+            <h3 id="les-techniques-et-outils-de-ciblage-publicitaire">Les techniques et outils de ciblage
+                publicitaire</h3>
+            <p>
+                Le ciblage publicitaire repose largement sur la création de personas. Il s’agit de comprendre
+                précisément l’audience ciblée en analysant les données disponibles. Une fois le persona défini, il
+                est possible, par exemple, de transmettre ce profil à Facebook, qui se charge d’identifier un public
+                correspondant et de diffuser des publicités adaptées. Cette méthode va parfois plus loin, avec le
+                croisement de bases de données. Des informations sur des clients existants sont transmises à
+                Facebook pour trouver des audiences similaires et élargir la portée des campagnes.
+            </p>
+
+            <p>
+                Le tracking joue un rôle clé dans ce processus. En utilisant des cookies ou des pixels, elle collecte
+                des données issues de différentes sources, ce qui permet d’affiner les campagnes publicitaires et de
+                mieux comprendre les comportements des utilisateurs.
+            </p>
+
+            <p>
+                Dans son quotidien, elle s’appuie sur plusieurs outils pour gérer ce tracking et analyser les
+                performances des campagnes. Parmi les outils qu’elle utilise, nous trouvons Google Tag Manager,
+                Pixel Meta (anciennement Facebook) ou encore Omnibug. Pour centraliser et analyser les résultats,
+                son entreprise utilise un outil interne, Datorama SizeForce.
+            </p>
+
+            <h3 id="l-volution-des-pratiques-publicitaires">L’évolution des pratiques publicitaires</h3>
+
+            <p>
+                L’arrivée de l’intelligence artificielle (IA) a transformé les stratégies de personnalisation dans la
+                publicité. Elle a évoqué une méthode qui consiste à créer une combinaison de titres, descriptions,
+                images et appels à l’action (CTA). En soumettant ces éléments à l’IA, celle-ci génère
+                automatiquement des publicités personnalisées en fonction des profils des utilisateurs. Chez Meta,
+                ces cibles sont appelées des « audiences », tandis qu’Amazon parle de « segments ».
+            </p>
+
+            <p>
+                Malgré ces avancées, gérer les données issues des campagnes reste complexe. Chaque plateforme dispose
+                de son propre système (API), ce qui rend difficile la centralisation des informations. Elle explique
+                qu’un travail de "mapping" est souvent nécessaire pour unifier les données collectées. Cela
+                permet d’extraire une vue d’ensemble, même si les métriques ne sont pas toujours directement
+                comparables.
+            </p>
+
+            <p>
+                Elle insiste aussi sur le fait que chaque plateforme attire un public différent. Par conséquent, il
+                faut adapter les stratégies de ciblage pour toucher efficacement les audiences de chaque réseau
+                social.
+            </p>
+
+            <h3 id="les-donn-es-exploit-es-pour-le-ciblage-publicitaire">Les données exploitées pour le ciblage
+                publicitaire</h3>
+            <p>
+                Les campagnes publicitaires utilisent plusieurs types de données pour affiner leur ciblage :
+            </p>
+
+            <ul>
+                <li>Données sociodémographiques : âge, genre, localisation (avec consentement explicite pour
+                    l’adresse IP) et langue.</li>
+                <li>Données comportementales : historique de navigation, catégories ou contenus consultés,
+                    interactions avec des publicités et fréquence des visites.</li>
+                <li>Données contextuelles : contenu de la page visitée, heure de la journée, type d’appareil utilisé
+                    et système d’exploitation ou navigateur.</li>
+            </ul>
+
+            <h3 id="r-flexions-sur-le-futur-de-l-industrie-publicitaire">Réflexions sur le futur de l’industrie
+                publicitaire</h3>
+
+            <p>
+                Elle s’interroge sur l’avenir des cookies, notamment avec le concept de « Google Cookies Less Future
+                », qui vise à se passer des cookies tiers. Elle accorde que ce secteur fait face à une
+                déshumanisation grandissante : les utilisateurs sont réduits à des chiffres et des données, perdant
+                leur individualité derrière un écran. Ce projet a été annulé entre l'interview et
+                l'écriture.
+            </p>
+
+            <p>
+                Enfin, elle remarque que les attitudes face aux réglementations diffèrent selon les profils :
+                certains techniciens cherchent à se protéger en appliquant scrupuleusement les règles, tandis que
+                d’autres les ignorent complètement. Pour sa part, elle utilise les algorithmes pour optimiser ses
+                recherches personnelles, comme lorsqu’elle a cherché un cadeau adapté pour son père en voyant
+                proposer des marques jusqu'alors inconnues qui lui sont proposées sous la forme de publicités.
+            </p>
+            <p>
+                Nous avons précédemment examiné un graphique de la CNIL montrant le nombre de personnes qui acceptent
+                ou refusent les cookies. Une étude met en lumière l'ampleur du temps que les Européens passent
+                chaque année à interagir avec ces bannières. Il est estimé que cela représente <a
+                    href="https://korben.info/perte-temps-bannieres-cookies-europe.html">575 000 000 d'heures
+                    par an</a> <sup><a href="#fn:53">[53]</a></sup> passées à accepter ou refuser des cookies. Cela
+                représente 1 heure et 42 minutes par
+                personne chaque année, un temps considérable quand nous l’additionnons au niveau européen. Ce
+                chiffre met en évidence l’absurdité de cette situation, où une pseudo-liberté d’acceptation ou de
+                refus des cookies nous fait perdre un temps précieux.
+            </p>
+            <p>
+                C’est ce que, à titre personnel, je dirais si nous étions dans une logique productiviste. Or ce n'est
+                pas le cas. De plus, ce document entre en résonance avec l'écrit sur le prix de notre liberté. Les deux,
+                ensemble, définissent une vision d'un anonymat des mieux préservé, pour un cout total d'une heure et
+                quarante-deux minutes ainsi que 36 à 75 euros par an et par personne.
+            </p>
+
+            <p>
+                Le problème n'est pas seulement le fait que ces bannières sont omniprésentes, mais aussi dans la
+                complexité des choix proposés. Souvent, l'utilisateur doit naviguer à travers des menus
+                d'options pour personnaliser ses préférences de cookies, ce qui peut être fastidieux et source
+                de confusion. Et pour ceux qui souhaitent simplement naviguer sans être suivis, il existe rarement
+                une option simple pour refuser tout suivi sans risquer de se voir exclure de l'accès au contenu
+                du site.
+            </p>
+
+            <p>
+                Face à cette perte de temps et à cette contrainte, des initiatives comme <a
+                    href="https://www.i-dont-care-about-cookies.eu/">Je m'en fous des cookies</a> <sup><a
+                        href="#fn:54">[54]</a></sup> ont vu le jour.
+                Cette extension permet de supprimer automatiquement les pop-ups de consentement aux cookies, ce qui
+                permet aux utilisateurs de naviguer plus rapidement et librement sur le web sans être interrompus
+                par ces demandes répétitives.
+            </p>
+
+            <p>
+                Ces outils vont au-delà de l’économie de temps et soulèvent des questions sur la validité des
+                pratiques actuelles et l’équilibre entre consentement et manipulation. Que signifie vraiment
+                "donner son consentement librement" si cette action devient une simple formalité sans
+                réelle option de contrôle pour l'utilisateur ?
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 CONCLUSION -->
+            <!-- ============================================================================================================ -->
+
+            <p>
+            <h3 id="#conclusion">
+                Conclusion </h3>
+            </p>
+
+            <p>Cet écrit contribue à une réflexion sur la redéfinition de l’identité numérique et de la protection de
+                soi. Il souligne les mesures mises en place pour assurer la sécurité des données et leur exploitation
+                facile. En effet, nos informations personnelles circulent constamment, captées, analysées et vendues
+                dans des formats dont nous n’avons pas nécessairement le contrôle. Les cookies sont devenus les
+                sentinelles silencieuses de notre navigation. Ils enregistrent nos habitudes et nos préférences.
+                Derrière l’apparente innocuité de ces petits fichiers se cache une surveillance omniprésente. Celle-ci
+                est normalisée sous le couvert de la personnalisation et du confort d’utilisation. Il est important de
+                comprendre le potentiel du Web. Il a la capacité d'offrir, mais aussi de nous marquer par nos choix
+                et nos actions.
+            </p>
+
+            <p>
+                Chaque action en ligne a des conséquences, souvent sous-estimées et insignifiantes. Cependant, si les
+                événements venaient à changer, elles pourraient s’avérer plus lourdes que nous ne l’imaginons.
+            </p>
+
+            <p>
+                Avec l’essor du Web 2.0, nos identités plurielles et volontaires se sont multipliées. Autrefois vitrines
+                d’expressions, les réseaux sociaux sont maintenant des reflets trompeurs où nous projetons une image
+                sculptée par les attentes des autres. Les transformations entrainées par les réseaux sociaux ont modifié
+                notre manière d’agir, de consommer et de nous montrer. Poussés par la dynamique sociétale, nous
+                partageons nos vies avec une insouciance teintée de naïveté, oubliant que ce que nous publions
+                aujourd’hui restera enregistré quelque part. Internet n'oublie jamais.
+            </p>
+
+            <p>
+                Les règles juridiques qui régissent les identités sociales se distinguent par une véracité accrue des
+                données échangées, ainsi que par l’objectif de réglementer ces activités. Les États et les entreprises
+                s’entremêlent pour structurer ces identités, plus proches du vrai soi. En raison de la nature des
+                données reçues et transmises, notre comportement évolue. De même, notre compréhension des événements se
+                déroulant à l’abri des regards s’enrichit. Le dicton "Nous sommes ce que nous consommons" prend ici
+                tout son sens : nos préférences, nos habitudes et nos faiblesses deviennent des données exploitables,
+                façonnant un double numérique dont l’existence nous échappe. Le tracking et l’utilisation de nos données
+                constituent une intrusion, mais, en France, la loi nous protège, avec parcimonie, contre plusieurs
+                dérives. Celles-ci se font dans un équilibre précaire. Ces institutions, bien qu’opaques, poursuivent un
+                but qui est difficile à comprendre, ou que je me refuse d’admettre.
+            </p>
+
+            <p>
+                Les identités militantes, finalement, nous permettent de défendre nos droits. Celles-ci demeurent
+                fragiles, puisqu’elles sont toujours menacées. Associations, lanceurs d’alerte et citoyens engagés
+                s’efforcent d’éclairer les zones d’ombre et de rééquilibrer le rapport de force. Cependant, leur combat
+                se déroule dans un contexte d’inégalité face à des systèmes conçus avec des zones d’ombre et visant à
+                maintenir l’équilibre des forces.
+            </p>
+
+            <p>
+                Par conséquent, l’expression de soi en ligne représente une responsabilité supplémentaire que nous
+                devons surveiller, protéger et nourrir avec parcimonie. Il nous incombe de surveiller et de prendre soin
+                de son entourage. Il est crucial d’être vigilant collectivement et individuellement face aux dérives,
+                aux lois et aux dangers. Ainsi que de diffuser une parole, qui, à mon sens, se rapproche plus de la
+                vérité.
+            </p>
+
+            <p>
+                Enfin, revenons à notre courte nouvelle. Louis n’est pas aussi fictif que nous pourrions le croire. Il
+                est une partie de chacun de nous. Il s'incarne dès notre création numérique et nous suit,
+                maintenant, après la mort. Ce personnage incarne l’ensemble des étapes que nous avons traversées ou que
+                nous allons traverser. À ce jour, la meilleure façon de se protéger est de créer du bruit autour de son
+                identité et d’éviter de laisser des traces.
+            </p>
+
+            <p>
+                Je m'appelle Louis Petit, et voici mon vrai visage.</p>
+
+            <figure id="image">
+                <img src="images/Graph.webp" alt="Logo" />
+                <figcaption>Louis Petit sur Internet.</figcaption>
+            </figure>
+
+            <p>
+                Après avoir navigué sur Internet et accepté les cookies, voici comment cette identité est représentée.
+                Les cercles correspondent aux sites visités, tandis que les triangles symbolisent les cookies troisième
+                partie ; autrement appelée cookies tiers. Nous remarquons des liens entre certains cookies et certains
+                sites, ce qui illustre parfaitement ce qu’est la toile, c’est-à-dire le web en français.
+            </p>
+
+            <!-- ============================================================================================================ -->
+            <!-- 🔹 BIBLIOGRAPHIE -->
+            <!-- ============================================================================================================ -->
+
+            <section id="notes" class="notes">
+
+                <p>
+                <h3> Notes </h3>
+                </p>
+
+                <ol>
+                    <li id="fn:1">
+                        <p><em>Le mystère Satoshi, aux origines du Bitcoin,</em> épisode 01. <a
+                                href="https://www.arte.tv/fr/videos/RC-021581/le-mystere-satoshi/"
+                                target="_blank">https://www.arte.tv/fr/videos/RC-021581/le-mystere-satoshi/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:2">
+                        <p>Nachricht von Ella. <a href="https://www.youtube.com/watch?v=F4WZ_k0vUDM"
+                                target="_blank">https://www.youtube.com/watch?v=F4WZ_k0vUDM</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:3">
+                        <p>Larousse. <a href="https://www.larousse.fr/dictionnaires/francais/identit%C3%A9/41420"
+                                target="_blank">https://www.larousse.fr/dictionnaires/francais/identit%C3%A9/41420</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:4">
+                        <p>CNIL. <a href="https://www.cnil.fr/fr/definition/cookie"
+                                target="_blank">https://www.cnil.fr/fr/definition/cookie</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:5">
+                        <p>Règlement général de protection des données.
+                        </p>
+                    </li>
+
+                    <li id="fn:6">
+                        <p><em>On the Internet, nobody knows you're a dog,</em> 05/07/1993, Peter Seiner.<a
+                                href="https://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you%27re_a_dog"
+                                target="_blank">https://en.wikipedia.org/wiki/On_the_Internet,_nobody_knows_you%27re_a_dog</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:7">
+                        <p><em>Éternités numériques</em>, Fanny Georges, 09/2021, page 01. <a
+                                href="https://hal.science/hal-01575171v1"
+                                target="_blank">https://hal.science/hal-01575171v1</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:8">
+                        <p><em>Derrière nos écrans de fumée,</em> Netflix, 2020.<a
+                                href="https://www.netflix.com/fr/title/81254224"
+                                target="_blank">https://www.netflix.com/fr/title/81254224</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:9">
+                        <p><em>L’identité numérique dans le web 2.0,</em> Fanny Georges, 2008, page 01. <a
+                                href="https://hal.science/hal-01575199v1"
+                                target="_blank">https://hal.science/hal-01575199v1</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:10">
+                        <p><em>Mouchette,</em> Martine Neddam, 1996. <a href="https://mouchette.org/"
+                                target="_blank">https://mouchette.org/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:11">
+                        <p><em>David Still,</em> Martine Neddam, 2001. <a href="https://davidstill.org/"
+                                target="_blank">https://davidstill.org/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:12">
+                        <p>Defend Intelligence. <a href="https://www.youtube.com/@DefendIntelligence"
+                                target="_blank">https://www.youtube.com/@DefendIntelligence</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:13">
+                        <p><em>Comment disparaître d'Internet ?,</em> Defend Intelligence, 08/2022. <a
+                                href="https://www.youtube.com/watch?v=dVVsadPMNNg&t=78s"
+                                target="_blank">https://www.youtube.com/watch?v=dVVsadPMNNg&t=78s</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:14">
+                        <p><em>L'Internet des enfants,</em> David-Julien Rahmil, 2024, page 168.
+                        </p>
+                    </li>
+
+                    <li id="fn:15">
+                        <p><em>EU kids online 2020,</em> 2020, page 21. <a
+                                href="https://www.lse.ac.uk/media-and-communications/assets/documents/research/eu-kids-online/reports/EU-Kids-Online-2020-10Feb2020.pdf"
+                                target="_blank">https://www.lse.ac.uk/media-and-communications/assets/documents/research/eu-kids-online/reports/EU-Kids-Online-2020-10Feb2020.pdf</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:16">
+                        <p>L'affaire doppelgänger. <a
+                                href="https://fr.wikipedia.org/wiki/Op%C3%A9ration_Doppelg%C3%A4nger"
+                                target="_blank">https://fr.wikipedia.org/wiki/Op%C3%A9ration_Doppelg%C3%A4nger</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:17">
+                        <p><em>Toxic data,</em>David Chavalarias, 2022.
+                        </p>
+                    </li>
+
+                    <li id="fn:18">
+                        <p>L'histoire du World Wide Web. <a
+                                href="https://home.web.cern.ch/fr/science/computing/birth-web"
+                                target="_blank">https://home.web.cern.ch/fr/science/computing/birth-web</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:19">
+                        <p><em>La démocratie Internet, promesses et limites,</em> Dominique Cardon, 2010, page 55.
+                        </p>
+                    </li>
+
+                    <li id="fn:20">
+                        <p><em>La démocratie Internet, promesses et limites,</em> Dominique Cardon, 2010, page 57.
+                        </p>
+                    </li>
+
+                    <li id="fn:21">
+                        <p>Nokia 7650, 2002.
+                        </p>
+                    </li>
+
+                    <li id="fn:22">
+                        <p><em>La démocratie Internet, promesses et limites,</em> Dominique Cardon, 2010, page 09.
+                        </p>
+                    </li>
+
+                    <li id="fn:23">
+                        <p>Cory Arcangel, 2005.
+                        </p>
+                    </li>
+
+                    <li id="fn:24">
+                        <p><em>Yellow Arrow,</em> Christopher Allen, Brian House et Jesse Shapins, 2004. <a
+                                href="https://en.wikipedia.org/wiki/Yellow_Arrow"
+                                target="_blank">https://en.wikipedia.org/wiki/Yellow_Arrow</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:25">
+                        <p>The Jenkins Comic, webcomic. <a href="https://thejenkinscomic.net/?id=239"
+                                target="_blank">https://thejenkinscomic.net/?id=239</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:26">
+                        <p>INSEE. <a href="https://www.insee.fr/fr/metadonnees/definition/c1029"
+                                target="_blank">https://www.insee.fr/fr/metadonnees/definition/c1029</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:27">
+                        <p>Digital ID Wallet. <a
+                                href="https://www.thalesgroup.com/fr/europe/france/dis/gouvernement/identite/digital-id-wallet"
+                                target="_blank">https://www.thalesgroup.com/fr/europe/france/dis/gouvernement/identite/digital-id-wallet</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:28">
+                        <p><em>Éternités numériques,</em> Fanny Georges, 09/2021, page 01. <a
+                                href="https://hal.science/hal-01575171v1"
+                                target="_blank">https://hal.science/hal-01575171v1</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:29">
+                        <p>Cyberattaque. <a
+                                href="https://www.academie-medecine.fr/les-attaques-des-systemes-informatiques-des-hopitaux-mettent-en-danger-la-vie-des-patients/"
+                                target="_blank">https://www.academie-medecine.fr/les-attaques-des-systemes-informatiques-des-hopitaux-mettent-en-danger-la-vie-des-patients/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:30">
+                        <p>Facebook. <a href="https://fr-fr.facebook.com/help/229715077154790"
+                                target="_blank">https://fr-fr.facebook.com/help/229715077154790</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:31">
+                        <p><em>Toxic Data,</em> David Chavalarias, 2022, page 46.
+                        </p>
+                    </li>
+
+                    <li id="fn:32">
+                        <p><em>La démocratie Internet,</em><sup> Dominique Cardon, 2010, page 30.
+                            </sup>
+                    </li>
+
+                    <li id="fn:33">
+                        <p><em>The Dating Brokers,</em> Joana Moll, Tactical Tech, 2017. <a
+                                href="https://datadating.tacticaltech.org/"
+                                target="_blank">https://datadating.tacticaltech.org/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:34">
+                        <p>Add-on pour suivre les cookies. <a href="https://omnibug.io/"
+                                target="_blank">https://omnibug.io/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:35">
+                        <p>Interview.
+                        </p>
+                    </li>
+
+                    <li id="fn:36">
+                        <p>Commission nationale de l'informatique et des libertés.
+                        </p>
+                    </li>
+
+                    <li id="fn:37">
+                        <p><em>Évolution des pratiques du web en matière de cookies</em>, CNIL, 2023. <a
+                                href="https://www.cnil.fr/fr/evolution-des-pratiques-du-web-en-matiere-de-cookies-la-cnil-evalue-limpact-de-son-plan-daction"
+                                target="_blank">https://www.cnil.fr/fr/evolution-des-pratiques-du-web-en-matiere-de-cookies-la-cnil-evalue-limpact-de-son-plan-daction</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:38">
+                        <p><em>Contre-atlas de l'intelligence artificielle, </em> Kate Crawford, 2021, page 112.
+                        </p>
+                    </li>
+
+                    <li id="fn:39">
+                        <p>Politique de confidentialité de Spotify, 2024. <a
+                                href="https://www.spotify.com/fr/legal/privacy-policy/"
+                                target="_blank">https://www.spotify.com/fr/legal/privacy-policy/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:40">
+                        <p>Wrapped Spotify. <a href="https://support.spotify.com/fr/article/spotify-wrapped/"
+                                target="_blank">https://support.spotify.com/fr/article/spotify-wrapped/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:41">
+                        <p>Revenue annuel de Google Search & Others en 2023. <a
+                                href="https://www.doofinder.com/en/statistics/google-revenue-breakdown"
+                                target="_blank">https://www.doofinder.com/en/statistics/google-revenue-breakdown</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:42">
+                        <p>Site de recettes de cuisine. <a href="https://www.marmiton.org/"
+                                target="_blank">https://www.marmiton.org/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:43">
+                        <p><em>Your Consent Is Worth 75 Euros A Year – Measurement and Lawfulness of Cookie
+                                Paywalls,</em> 2022. <a href="http://arxiv.org/pdf/2209.09946"
+                                target="_blank">http://arxiv.org/pdf/2209.09946</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:44">
+                        <p><em>Your Consent Is Worth 75 Euros A Year – Measurement and Lawfulness of Cookie
+                                Paywalls,</em> , page 02, 2022. <a href="http://arxiv.org/pdf/2209.09946"
+                                target="_blank">http://arxiv.org/pdf/2209.09946</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:45">
+                        <p>Système automatisé pour les fichiers administratifs et le répertoire des individus, 1970.
+                        </p>
+                    </li>
+
+                    <li id="fn:46">
+                        <p>Conférence de Félix Tréguer, Le Méliès Saint-François, 06/12/2024.
+                        </p>
+                    </li>
+
+                    <li id="fn:47">
+                        <p><em>La CNIL démissionnaire, </em> La quadrature du net, 2024. <a
+                                href="https://www.laquadrature.net/2024/12/04/vsa-et-biometrie-la-cnil-demissionnaire/"
+                                target="_blank">https://www.laquadrature.net/2024/12/04/vsa-et-biometrie-la-cnil-demissionnaire/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:48">
+                        <p>Qui sommes-nous ? <a href="https://www.laquadrature.net/nous/EN"
+                                target="_blank">https://www.laquadrature.net/nous/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:49">
+                        <p><em>LinkedIn condamnée à 310 millions d’euros suite à notre plainte collective,</em> La
+                            quadrature du net, 2024. <a
+                                href="https://www.laquadrature.net/2024/10/25/linkedin-condamnee-a-310-millions-deuros-suite-a-notre-plainte-collective/"
+                                target="_blank">https://www.laquadrature.net/2024/10/25/linkedin-condamnee-a-310-millions-deuros-suite-a-notre-plainte-collective/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:50">
+                        <p><em>Amende
+                                de 746 millions d’euros contre Amazon suite à nos plaintes collectives,</em> La
+                            quadrature du net, 2021. <a
+                                href="https://www.laquadrature.net/2021/07/30/amende-de-746-millions-deuros-contre-amazon-suite-a-nos-plaintes-collectives/"
+                                target="_blank">https://www.laquadrature.net/2021/07/30/amende-de-746-millions-deuros-contre-amazon-suite-a-nos-plaintes-collectives/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:51">
+                        <p>Données personnelles, La quadrature du net. <a
+                                href="https://www.laquadrature.net/donnees_perso/"
+                                target="_blank">https://www.laquadrature.net/donnees_perso/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:52">
+                        <p>Halte au contrôle numérique, Saint-Étienne. <a href="https://halteaucontrolenumerique.fr/"
+                                target="_blank">https://halteaucontrolenumerique.fr/</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:53">
+                        <p>750 000 000 d'heures par an devant une bannière de cookies. <a
+                                href="https://korben.info/perte-temps-bannieres-cookies-europe.html"
+                                target="_blank">https://korben.info/perte-temps-bannieres-cookies-europe.html</a>
+                        </p>
+                    </li>
+
+                    <li id="fn:54">
+                        <p>Je m'en fous des cookies. <a href="https://www.i-dont-care-about-cookies.eu/"
+                                target="_blank">https://www.i-dont-care-about-cookies.eu/</a>
+                        </p>
+                    </li>
+                </ol>
+
+            </section>
+
+            <section id="annexe" class="annexe">
+
+                <p>
+                <h3> Annexe </h3>
+                </p>
+
+                <blockquote>
+                    <p>
+                        15 - "The number of children in the youngest age category (9–11) who go online from their
+                        smartphones every day ranges between 14% in France and 56% in Lithuania. In most countries,
+                        however, less than one in three children in this age group accesses the Internet from a
+                        smartphone several times a day."
+                        <em>EU kids online 2020</em>, 2020, page 21.
+                    </p>
+
+                    <p>
+                        23 - “Dear Internet, I am writing this to announced that I am going to commit “Friendster
+                        Suicide” on
+                        Thursday, --->; aka. delete my Friendster account. Yep, I just can’t take it anymore …”
+                        Cory Arcangel, 2005.
+                    </p>
+
+                    <p>
+                        43 -"The Austrian NGO NOYB filed complaints against paywalls of seven major German and Austrian
+                        news websites in 2021 considering that consent is not freely given if the alternative to being
+                        tracked is to "pay 100 times the market price of the user’s personal data."
+                        <em>Your Consent Is Worth 75 Euros A Year – Measurement and
+                            Lawfulness of Cookie Paywalls</em>, 2022, page 2.
+                    </p>
+                </blockquote>
+
+
+
+            </section>
+    </main>
+</body>
+
+</html>
