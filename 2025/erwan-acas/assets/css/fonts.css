@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Creato Display;
+  src: url("fonts/CreatoDisplay-Regular.woff2") format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Creato Display;
+  src: url("fonts/CreatoDisplay-ExtraBold.otf") format('truetype');
+  font-weight: bolder;
+}
+
+@font-face {
+  font-family: Creato Display;
+  src: url("fonts/CreatoDisplay-RegularItalic.otf") format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Creato Display;
+  src: url("fonts/CreatoDisplay-BoldItalic.otf") format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
