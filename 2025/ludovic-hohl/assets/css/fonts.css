@@ -1,0 +1,12 @@
+@font-face {
+  font-family: Libertine;
+  src: url("./fonts/LinLibertine_RZ.woff2") format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Libertine;
+  src: url("./fonts/LinLibertine_RZI.woff2") format('woff2');
+  font-weight: 500;
+  font-style: italic;
+}

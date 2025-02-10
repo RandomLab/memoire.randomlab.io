@@ -1,0 +1,727 @@
+@media screen {
+
+
+    /* variables */
+    :root {
+        --padding: 1.5rem;
+        --main-font-size: 1rem;
+        --color-grey: #333;
+        --color-light: #efefef;
+        --color-text: var(--color-grey);
+        --color-background: var(--color-light);
+        --color-btn: rgb(61, 61, 61);
+        scroll-behavior: smooth;
+        --width : 80%;
+        --width-citation : 60%;
+    }
+
+    /* global */
+
+    html {
+        padding: 0;
+        margin: auto;
+        color: var(--color-text);
+        font-size: var(--main-font-size);
+        /* background-color: aqua; */
+    }
+
+    body {
+        /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+        font-size: 115%;
+        background-color: var(--color-background);
+        width: 100vw;
+        height: 100vh;
+        /* background-color: yellow; */
+    }
+
+    /* titre fixe */
+    .titre-fixe {
+        font-family: Syne;
+        position: fixed;
+        top: 0;
+        background-color: var(--color-background);
+        width: 100%;
+        padding: 5px 20px 10px 40px;
+        z-index: 1000;
+        display: flex;
+    }
+    
+    .titre-fixe h1 {
+        font-size: 1rem;
+        font-weight: normal;
+        color: var(--color-text);
+        margin-right: 5px;
+    }
+
+    /* structure */
+    .container {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 200px;
+        /* background-color: green; */
+    }
+
+
+    /* images et légendes */
+    .container figure {
+        margin: 20px auto 40px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #image{
+        width: 80%;
+    }
+
+    .img-petite{
+        width: 40%;
+    }
+
+    
+
+    img{
+        width: 100%;
+    }
+
+    .portrait{
+        width: 60%;
+    }
+
+    .container figure figcaption .source-img{
+        font-family: Syne;
+        font-weight: normal;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    
+      
+
+    .container figure figcaption {
+        font-family: Syne;
+        font-weight: normal;
+        font-size: 1rem;
+        color: black;
+        text-align: center;
+    }
+
+    /* chapeau */
+
+    .container #header #couv-pdf{
+        font-family: "Syne";
+        font-weight: normal;
+        font-size: 0.8rem;
+        /* margin-top: 80px; */
+        /* text-align: left; */
+        margin: 6vh auto 0 auto;
+        /* background-color: aqua; */
+    }
+
+    .container .header {
+        text-align: center;
+        /* margin-bottom: 2rem; */
+    }
+
+    .container .header h1 {
+        font-family: Syne;
+        line-height: 1;
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 0 0 10px 0;
+        padding-top: 20vh;
+    }
+
+    .container .header h2{
+        font-family: Syne;
+        font-size: 1.8rem;
+        font-weight: normal;
+    }
+
+
+    .first-page{
+        min-height: 100vh;
+        max-height: fit-content;
+        /* background-color: red; */
+    }
+
+    /* table des matières */
+
+    .container .sommaire h1{
+        display: none;
+    }
+
+    .container .sommaire {
+        /* background-color: aquamarine; */
+        font-family: Syne;
+        list-style-type: none;
+        padding-inline-start: 2ch;
+        font-size: 1.5rem;
+        border-bottom: 1px solid var(--color-text);
+        border-top: 1px solid var(--color-text);
+        margin: 10px auto 0 auto;
+        padding: 20px 0 20px 0;
+        width: var(--width);
+        /* background-color: aquamarine; */
+    }
+
+    .container .sommaire a {
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    .container .sommaire a:hover {
+        text-decoration: wavy underline;
+        text-decoration-thickness: 1px;
+    }
+
+    .container .sommaire .titre {
+        margin: 0;
+    }
+
+    /* corps du texte */
+
+    .container .chapitre {
+        margin: 0 0 20px 0;
+        /* background-color: yellow; */
+    }
+
+    .container .chapitre h2 {
+        font-family: Syne;
+        font-weight: normal;
+        margin: 120px auto 10px auto;
+        font-size: 2rem;
+        width: var(--width);
+    }
+
+    #chapitre\:1 h2:first-of-type {
+        /* background-color: aqua; */
+        margin-top: 0;
+    }
+
+    .container .chapitre h3 {
+        font-family: Syne;
+        font-weight: normal;
+        /* font-style: italic; */
+        margin: 100px auto 10px auto;
+        font-size: 1.5rem;
+        width: var(--width);
+    }
+
+
+    .container .chapitre h4{
+        font-family: Syne;
+        font-weight: normal;
+        margin: 50px auto 0 auto;
+        width: var(--width);
+    }
+
+    .container .chapitre h3:first-of-type{
+        /* background-color: red; */
+        margin-top: 0;
+    }
+
+    #chapitre\:2 h3{
+        margin: 60px auto 10px auto;
+        /* background-color: aqua; */
+    }
+
+    .container .chapitre h3 + blockquote{
+        margin: 40px auto;
+        /* background-color: red; */
+    }
+
+    /* .container .chapitre #g5{
+        font-size: 1.2rem;
+        margin-top: 20px;
+    } */
+
+    /* paragraphe */
+
+    .container .chapitre p {
+        font-family: AmiAmie;
+        font-weight: normal;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        margin: 0 auto 20px auto;
+        width: var(--width);
+    }
+
+    .container .chapitre p i {
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    .container .chapitre p strong {
+        font-weight: bold;
+    }
+
+    /* Rermerciements */
+    #chapitre\:8{
+        border-top: 1px solid var(--color-text);
+    }
+
+    /* appel de note */
+    .container .chapitre p sup, 
+    .container .chapitre h3 sup, 
+    .container .chapitre blockquote sup, 
+    .container .chapitre h4 sup {
+        top: -0.5em;
+    }
+
+    .container .chapitre p sup a, 
+    .container .chapitre h3 sup a, 
+    .container .chapitre blockquote sup a,
+    .container .chapitre h4 a {
+        color: rgb(89, 0, 255);
+        text-decoration: none;
+    }
+
+    .container .chapitre p sup a:hover, 
+    .container .chapitre h3 sup a:hover, 
+    .container .chapitre blockquote sup a:hover,
+    .container .chapitre h4 sup a:hover {
+        color: rgb(218, 17, 17);
+    }
+
+    /* definition */
+    .container .chapitre p .definition, 
+    .container .chapitre h3 .definition, 
+    .container .chapitre blockquote .definition, 
+    .container .chapitre h4 .definition {
+        /* background-color: rgb(166, 255, 0); */
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* ANCIEN TRUC HOVER DEFINITION */
+
+    .container .chapitre p .hide, 
+    .container .chapitre h3 .hide, 
+    .container .chapitre blockquote .hide, 
+    .container .chapitre h4 .hide {
+        display: none;
+    }
+
+    .container .chapitre p .definition:hover + .hide, 
+    .container .chapitre h3 .definition:hover + .hide,
+    .container .chapitre blockquote .definition:hover + .hide,
+    .container .chapitre h4 .definition:hover + .hide {
+        display: block;
+        position: absolute;
+        font-family: AmiAmie;
+        font-weight: normal;
+        /* background-color: rgb(154, 119, 194); */
+        font-size: 0.8rem;
+        line-height: 1.2;
+        width: 300px;
+        padding: 5px;
+        transform: translate(0, -25px);
+        left: 75vw;
+    }
+
+    .container .chapitre h3 .hide{
+        font-style: normal;
+    }
+
+    /* scroll # */
+    [id^="chapitre\3A"], [id^="fn\3A"]{
+        scroll-margin-top: 60px;
+    }
+
+
+    /* second paragraphe */
+    /* .container .chapitre .paragraphe {
+        font-family: "FreeSans", sans-serif;
+        color: rgb(145, 141, 141);
+    } */
+
+    /* citation */
+    .container .chapitre blockquote {
+        font-family: AmiAmie;
+        padding: 0 0 0 60px;
+        width: var(--width-citation);
+        /* background-color: aqua; */
+    }
+    
+    #citation{
+        margin: 40px auto 20px auto;
+
+    }
+
+    .container .chapitre blockquote .signature {
+        font-size: 0.9rem;
+        text-align: left;
+        margin: 10px 0 0 0;
+    }
+
+
+    /* video */
+    .container .chapitre .video-container {
+        margin: 20px 0 120px 0;
+    }
+
+    .container .chapitre .video {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+    }
+
+    /* notes */
+    .container .notes {
+        margin: 60px 0 0 0;
+        padding: 60px 0 0 0;
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        border-top: 1px solid var(--color-text);
+        /* background-color: yellow; */
+    }
+
+    .container .notes ol, .container .annexe ul{
+        list-style-position: inside;
+        /* background-color: yellow; */
+    }
+
+    .container #annexe{
+        /* background-color: rebeccapurple; */
+        /* width: var(--width);
+        margin: 0 auto; */
+        border-top: 1px solid var(--color-text);
+    }
+
+    .container .notes ol,
+    .container .notes h2 {
+        /* CONNERIE QUI RAJOUTE DE LA WIDTH EN VERSION MOBILE */
+        /* padding: 0 0 0 20px; */
+        width: var(--width);
+        margin: 0 auto;
+        /* background-color: yellow; */
+    }
+
+    .container .notes h2{
+        font-family: Syne;
+        font-weight: normal;
+        font-size: 2rem;
+        line-height: 4rem;
+        /* width: fit-content;
+        margin: 0 auto; */
+    }
+
+    .container .notes h3, 
+    .container .notes h4{
+        font-family: Syne;
+    }
+
+    .container .notes h3{
+        font-size: 1.5rem;
+        font-weight: normal;
+        line-height: 3rem;
+        margin: 50px 0 0 0;
+    }
+
+    .container .notes ol:first-of-type h3:first-of-type{
+        margin: 0;
+    }
+
+    .container .notes h4{
+        font-size: 1.2rem;
+        line-height: 2rem;
+        font-weight: normal;
+    }
+
+    .container .notes ol li {
+        font-family: AmiAmie;
+        font-weight: normal;
+        font-size: 1rem;
+        /* padding: 0 0 0 10px; */
+        margin: 0 0 20px 0;
+        line-height: 1.5rem;
+    }
+
+    .container .notes ol li a {
+        color: var(--color-text);
+    }
+
+    /* annexe */
+
+    .bibliographie{
+        /* width: var(--width); */
+        margin: 0 auto;
+    }
+
+    .container .annexe {
+        margin: 120px 0 0 0;
+        border-top: 1px solid var(--color-text);
+        padding: 60px 0 0 0;
+    }
+
+    .container .annexe a{
+        color: var(--color-grey);
+    }
+
+    .container .annexe h2{
+        font-family: Syne;
+        font-size: 2rem;
+        font-weight: normal;
+    }
+
+    .container .annexe .biblio{
+        /* display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap; */
+
+        column-count: 2; /* Deux colonnes */
+        column-gap: 40px; /* Espacement entre les colonnes */
+    }
+
+    .container .annexe .biblio article {
+        /* flex: 1 0 50%;
+        margin: 0 0 30px 0;
+        padding: 0 30px 0 0;
+        width: 100%; */
+
+        break-inside: avoid; /* Évite que les articles se coupent entre les colonnes */
+        margin-bottom: 60px; /* Espacement entre les articles */
+        display: inline-block; /* Permet un meilleur rendu avec les colonnes */
+        width: 100%; /* Évite des bugs d'affichage */
+    }
+
+    .container .annexe article:last-child {
+        /* flex: 0 1 50%; */
+    }
+
+    .container .annexe article h3 {
+        font-family: Syne;
+        font-size: 1.5rem;
+        font-weight: normal;
+        margin: 0 0 10px 0;
+        line-height: 1.2;
+    }
+
+    .container .annexe article li {
+        font-family: AmiAmie;
+        font-weight: normal;
+        font-size: 0.9rem;
+    }
+
+    .biblio li{
+        margin: 10px 0;
+        /* background-color: aqua; */
+    }
+
+    /* bouton pour remonter la page */
+
+    .bouton-top {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: var(--color-btn);
+    }
+
+    .bouton-top:hover {
+        background-color: var(--color-grey);
+    }
+
+    
+
+}
+
+/* version mobile */
+
+@media only screen and (min-width: 1px) and (max-width: 900px) {
+
+
+    /* structure */
+
+    .container {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* titre fixe */
+
+    .titre-fixe{
+        padding: 10px 0 10px 0;
+        justify-content: center;
+    }
+
+    .titre-fixe h1 {
+        font-size: 1rem;
+    }
+
+
+    .titre-fixe h1:nth-child(2){
+        display: none;
+    }
+
+
+    /* table des matières */
+
+    .container .sommaire {
+        margin: 10px auto 60px auto;
+        font-size: 1.2rem;
+        width: 90%;
+    }
+
+    .container .sommaire .titre {
+        margin: 0 0 0 20px;
+    }
+
+    /* chapeau */
+    .container .header h1{
+        padding-top: 12vh;
+        margin: 2vh 0 10px 0;
+        font-size: 3.5rem;
+    }
+
+    .container .header h2{
+        font-size: 1.2rem;
+    }
+
+    .container #header #couv-pdf {
+        margin: 6vh 0 0 0;
+        font-size: 0.7rem;
+    }
+
+    
+    /* corps du texte */
+
+    .container .chapitre h2, 
+    .container .chapitre h3{
+        width: 100%;
+    }
+
+    .container .chapitre {
+        margin: 0 20px 0 20px;
+    }
+
+    /* paragraphe */
+
+    .container .chapitre p {
+        font-size: calc(1rem + 0.5vw);
+        width: 100%;
+    }
+
+    /* appel de note */
+
+    .container .chapitre p sup {
+        font-size: 1rem;
+    }
+
+    /* definition */
+
+    .container .chapitre p .definition + .hide {
+        display: none;
+    }
+/* 
+    .container .chapitre p .definition:hover + .hide {
+        transform: unset;
+        font-size: 1rem;
+        width: 80%;
+    } */
+
+
+    /* citation */
+    .container .chapitre blockquote {
+        padding: 0;
+        width: 80%;
+        text-align: left;
+        /* background-color: aqua; */
+        margin: 0 auto 40px auto;
+        font-size: 1rem;
+    }
+
+
+    .container .chapitre blockquote .signature{
+        text-align: right;
+    }
+    
+    /* notes */
+
+    .container .notes {
+        font-size: 1rem;
+        line-height: 1.6rem;
+        /* padding: 0 20px; */
+        width: 90%;
+        margin: 0 auto;
+        /* margin: 0 20px 0 20px; */
+    }
+
+    .container .notes ol, 
+    .container .notes h2 {
+        width: 100%;
+        margin: 0 auto;
+        /* padding: 0 20px; */
+    }
+
+    /* annexe */
+    .container .annexe {
+        width: 90%;
+        margin: 0 auto;
+        /* margin: 60px 20px 0 20px; */
+        /* background-color: red; */
+    }
+    
+    .bibliographie{
+        
+        width: 100%;
+    }
+
+    .container .annexe article .biblio {
+        /* flex: 1 0 auto; */
+        margin: 0 0 60px 0;
+        /* padding: 0 0 0 20px; */
+        width: 90%;
+    }
+
+    .container .annexe article h2 {
+        font-size: 1.3rem;
+    }
+
+    .container .annexe article li {
+        font-size: 1rem;
+        /* margin: 0 20px; */
+    }
+
+    #image{
+        width: 100%;
+    }
+
+    .portrait{
+        width: 100%;
+    }
+
+    .container .chapitre p .definition:hover + .hide, 
+    .container .chapitre h3 .definition:hover + .hide,
+    .container .chapitre blockquote .definition:hover + .hide{
+        display: none;
+    }
+
+    .container .annexe .biblio{
+        column-count: 1;
+    }
+
+}
+
+/* demi écran full HD */
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+
+
+    .container{
+        max-width: 80%;
+    }
+
+    .container .chapitre p .definition:hover + .hide, 
+    .container .chapitre h3 .definition:hover + .hide,
+    .container .chapitre blockquote .definition:hover + .hide,
+    .container .chapitre h4 .definition:hover + .hide {
+
+        width: 130px;
+        transform: translate(0, -25px);
+        left: 85vw;
+    }
+}
