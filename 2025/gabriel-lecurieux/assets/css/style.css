@@ -1,0 +1,573 @@
+@media screen {
+
+
+    /* variables */
+    :root {
+        --padding: 1.5rem;
+        --main-font-size: 1rem;
+        --color-grey: #333;
+        --color-light:white;
+        --color-text: var(--color-grey);
+        --color-background: var(--color-light);
+        --color-btn: rgb(108, 64, 179);
+        scroll-behavior: smooth;
+    }
+
+    /* global */
+
+    html {
+        padding: 0;
+        margin: auto;
+        color: var(--color-text);
+        font-size: var(--main-font-size);
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-size: 115%;
+        background-color: var(--color-background);
+        width: 100vw;
+        height: 100vh;
+    }
+
+    /* titre fixe */
+    .titre-fixe {
+        position: sticky;
+        top: 0;
+        background-color: rgba(0, 0, 00, 0.1);;
+        width: 100%;
+        padding: 5px 0 10px 5px;
+        text-align: start;
+        white-space: pre-line;
+        display:flex;
+
+
+    }
+
+    .titre-fixe h1 {
+        font-size: 3rem;
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        padding-left: 1rem;
+        padding-right: 2rem;
+        border-left-color: black;
+        border-left: 0.2rem solid;
+        border-top: 0.2rem solid;
+        font-family: "sora", serif;
+    }
+    .titre-fixe h2 {
+
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        padding-left: 1rem;
+        padding-right: 2rem;
+        border-left-color: black;
+        border-left: 0.2rem solid;
+        border-top: 0.1rem solid;
+        border-bottom: 0.1rem solid;
+        font-family: "sora", serif;
+        margin-right:0.25em;
+        text-align:right; font-size:1.8vw; padding:0.8vw;
+    }
+    .titre-fixe h3 {
+        font-size: 3rem;
+        font-weight: normal;
+        color: rgb(0, 0, 0);
+        text-align:left;
+        margin-right: auto;
+        padding-left: 1rem;
+        font-family: "spacegrotesk", serif;
+
+    }
+    /* structure */
+    .container {
+      max-width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 200px;
+    }
+
+.figure{
+      display: grid;
+  grid-template-columns: 19rem 5fr  ;
+  grid-gap: 5rem;
+}
+ .figure .horizontal{
+   width: 20vw;
+}
+.figure .verticale{
+  width: 15.5vw;
+}
+.figure .vidéo-game{
+  width:25.5vw; padding: 0.5vw; margin-left: 0vw;
+}
+.figure .vidéo-game h6{
+   padding: 0.1vw; margin-left: 5vw;
+}
+.figure-main{
+  width: 100%;
+}
+
+.container .figure-main .figure figure figcaption {
+    font-family: "sora", serif;
+    font-size: 0.8rem;
+    color: black;
+    text-align: center;
+    width: 90%;
+
+}
+
+
+    /* images et légendes */
+    .container figure {
+        margin: 20px 0 0px 0;
+    }
+
+    .container figure figcaption {
+        font-family: "sora", serif;
+        font-size: 0.8rem;
+        color: black;
+        text-align: center;
+        width: 30%;
+    }
+
+    /* chapeau */
+    .container .header {
+        text-align: start;
+        margin-bottom: 2rem;
+        border-left: 0.1rem solid;
+    }
+
+    .container .header h1 {
+        font-family: "sora", serif;
+        line-height: 1;
+        font-size: 8rem;
+        font-weight: normal;
+        margin: 120px 0 120px 0;
+        padding-left: 2rem;
+        border-left-color: black;
+        border-left: 0.2rem solid;
+        border-top: 0.2rem solid;
+    }
+
+    /* citation chapeau */
+    .container .header blockquote {
+        text-align: left;
+        width: 50%;
+
+        margin: 2rem 1rem 1rem 5rem;
+    }
+
+    .container .header blockquote .signature {
+        text-align: right;
+        margin: 10px 1rem 1rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    /* table des matières */
+
+    .container .sommaire {
+        list-style-type: none;
+        padding-inline-start: 2ch;
+        padding: 0;
+        font-size: 1.5rem;
+        border-bottom: 1px solid var(--color-text);
+        border-top: 1px solid var(--color-text);
+        margin: 120px 0 120px 0;
+        padding: 20px 0 20px 0;
+        border-left: 0.2rem solid;
+    }
+
+    .container .sommaire a {
+        padding-left:1rem;
+        text-decoration: underline;
+        color: var(--color-text);
+    }
+
+    .container .sommaire a:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+        padding-left:2rem;
+    }
+
+    .container .sommaire .titre {
+        margin: 0;
+    }
+
+    /* corps du texte */
+
+    .container .chapitre {
+        margin: 15rem 0 5rem 0;
+    }
+
+    .container .chapitre h2 {
+        font-weight: normal;
+        margin: 0 0 0rem 0;
+        font-size: 4.5rem;
+        font-family: "sora", serif;
+    }
+
+    .container .chapitre h3 {
+        font-weight: normal;
+        margin: 6rem 5rem 0rem 0;
+        font-size: 2.5rem;
+        font-family: "sora", serif;
+        text-decoration: underline  from-font;
+        text-decoration-color: rgba(0, 0, 0, 0.05);
+
+    }
+    .container .chapitre h4 {
+        font-weight: normal;
+        margin: 6rem 0rem 3rem 0;
+        font-size: 1.5rem;
+        text-decoration: underline  from-font;
+        text-decoration-color: rgba(0, 0, 0, 0.25);
+        border-top: 0.1rem solid;
+        padding-top: 4rem;
+        border-image:
+          linear-gradient(to right, rgba(0, 0, 0, 0) 00%, black 50%, #3a4ed5 65%) 1;
+        font-family: "sora", serif;
+
+    }
+
+
+
+
+    .container .chapitre h5 {
+        font-weight: normal;
+        margin: 2.8rem 0rem -0.0rem -1rem;
+        font-size: 1rem;
+        font-family: "sora", serif;
+    }
+
+    /* paragraphe */
+
+    .container .chapitre p {
+        font-size: 1.3rem;
+        line-height: 1.6;
+        padding-left:2.5rem;
+        padding-top:0rem;
+        white-space: normal;
+    }
+
+    .container .chapitre p i {
+        font-style: italic;
+    }
+
+    .container .chapitre p strong {
+        font-weight: bold;
+    }
+
+    /* appel de note */
+    .container .chapitre p sup {
+        top: -0.5em;
+    }
+
+    .container .chapitre p sup a {
+        color: rgb(89, 0, 255);
+        text-decoration: none;
+    }
+
+    .container .chapitre p sup a:hover {
+        color: rgb(218, 17, 17);
+    }
+
+    /* definition */
+    .container .chapitre p .definition {
+        background-color: rgb(166, 255, 0);
+        cursor: pointer;
+        position: relative;
+    }
+
+    .container .chapitre p .hide {
+        display: none;
+    }
+
+    .container .chapitre p .definition:hover + .hide {
+        display: block;
+        position: absolute;
+        font-family: "Freesans", sans-serif;
+        background-color: rgb(154, 119, 194);
+        font-size: 0.8rem;
+        line-height: 1.2;
+        width: 100px;
+        padding: 5px;
+        transform: translate(-120px, -25px);
+    }
+
+    /* second paragraphe */
+    .container .chapitre .paragraphe {
+        font-family: "spacegrotesk", sans-serif;
+        color: rgb(50, 51, 51);
+        white-space:pre-line;
+        margin:  1rem;
+        margin-left: -0.25rem;
+        border-left: 0.01rem solid;
+    }
+
+    /* citation */
+    .container .chapitre blockquote {
+        margin: 1rem 0rem 2.5rem -2.5rem;
+        padding: 1.1rem;
+        width: 80%;
+        font-size:0.75rem;
+        background:
+        linear-gradient(-0deg, rgba(201,218,255,0.2) 0%, rgba(121,121,255,0) 01%, rgba(121,121,255,0) 40%, rgba(206,222,255,0.2439844297093805) 90%);
+        border-top-right-radius: 2em;
+        border-bottom-right-radius: 2em;
+        border: 1px blue solid;
+
+        border-right: 0px transparent solid ;
+        border-left: 0px transparent solid ;
+
+    }
+
+    .container .chapitre blockquote .signature {
+        font-size: 0.9rem;
+        text-align: right;
+        margin: 20px 0 0 0;
+
+    }
+    .part{
+      background-color:rgba(200,200,200,0.0);
+      padding: 2.5rem;
+      padding-bottom: 0.1rem;
+      border-radius: 0rem 0.5rem 0.5rem 0.0rem;
+      margin-top:.5rem;
+      border-left: 0.12rem solid;
+      border-bottom:0.rem solid;
+      border-image:
+        linear-gradient(to top, black 0%, #3a4ed5 50% ,rgba(0, 0, 0, 0) 90%) 1 80%;
+
+    }
+
+
+
+    /* video */
+    .container .chapitre .video-container {
+        margin: 1rem 0rem 0rem 4rem;
+    }
+
+    .container .chapitre .video {
+        aspect-ratio: 16 / 9;
+        width: 95%;
+    }
+
+    /* table */
+
+    .data {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 60px 0 120px 0;
+    }
+
+    .data td, .data tr {
+        padding: 10px;
+        border: 1px solid grey;
+    }
+
+    .data tr:nth-child(even) {
+        background-color: rgb(168, 168, 168);
+    }
+
+    .data th {
+        background-color: var(--color-grey);
+        color: white;
+        font-weight: normal;
+        padding: 12px;
+        text-align: left;
+    }
+
+    /* notes */
+    .container .notes {
+        margin: 60px 0 0 0;
+        padding: 60px 0 0 0;
+        width: 100%;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        white-space:pre-line;
+    }
+
+    .container .chapitre .note{
+
+      font-family: "spacegrotesk", sans-serif;
+      color: rgb(50, 51, 51);
+      white-space:pre-line;
+      margin:  1rem;
+      border-left: 0.1rem solid;
+      font-size: 1rem;
+    }
+
+    .container .notes ol {
+        padding: 0 0 0 20px;
+    }
+
+    .container .notes ol li {
+        padding: 0 0 0 10px;
+        margin: 0 0 10px 0;
+    }
+
+    .container .notes ol li a {
+        color: var(--color-text);
+    }
+
+    /* annexe */
+
+    .container .annexe {
+        display: flex;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 120px 0 0 0;
+        border-top: 1px solid black;
+        padding: 60px 0 0 0;
+    }
+
+    .container .annexe article {
+        flex: 1 0 50%;
+        margin: 0 0 30px 0;
+        padding: 0 30px 0 0;
+        width: 100%;
+    }
+
+    .container .annexe article:last-child {
+        flex: 0 1 50%;
+    }
+
+    .container .annexe article h2 {
+        font-size: 1rem;
+        font-weight: normal;
+        margin: 0 0 10px 0;
+        line-height: 1.2;
+    }
+
+    .container .annexe article p {
+        font-family: "Freeserif", serif;
+        font-size: 0.9rem;
+    }
+
+    /* bouton pour remonter la page */
+
+    .bouton-top {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background-color: var(--color-btn);
+
+    }
+
+    .bouton-top:hover {
+        background-color: var(--color-grey);
+    }
+
+
+
+}
+
+/* version mobile */
+
+@media only screen and (min-width: 1px) and (max-width: 900px) {
+
+
+    /* structure */
+
+    .container {
+        max-width: 100%;
+    }
+
+     /* citation chapeau */
+
+    .container .header blockquote {
+        text-align: left;
+        width: 90%;
+        margin: 0 20px 0 20px;
+    }
+
+    /* table des matières */
+
+    .container .sommaire {
+        margin: 60px 0 60px 0;
+    }
+
+    .container .sommaire .titre {
+        margin: 0 0 0 20px;
+    }
+
+    /* corps du texte */
+
+    .container .chapitre {
+        margin: 0 20px 0 20px;
+    }
+
+    /* paragraphe */
+
+    .container .chapitre p {
+        font-size: 1.3rem;
+    }
+
+    /* appel de note */
+
+    .container .chapitre p sup {
+        font-size: 1.3rem;
+    }
+
+    /* definition */
+
+    .container .chapitre p .hide {
+        display: hide;
+    }
+
+    .container .chapitre p .definition:hover + .hide {
+        transform: unset;
+        font-size: 1rem;
+        width: 80%;
+    }
+
+
+    /* citation */
+    .container .chapitre blockquote {
+        padding: 0;
+        width: 100%;
+    }
+
+    /* table */
+    .data {
+        margin: 60px 20px 80px 20px;
+        width: 90%;
+    }
+
+    /* notes */
+
+    .container .notes {
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+
+    .container .notes ol {
+        padding: 0 30px 0 30px;
+    }
+
+    /* annexe */
+    .container .annexe {
+        margin: 60px 0 0 0;
+        flex-direction: column;
+    }
+
+    .container .annexe article {
+        flex: 1 0 auto;
+        margin: 0 0 60px 0;
+        padding: 0 0 0 20px;
+        width: 90%;
+    }
+
+    .container .annexe article h2 {
+        font-size: 3rem;
+    }
+
+    .container .annexe article p {
+        font-size: 1rem;
+    }
+}

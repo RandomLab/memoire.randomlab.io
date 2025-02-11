@@ -1,0 +1,49 @@
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerif.woff2") format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifBold.woff2") format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifItalic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifBoldItalic.woff2") format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: sora;
+  src: url("./fonts/spline/SplineSans-Regular.woff2") format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: spline;
+  src: url("./fonts/spline/SplineSans-Regular.woff2") format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: sora;
+  src: url("./fonts/sora/Sora-Thin.woff2") format('woff2');
+  font-weight: thin;
+}
+
+@font-face {
+  font-family: spacegrotesk;
+  src: url("./fonts/space/SpaceGrotesk-Regular.woff2") format('woff2');
+  font-weight: normal;
+}
