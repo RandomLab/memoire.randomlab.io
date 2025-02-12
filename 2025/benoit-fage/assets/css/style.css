@@ -72,6 +72,16 @@
         width: 100vw;
         height: 100vh;
     }
+	
+    img, picture, svg, video, canvas{
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+        font-style: italic;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
 
     /* titre fixe */
     .titre-fixe {
