@@ -216,6 +216,7 @@
     /* notes */
 
     #notes {
+        display: none;
         margin: 20mm 0 10mm 0;
         padding: 10mm 0 0 0;
         width: 100%;
@@ -247,6 +248,7 @@
     /* annexe */
 
     #annexe {
+        display: none;
         margin: 20mm 0 10mm 0;
         padding: 10mm 0 0 0;
         width: 100%;
