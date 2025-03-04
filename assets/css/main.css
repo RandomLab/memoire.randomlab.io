@@ -1,5 +1,36 @@
+/* fontes */
+
+@font-face {
+    font-family: FreeSans;
+    src: url("./fonts/FreeSans.woff2") format('woff2');
+    font-weight: normal;
+}
+  
+@font-face {
+    font-family: FreeSans;
+    src: url("./fonts/FreeSansBold.woff2") format('woff2');
+    font-weight: bold;
+}
+  
+@font-face {
+    font-family: FreeSans;
+    src: url("./fonts/FreeSansOblique.woff2") format('woff2');
+    font-weight: normal;
+    font-style: italic;
+}
+  
+@font-face {
+    font-family: FreeSerif;
+    src: url("./fonts/FreeSansBoldOblique.woff2") format('woff2');
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* général */
+
 body {
-    font-family: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 115%;
     font-weight: normal;
 }
 
@@ -12,18 +43,61 @@ body {
     'footer';
 
     min-height: 100%;
+    width: 100%;
 }
+
+/* navigation */
 
 .navigation {
     grid-area: header;
     position: fixed;
     height: 50px;
     background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0 20px 0 0;
 }
+
+.navigation li {
+    /* display: inline-block; */
+}
+
+/* contenu */
 
 .content {
     grid-area: main;
     margin-top: 50px;
+}
+
+.content .header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    align-items: start;
+    border-bottom: 1px solid black;
+    padding: 10px 0 10px 0;
+}
+
+.content .detail {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: min-content;
+    width: 100%;
+    height: fit-content;
+    gap: 10px;
+    align-items: start;
+    border-bottom: 1px dotted black;
+    padding: 10px 0 10px 0;
+}
+
+h1 {
+    font-size: 1rem;
 }
 
 ul {
@@ -38,3 +112,5 @@ li {
 h1 {
     margin-bottom: 10px;
 }
+
+/* mobile */
