@@ -1,0 +1,56 @@
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerif.woff2") format('woff2');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifBold.woff2") format('woff2');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifItalic.woff2") format('woff2');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: FreeSerif;
+  src: url("./fonts/FreeSerifBoldItalic.woff2") format('woff2');
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+/*@font-face {*/
+/*  font-family: Lato;*/
+/*  src: url("/assets/css/fonts/LatoRegular.woff2") format('woff2'),*/
+/*       url("/assets/css/fonts/LatoRegular.woff2") format('woff');*/
+/*  font-weight: normal;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: Lato;*/
+/*  src: url("/assets/css/fonts/LatoBold.woff2") format('woff');*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: Lato;*/
+/*  src: url("/assets/css/fonts/LatoItalic.woff2") format('woff');;*/
+/*  font-weight: normal;*/
+/*  font-style: italic;*/
+/*}*/
+
+/*@font-face {*/
+/*  font-family: Lato;*/
+/*  src: url("/assets/css/fonts/LatoBoldItalic.woff2") format('woff');*/
+/*  font-weight: bold;*/
+/*  font-style: italic;*/
+/*}*/
+/*body {*/
+/*  font-family: 'Lato', sans-serif;*/
+/*}*/
