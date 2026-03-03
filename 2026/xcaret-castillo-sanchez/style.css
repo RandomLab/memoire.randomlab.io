@@ -1,0 +1,831 @@
+@import url("reset.css");
+
+@font-face {
+  font-family: "Outfit";
+  src: url("assets/typos/Outfit-VariableFont_wght.ttf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "isonorm";
+  src: url("assets/typos/Isonorm\ 3098\ Regular.otf");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "commissioner";
+  src: url("assets/typos/Commissioner-VariableFont_FLAR\,VOLM\,slnt\,wght.ttf");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --gray: #d9d9d9;
+  --primary: #d6f4e7;
+  --secondary: #ffa680;
+  --text-sm: 14px;
+  --text-base: 20px;
+  --text-md: 25px;
+  --text-lg: 30px;
+  --text-xl: 35px;
+  --text-xxl: 45px;
+  --text-h1: 130px;
+  --text-h2: 100px;
+  --text-h3: 50px;
+  --text-h4: 20px;
+  --container-sm: 680px;
+  --container-md: 910px;
+  --container-lg: 1140px;
+  --container-xl: 1260px;
+  --container-xxl: 1376px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-xxl: 1536px;
+
+  @media screen and (max-width: 768px) {
+    --text-h1: 100px;
+  }
+
+  @media screen and (max-width: 576px) {
+    --text-h1: 80px;
+  }
+}
+
+html,
+body {
+  font-family: "Outfit", sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  font-weight: 200;
+}
+
+/* Classes utilitaires */
+.container-sm {
+  max-width: var(--container-sm);
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+.container-md {
+  max-width: var(--container-md);
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+.container-lg {
+  max-width: var(--container-lg);
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+.container-xl {
+  max-width: var(--container-xl);
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+.container-xxl {
+  max-width: var(--container-xxl);
+  margin: auto;
+  padding-inline: 1rem;
+}
+
+.text-md {
+  font-size: var(--text-md);
+}
+
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+.text-xl {
+  font-size: var(--text-xl);
+}
+
+.highlight-anim {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  width: fit-content;
+}
+
+.highlight-anim::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: calc(100% + 20px);
+  position: absolute;
+  top: 0;
+  left: -10px;
+  z-index: -10;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform ease-out 500ms 50ms;
+}
+
+.highlight-anim:hover::after {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+}
+
+.highlight-anim.bg-primary::after {
+  background-color: var(--primary);
+}
+
+.highlight-anim.bg-secondary::after {
+  background-color: var(--secondary);
+}
+
+.capitulo-portada {
+  height: 1000px;
+  width: 100%;
+  background: var(--bg-img) no-repeat center center / cover;
+  background-attachment: fixed;
+  margin-bottom: 5rem;
+  color: var(--white);
+
+  @media (max-width: 768px) {
+    height: 600px;
+  }
+}
+
+.capitulo-portada h2 {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+}
+
+.poema {
+  background-color: rgba(0, 0, 0, 75%);
+  color: var(--white);
+  font-family: "commissioner";
+  font-weight: 400;
+  max-width: 470px;
+  padding: 2rem 0;
+  margin: auto;
+  transform: translateY(-210px);
+  padding-inline: 1rem;
+
+  @media screen and (max-width: 1536px) {
+    transform: translateY(-160px);
+  }
+}
+
+.poema span {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-inline: 3rem;
+}
+
+.poema span:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.list-style-puntos {
+  list-style: disc;
+}
+
+.list-style-puntos > li:not(last-child) {
+  margin-bottom: 1rem;
+}
+
+.notas {
+  margin-block: 3rem;
+}
+
+.nota {
+  font-size: var(--text-sm);
+  font-weight: 400;
+}
+
+/* Golbal styles */
+h1,
+.h1 {
+  font-family: "isonorm";
+  font-size: var(--text-h1);
+  line-height: var(--text-h1);
+}
+
+h2,
+.h2 {
+  font-family: "isonorm";
+  font-size: var(--text-h2);
+  line-height: var(--text-h1);
+
+  @media (max-width: 768px) {
+    font-size: var(--text-h3);
+  }
+}
+
+h3,
+.h3 {
+  font-family: "isonorm";
+  font-size: var(--text-h3);
+  line-height: var(--text-h3);
+  background-color: var(--primary);
+  width: fit-content;
+  padding-inline: 20px;
+  text-align: right;
+  margin-left: auto;
+  margin-bottom: 5rem;
+}
+
+h4,
+.h4 {
+  font-family: "isonorm";
+  font-size: var(--text-xl);
+  background-color: var(--gray);
+  padding-inline: 10px;
+  width: fit-content;
+  margin-bottom: 11px;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*  Header */
+
+.to_summary a {
+  position: fixed;
+  z-index: 100;
+  bottom: 1rem;
+  right: 1rem;
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  border-radius: 50%;
+  background-color: var(--secondary);
+}
+
+.to_summary a::after {
+  position: absolute;
+  margin-top: 5px;
+  top: 50%;
+  left: 50%;
+  content: "";
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+header {
+  margin-bottom: 10rem;
+}
+
+header .header-hero {
+  height: 90dvh;
+  position: relative;
+}
+
+header .header-hero img {
+  width: 100%;
+  height: 90dvh;
+  object-fit: cover;
+  object-position: bottom center;
+}
+
+header .header-hero .header-hero__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  color: var(--white);
+  width: 700px;
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+header .header-hero .header-hero__title p {
+  font-weight: 400;
+}
+
+header .neza {
+  background-color: rgba(0, 0, 0, 75%);
+  color: var(--white);
+  font-family: "commissioner";
+  font-weight: 200;
+  max-width: 470px;
+  padding: 2rem 0;
+  margin: auto;
+  transform: translateY(-210px);
+  padding-inline: 1rem;
+
+  @media screen and (max-width: 1536px) {
+    transform: translateY(-160px);
+  }
+}
+
+header .neza span {
+  display: block;
+  margin-bottom: 0.5rem;
+  margin-inline: 3rem;
+}
+
+header .neza span:first-child {
+  margin-bottom: 1.5rem;
+}
+
+header .header-bottom__wrapper {
+  max-width: var(--container-xl);
+  margin-left: auto;
+  display: flex;
+  gap: 130px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+header .header-credits {
+  margin-bottom: 56px;
+}
+
+header .header-summary {
+  font-family: "isonorm";
+  border: 1px solid var(--black);
+  padding: 8px;
+}
+header .header-summary div {
+  padding-left: 0.5rem;
+}
+
+header .header-summary div:last-of-type {
+  margin-bottom: 2rem;
+}
+
+header .header-summary > ol {
+  list-style: inside none;
+  counter-reset: section;
+}
+
+header .header-summary > ol > li {
+  counter-increment: section;
+  position: relative;
+}
+
+header .header-summary > ol > li::before {
+  content: counter(section, upper-roman) "/ ";
+}
+
+header .header-summary li ol {
+  list-style: inside decimal;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+header .header-bottom__end {
+  flex-basis: 55%;
+}
+
+header .header-prologue {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Introduccion */
+
+#intro {
+  margin-bottom: 10rem;
+}
+
+#intro img {
+  width: 100%;
+  margin-bottom: 10rem;
+}
+
+/* Capitulo 1 */
+#capitulo_1 .capitulo-portada {
+  --bg-img: url("assets/img/cap1_mictlan.jpg");
+}
+
+#capitulo_1 .capitulo-portada h2 {
+  margin-left: auto;
+  width: 50%;
+  text-wrap: balance;
+
+  @media (max-width: 1024px) {
+    width: auto;
+    margin-left: unset;
+  }
+}
+
+#capitulo_1 .intro {
+  margin-bottom: 5rem;
+}
+
+#capitulo_1 .intro p {
+  margin-bottom: 5rem;
+}
+
+#cap_1_1 {
+  margin-bottom: 10rem;
+}
+
+#cap_1_1 .cap_1_1-contenido {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 10rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+#cap_1_1 .cap_1_1-contenido > div {
+  @media (min-width: 1024px) {
+    max-width: 440px;
+  }
+}
+
+#cap_1_1 img {
+  width: 100%;
+  height: 1400px;
+  object-fit: cover;
+  object-position: top;
+}
+
+#cap_1_2 {
+  margin-bottom: 10rem;
+}
+
+#cap_1_2 .cap_1_2-contenido > p:last-of-type {
+  margin-bottom: 10rem;
+}
+
+#cap_1_2 .cap_1_2-contenido img {
+  width: calc(100% - 100px);
+  display: block;
+  margin: 0 auto 10rem;
+}
+
+#cap_1_2 .cap_1_2_lista-niveles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 10rem;
+}
+
+#cap_1_2 .cap_1_2_lista-niveles .nivel {
+  max-width: 560px;
+  grid-column: span 2;
+}
+
+#cap_1_2 .cap_1_2_lista-niveles .nivel:nth-child(even) {
+  @media (min-width: 768px) {
+    grid-column: 2;
+  }
+}
+
+#cap_1_2 .cap_1_2_lista-niveles .nivel .text-lg {
+  margin-bottom: 11px;
+}
+
+#cap_1_2 .cap_1_2_lista-niveles .nivel p:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
+#cap_1_2 .container-xl {
+  margin: 0 0 0 auto;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+#cap_1_2 .container-xl > div {
+  flex: 1;
+}
+
+#cap_1_3 {
+  margin-bottom: 10rem;
+}
+
+#cap_1_3 .container-xl {
+  margin: 0 0 0 auto;
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+#cap_1_3 .container-xl .text-md {
+  margin-bottom: 5rem;
+}
+
+#cap_1_3 .container-xl ul {
+  margin: auto;
+  width: fit-content;
+}
+
+#cap_1_3 .container-xl ul li {
+  width: fit-content;
+}
+
+#cap_1_3 .container-xl ul li::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+#cap_1_3 .container-xl ul li:first-child::before {
+  background-color: rgba(0, 0, 0, 30%);
+}
+
+#cap_1_3 .container-xl ul li:nth-child(2)::before {
+  background-color: rgba(0, 119, 255, 30%);
+}
+
+#cap_1_3 .container-xl ul li:nth-child(3)::before {
+  background-color: rgba(227, 228, 208, 30%);
+}
+
+#cap_1_3 .container-xl ul li:last-child::before {
+  background-color: rgba(255, 0, 0, 30%);
+}
+
+/* Capitulo 2 */
+#capitulo_2 .capitulo-portada {
+  --bg-img: url("assets/img/la-sombra-del-popo.jpg");
+}
+
+#capitulo_2 .poema {
+  font-weight: 600;
+}
+
+#cap_2_1 > img {
+  margin-bottom: 10rem;
+}
+
+#cap_2_1 .container-md p {
+  margin-bottom: 1rem;
+}
+
+#cap_2_1 .container-md p:last-of-type {
+  margin-bottom: 5rem;
+}
+
+#cap_2_2 .container-md p {
+  margin-bottom: 1rem;
+}
+#cap_2_2 .container-md p:last-of-type {
+  margin-bottom: 10rem;
+}
+
+#cap_2_2 > img {
+  margin-bottom: 10rem;
+}
+
+#cap_2_2 .container-sm {
+  margin-bottom: 10rem;
+}
+
+#cap_2_2 .container-sm p {
+  margin-bottom: 1rem;
+}
+#cap_2_2 .container-sm p:last-of-type {
+  margin-bottom: 5rem;
+}
+
+#cap_2_3 > img {
+  margin-bottom: 1rem;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 5rem;
+  }
+}
+
+#cap_2_3 > img:last-child {
+  margin-bottom: 10rem;
+}
+
+#cap_2_3 .container-md p {
+  margin-bottom: 1rem;
+}
+
+#cap_2_3 .container-md p:last-of-type {
+  margin-bottom: 5rem;
+}
+
+#cap_2_3 .container-xl {
+  margin: 0 0 10rem;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10%;
+  max-width: unset;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 20%;
+  }
+}
+
+#cap_2_3 .container-xl > div {
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+}
+
+#cap_2_3 .container-xl ul {
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: column;
+    width: 200px;
+  }
+
+  @media (min-width: 1024px) {
+    gap: 1rem;
+  }
+
+  @media (min-width: 1280px) {
+    gap: 2rem;
+  }
+}
+
+#cap_2_3 .container-xl ul li:not(:last-child)::after {
+  @media (max-width: 768px) {
+    content: "•";
+    margin-left: 1rem;
+  }
+}
+
+#cap_2_4 {
+  margin-bottom: 10rem;
+}
+
+#cap_2_4 .container-md {
+  margin-bottom: 5rem;
+}
+
+#cap_2_4 .container-sm {
+  margin-bottom: 10rem;
+}
+
+#cap_2_4 .container-sm p {
+  margin-bottom: 1rem;
+}
+
+#cap_2_4 > img {
+  margin-bottom: 1rem;
+
+  @media (min-width: 1280px) {
+    margin-bottom: 5rem;
+  }
+}
+
+#cap_2_4 .container-xxl {
+  margin-top: 5rem;
+}
+
+#cap_2_4 .container-xxl .container-xl {
+  margin: 0 0 0 auto;
+  display: flex;
+  gap: 3rem;
+  margin-bottom: 5rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
+}
+
+#cap_2_4 .container-xxl .container-xl > * {
+  flex: 1;
+}
+
+#cap_2_4 .container-xxl .container-xl > div:has(img) {
+  flex: 2;
+}
+
+#cap_2_4 .container-md:last-of-type p {
+  margin-bottom: 3rem;
+}
+
+/* Capitulo 3 */
+#capitulo_3 .capitulo-portada {
+  --bg-img: url("assets/img/cap3.jpg");
+}
+
+#capitulo_3 .container-md {
+  margin-bottom: 10rem;
+}
+
+#capitulo_3 .container-xl.cap3-main {
+  max-width: var(--container-xl);
+  margin: 0 auto 10rem;
+  padding-inline: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+/* Columna imagen */
+#capitulo_3 .container-xl.cap3-main > div {
+  flex: 0 0 55%;
+}
+
+/* Imagen */
+#capitulo_3 .container-xl.cap3-main img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Texto */
+#capitulo_3 .container-xl.cap3-main p {
+  flex: 0 0 35%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ---------------------------------------------------
+   2) BLOQUES REPETIBLES (duo)
+   --------------------------------------------------- */
+#capitulo_3 .container-xl.duo {
+  max-width: var(--container-xl);
+  margin: 0 auto 8rem;
+  padding-inline: 1rem;
+
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+/* Imagen del bloque duo */
+#capitulo_3 .container-xl.duo img {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Texto del bloque duo */
+#capitulo_3 .container-xl.duo p {
+  width: 50%;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Responsive para duo */
+@media (max-width: 1024px) {
+  #capitulo_3 .container-xl.duo {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  #capitulo_3 .container-xl.duo img,
+  #capitulo_3 .container-xl.duo p {
+    width: 100%;
+  }
+}
+
+/*annexe*/
+
+#annexe .container-xl {
+  margin-bottom: 10rem;
+}
