@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="assets/style.css" />
+    
+</head>
+<audio id="backgroundAudio" src="media/PODCAST_MEMOIRE.mp3" preload="metadata"></audio>
+
+<div class="audio-player">
+  <button id="back20"><span class="iconshort">«</span></button>
+  <button id="playButton"><span class="icon">▶</span></button>
+  <button id="forward20"><span class="iconshort">»</span></button>
+
+  <span id="currentTime">00:00</span>
+  <input type="range" id="seekBar" value="0" min="0" max="100" step="0.1">
+  <span id="totalTime">00:00</span>
+  <span id="PODCAST">PODCAST</span>
+</div>
+
+<style>
+.audio-player {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px;
+  font-family: sans-serif;
+}
+
+#seekBar {
+  flex: 1;
+  cursor: pointer;
+}
+</style>
+<script>
+  const audio = document.getElementById("backgroundAudio");
+  const playButton = document.getElementById("playButton");
+  const back20 = document.getElementById("back20");
+  const forward20 = document.getElementById("forward20");
+  const seekBar = document.getElementById("seekBar");
+  const currentTimeElem = document.getElementById("currentTime");
+  const totalTimeElem = document.getElementById("totalTime");
+
+  // Formateur de temps mm:ss
+  function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60).toString().padStart(2, "0");
+    return `${minutes}:${seconds}`;
+  }
+
+  // Quand la durée est prête (pour afficher la durée totale)
+  audio.addEventListener("loadedmetadata", () => {
+    totalTimeElem.textContent = formatTime(audio.duration);
+  });
+playButton.addEventListener("click", () => {
+  const icon = playButton.querySelector(".icon");
+
+  if (audio.paused) {
+    audio.play();
+    playButton.classList.remove("play");
+    playButton.classList.add("pause");
+    icon.textContent = "⏸";
+  } else {
+    audio.pause();
+    playButton.classList.remove("pause");
+    playButton.classList.add("play");
+    icon.textContent = "▶";
+  }
+});
+
+  // Avancer / Reculer 20s
+  back20.addEventListener("click", () => {
+    audio.currentTime = Math.max(0, audio.currentTime - 20);
+  });
+
+  forward20.addEventListener("click", () => {
+    audio.currentTime = Math.min(audio.duration, audio.currentTime + 20);
+  });
+
+  // Mettre à jour la barre de progression et le texte de temps
+  audio.addEventListener("timeupdate", () => {
+    currentTimeElem.textContent = formatTime(audio.currentTime);
+    const progress = (audio.currentTime / audio.duration) * 100;
+    seekBar.value = progress;
+  });
+
+  // Cliquer sur la barre pour aller à une position
+  seekBar.addEventListener("input", () => {
+    const time = (seekBar.value / 100) * audio.duration;
+    audio.currentTime = time;
+  });
+
+  // Quand l’audio se termine, revenir au début
+  audio.addEventListener("ended", () => {
+    playButton.classList.remove("play");
+    playButton.classList.add("pause");
+    seekBar.value = 0;
+  });
+</script>
+<body>
+    <nav><a href="/"></a></nav>
+
+    
+
+        
+        
+    
+        <p><strong>Métamorphoses du concept-album</strong><br />
+        <strong>Arthur Quet</strong><br />
+        <br />
+        // La version podcast est légèrement plus épurée et réduite que
+        la version écrite, mais contient des extraits audios //</p>
+        <h1 id="introduction"><strong><u>INTRODUCTION</u></strong></h1>
+        <p>Bonjour et bienvenue dans le podcast-mémoire d'Arthur
+        Quet.<br />
+        Aujourd'hui, nous allons parler des évolutions de l'album, et
+        plus particulièrement du concept-album dans la musique
+        électronique depuis l'avènement du streaming. Mon objectif est
+        d’interroger ses transformations, comprendre d'où elles viennent
+        et où elles vont.</p>
+        <p>Mais d'abord, qu'est-ce qu'un concept-album ? D'après Roy
+        Shuker dans <em>Popular Music : The Key Concepts</em>
+        (Routledge, 2002), il s'agit d'un terme discologique qui traduit
+        la volonté de la part d'un artiste ou d'un groupe de créer une
+        œuvre où toutes les pistes sont globalement liées à un thème,
+        une idée ou une histoire, contrairement aux albums plus typiques
+        constitués de pistes sans liens apparents entre elles. Ainsi,
+        peut être dit « concept » tout album faisant preuve d'une
+        certaine cohérence interne et assumant une certaine unité, que
+        ce soit sur le plan des thèmes abordés ou au niveau de
+        l'esthétique choisie.</p>
+        <p>Ma problématique est la suivante :<br />
+        Le concept-album à l'épreuve du streaming : survie ou mutation
+        d'un format artistique dans la musique électronique
+        contemporaine ?</p>
+        <p>Pour y répondre, nous allons explorer deux hypothèses.<br />
+        Première hypothèse : le concept-album comme forme dominante
+        disparaît au profit de niches spécifiques.<br />
+        Seconde hypothèse : le concept-album ne disparaît pas mais mute
+        vers des formes d'"album-œuvre" plus larges.</p>
+        <p>Pourquoi se concentrer sur la musique électronique
+        contemporaine ? Parce que ce cadre, à la croisée de la
+        technologie, de l'économie numérique et des évolutions
+        esthétiques, offre un terrain particulièrement riche pour
+        interroger le format concept-album et surtout les conditions
+        qu'impose le streaming. C'est dans ce contexte que l'album se
+        révèle soumis à des défis inédits : mutation, adaptation,
+        disparition possible ou reconversion en "album-œuvre". La
+        musique électronique incarne directement ces transformations
+        techniques, industrielles et esthétiques.</p>
+        <p>Nous parlerons donc d'albums et de mouvements sonores des
+        années 2000 à aujourd'hui, une période qui bouleverse la musique
+        et la manière dont on l'écoute. Une ère ultra-connectée où le
+        streaming influence les pratiques, la créativité des artistes et
+        dessert parfois leurs projets. Mais ces bouleversements font
+        aussi émerger un large panel musical qu'il serait dommage
+        d'ignorer.</p>
+        <p>Avant toute chose, laissez-moi vous recontextualiser et vous
+        raconter brièvement l'histoire du concept-album.</p>
+        <h1
+        id="recontextualisation"><strong><u>RECONTEXTUALISATION</u></strong></h1>
+        <p>Avec l’apparition du format long play, ou longue durée abrégé
+        par les lettres “LP”, vers la fin des années 1940, les artistes
+        ont eu la possibilité de considérer l’album comme un ensemble
+        cohérent, plus qu’une simple collection de singles.</p>
+        <p>Mais c’est surtout dans les années 1960 que l’idée
+        d’album-concept a explosé, en particulier dans la musique rock
+        et populaire. On peut parler <em>des Beatles avec leur album
+        nommé</em> <em>Sergeant Pepper's Lonely Hearts Club Band</em>,
+        sorti en 1967, qui est considéré comme le “vrai” premier
+        album-concept tel qu’on le définit aujourd’hui : chansons
+        reliées par une structure, une esthétique globale, un concept
+        d’« album comme œuvre » ; plutôt qu’un simple recueil. Je pense
+        tout de même que l'évolution s'est faite petit à petit du simple
+        album vers l'album-concept, il n'y a pas réellement de
+        "premier"; mais celui-ci à marqué les esprits de beaucoup de
+        groupes de cette époque comme The Who avec leur album-concept
+        <em>Tommy</em>, ou David Bowie avec <em>The Rise and Fall of
+        Ziggy Stardust and the Spiders from Mars</em> puis bien
+        évidemment Pink Floyd avec <em>The Dark Side of the Moon</em>
+        qui fût et qui est toujours la référence même du concept-album :
+        thématiques existentielles (temps, folie, pression sociale,
+        aliénation), cohérence musicale et sonore, transitions soignées
+        entre morceaux, on assiste donc à une création d’un tout
+        uni.</p>
+        <p>Dès lors, cette approche est devenue de plus en plus
+        naturelle, notamment dans les styles rocks et un peu plus tard
+        dans beaucoup d’autres genres musicaux, parce que l’album est vu
+        non plus comme une collection de chansons, mais comme une œuvre
+        à part entière, un espace de création plus vaste.</p>
+        <p>Il est vrai que le terme de "concept-album" est utilisé
+        principalement au travers des genres rock, pop et de musiques
+        dites populaires. Cependant, il s'étend bien au-delà de ces
+        cadres.<br />
+        On peut parler de Brian Eno avec son concept-album <em>Music For
+        Airports</em>, sorti en 1978, qui a été conçu dès le départ
+        autour d’une idée directrice très claire : créer de la musique
+        d’“ambiance” 🔊 destinées à des espaces publics comme un
+        aéroport, pour “apaiser” l’atmosphère et offrir un son de fond à
+        la fois discret et esthétique.<br />
+        L’intention formulée par Eno lui-même n’était pas simplement de
+        produire des “morceaux”, mais de sculpter un espace, un paysage
+        sonore dans lequel l’auditeur peut flotter, oubliant l’idée de
+        piste distincte. <em>Music For Airports</em> est une autre forme
+        de concept-album que les LPs rock : il n'est pas basé sur une
+        narration, ni un personnage ou une progression, mais plutôt sur
+        une façon de "faire" la musique. Il cherche une écoute
+        particulière d'une audience. Soit, c'est une approche plus
+        conceptuelle et expérimentale, mais on retrouve entièrement un
+        "concept" et un album regroupant ses quatre longues nappes
+        sonores et abstraites.</p>
+        <p>On peut aussi parler de la musique électronique, qui est
+        devenue un terrain presque aussi fertile que le rock pour le
+        concept-album. Kraftwerk ou Vangelis dans les années 70', Konrad
+        Becker (MONOTON) ou Beverly Glenn‑Copeland dans les années 80',
+        The Orb ou Underworld dans les années 90' et Radiohead,
+        Stupeflip ou Burial dans les années 2000.</p>
+        <p>Le concept-album est principalement reconnu sous la forme
+        d'un objet d'écoute en vinyle 12 pouces, le format initial du
+        LP. Mais dès les années 1990, le CD devient le médium le plus
+        commercialisé et le plus courant, grâce à sa facilité de
+        production et à son temps d'écoute nettement supérieur.
+        Toutefois, la part des concept-albums diminue déjà face à la
+        vente massive des "tubes" et des albums classiques, souvent
+        commerciaux. Vers la fin des années 1990 et le début des années
+        2000, l'industrie musicale atteint son sommet avec les ventes de
+        CD. La musique électronique se l'est vite approprié, par sa
+        transposition facile, adaptée et réfléchie pour une compression
+        numérique <em>MP3</em>. Le concept-album était "cadré" par cet
+        objet d'écoute : un temps limité, parfois doublé, avec une
+        pochette, une illustration ou même un livret à l'intérieur. Mais
+        c'est surtout une continuité, un fil rouge, ou devrais-je dire,
+        un sillon. Un flux qui enchaîne les morceaux, nous conseillant,
+        voire nous obligeant à écouter dans l'ordre établi par le groupe
+        ou l'artiste. Beaucoup affirmeront que la beauté d'un
+        concept-album réside dans sa capacité à être écouté tel que
+        l'artiste l'a imaginé, dans son ensemble.</p>
+        <p>Puis vient l'ère du World Wide Web, depuis 1999 la musique
+        commence à être téléchargée illégalement comme sur Napster ou
+        Soulseek et plus tard légalement, en 2003 avec l’Itunes Store.
+        Et d'une façon logique, dû à la connexion internet limitée et au
+        peu de stockage du matériel d'écoute de chacun : l’encodage
+        <em>MP3</em> fut créé. Un format réduisant considérablement la
+        qualité du son et donc sa taille presque sans pouvoir
+        l'entendre. Puis avec ces contraintes on commença aussi à
+        sélectionner, faire des choix, prendre les sons qu'on préfère…
+        Moi-même, en 2010, j’avais un baladeur mp3, ne pouvant mettre
+        que 20 morceaux de musique de 4 minutes, je choisissais donc mes
+        “préférées” et aussi les plus courtes pour pouvoir en mettre
+        plus. Cependant, cette méthode alimente cette "boucle” de
+        sélection où plus un morceau est sélectionné par le public, plus
+        il sera diffusé par ce même public et resélectionné, laissant
+        les musiques voisines de l’album dans l’ombre. Cela ressemble à
+        l’<em>Effet Matthieu</em> en sociologie, désignant un processus
+        où ceux qui ont déjà quelque chose (popularité, choix,
+        ressources…) en reçoivent encore plus, renforçant ainsi leur
+        avantage initial.</p>
+        <p>On peut donc imaginer que, peu à peu, le concept-album sera
+        abandonné . Ce modèle d’écoute ou, devrais-je, dire "de
+        consommation" de la musique s'est banalisée et perdure encore de
+        nos jours au travers des plateformes de streaming audio, même si
+        on a maintenant les moyens et le matériel pour pouvoir se
+        permettre de télécharger, stocker puis d'écouter des albums en
+        entier. C'est donc une logique différente qui s'est installée
+        lors de cette consommation, au départ sacrificielle ; dorénavant
+        réellement sélective et beaucoup plus personnelle, en créant des
+        playlists à partir d'un simple thème, d'un genre, d'une case.
+        Donnant à l'auditeur le pouvoir de fragmenter des albums pour en
+        faire une collection de singles, en oblitérant l'univers, le
+        storytelling au sens plein, l'écoute construite et imaginée par
+        l'artiste.</p>
+        <p>Je vais citer une reportage d’ARTE nommé “Comment le
+        streaming a mangé la musique”, racontant la création de la
+        playlist en 2014 :</p>
+        <h2
+        id="les-playlists-cest-la-véritable-naissance-du-streaming-cest-cette-bascule-là-qui-a-réellement-inventé-la-façon-dont-on-utilise-la-musique-aujourdhui.-avec-elle-on-séloigne-de-la-forme-de-lalbum-qui-a-dominé-six-décennies-de-musique-pour-une-nouvelle-forme-qui-mélange-les-chansons-qui-circulent-aujourdhui-dune-façon-beaucoup-plus-fluide-...-grâce-aux-playlists-spotify-soundcloud-deezer-et-compagnie-deviennent-des-médias-des-voix-puissantes-qui-orientent-les-écoutes-de-leurs-auditeurs.-...-nous-sommes-désormais-suivis-dans-nos-moindres-mouvements-en-ligne-par-des-plateformes-qui-essayent-de-comprendre-nos-envies-au-bon-moment-...-une-gigantesque-chasse-à-la-donnée-personnelle-est-lancée-avec-un-seul-but-contentez-chaque-utilisateur-pour-quil-reste-abonné.-lautre-révolution-du-streaming-est-larrivée-de-lutilisateur-dans-la-façon-dont-on-va-lui-proposer-de-la-musique.-parce-que-jusquici-depuis-quasiment-toujours-dans-lindustrie-musicale-lutilisateur-navait-pas-son-mot-à-dire-ce-sont-des-maisons-de-disques-des-labels-des-directives-des-radios-des-magasins-qui-décident-de-la-musique-qui-est-produite-et-qui-est-distribué.-dit-antoine-monin-directeur-général-de-spotify-france.-3343"><em>"
+        [...] les playlists c'est la véritable naissance du streaming
+        c'est cette bascule là qui a réellement inventé la façon dont on
+        utilise la musique aujourd'hui. Avec elle on s'éloigne de la
+        forme de l'album qui a dominé six décennies de musique, pour une
+        nouvelle forme qui mélange les chansons qui circulent
+        aujourd'hui d'une façon beaucoup plus fluide [...] Grâce aux
+        playlists ; Spotify, Soundcloud, Deezer et compagnie deviennent
+        des médias ; des voix puissantes qui orientent les écoutes de
+        leurs auditeurs. [...] Nous sommes désormais suivis dans nos
+        moindres mouvements en ligne par des plateformes qui essayent de
+        comprendre nos envies au bon moment [...], une gigantesque
+        chasse à la donnée personnelle est lancée avec un seul but :
+        contentez chaque utilisateur pour qu'il reste abonné. "L'autre
+        révolution du streaming est l'arrivée de l'utilisateur dans la
+        façon dont on va lui proposer de la musique. Parce que
+        jusqu'ici, depuis quasiment toujours dans l'industrie musicale,
+        l'utilisateur n'avait pas son mot à dire, ce sont des maisons de
+        disques, des labels, des directives, des radios, des magasins
+        qui décident de la musique qui est produite et qui est
+        distribué."" dit Antoine Monin, directeur général de Spotify
+        France. (33”43’)</em></h2>
+        <p>De nos jours, les plateformes de streaming audio telles que
+        Spotify, Deezer ou Apple Music offrent des playlists
+        hebdomadaires, non plus gérées par des éditorialistes mais par
+        des algorithmes. Elles nous permettent de faire des découvertes
+        de singles ou d'un titre tiré d'un album, l'isolant plus que
+        tout dans une masse de sonorités éloignées à ce dernier. La
+        “découverte” est la meilleure arme du streaming audio, car elle
+        nous absorbe, c’est une “récompense” facile ; qui va, soit nous
+        faire plaisir, mais aussi rendre “accro” à la plateforme.
+        L'album devient aux yeux de presque tous.tes qu'un simple
+        recueil de singles "à choisir" ou “à la carte” au lieu de faire
+        partie d’un “menu”. Le concept-album se retrouve alors davantage
+        décrédibilisé, brisé et son sens disparaît, surtout au milieu
+        d'une playlist en écoute aléatoire.</p>
+        <h3 id="problématique"><strong><u>Problématique
+        :</u></strong></h3>
+        <p><strong>Le concept-album à l’épreuve du streaming :<br />
+        survie ou mutation d’un format artistique dans la musique
+        électronique contemporaine ?</strong></p>
+        <h1 id="définitions"><strong><u>DÉFINITIONS</u></strong></h1>
+        <p>Pour approfondir les connaissances et les interprétations
+        sémantiques de chaque terme clé, par rapport à la problématique.
+        Vous pouvez à tout moment consulter la partie supplémentaire des
+        définitions, seulement disponible à l’écrit. Je définis ce
+        qu'est le concept-album, le streaming, la survie, la mutation,
+        le format artistique et la musique électronique
+        contemporaine.</p>
+        <h3 id="concept-album"><strong><u>Concept-album
+        :</u></strong></h3>
+        <p>La définition d'après Roy Shuker dans <em>Popular Music : The
+        Key Concepts (Routledge, 2002) :* Un </em>album-concept<em>, (de
+        l'anglais </em>concept-album*), est un terme discologique qui
+        traduit la volonté de la part d'un artiste ou d'un groupe de
+        créer une œuvre où toutes les pistes sont globalement liées à un
+        thème, une idée ou une histoire contrairement aux albums plus
+        typiques constitués de pistes sans lien apparent entre elles.
+        Ainsi, peut être dit « concept » tout album faisant preuve d'une
+        certaine cohérence interne et assumant une certaine unité, que
+        ce soit sur le plan des thèmes abordés ou au niveau de
+        l'esthétique choisie.</p>
+        <p>La définition vue sur Wikipedia et mentionnée en
+        introduction, soulève cependant plusieurs débats.<br />
+        Comme le note une thèse de Julia Kuzmina nommée “<em>Histoire et
+        sémiologie narrative des albums concepts”</em> :</p>
+        <h2
+        id="si-ce-terme-désigne-des-albums-qui-ont-une-unité-thématique-et-un-développement-tout-leur-long-alors-en-réalité-il-y-a-probablement-moins-dalbums-concepts-quon-pourrait-dabord-le-penser.-pet-sounds-et-sergeant-peppers-ne-sont-pas-admissibles-selon-ce-critère...-cependant-si-au-contraire-on-étire-un-peu-la-définition-là-où-lalbum-lui-même-est-le-concept-alors-il-est-clair-que-le-rock-progressif-est-entièrement-une-musique-dalbums-concepts---et-cela-découle-assez-directement-de-rubber-soul-décembre-1965-puis-revolver-1966-pet-sounds-et-sergeant-peppers."><em>“Si
+        ce terme désigne des albums qui ont une unité thématique et un
+        développement tout leur long, alors en réalité il y a
+        probablement moins d’albums concepts qu’on pourrait d’abord le
+        penser. Pet Sounds et Sergeant Pepper's ne sont pas admissibles
+        selon ce critère... Cependant, si au contraire on étire un peu
+        la définition, là où l’album lui-même est le concept, alors il
+        est clair que le rock progressif est entièrement une musique
+        d’albums concepts - et cela découle assez directement de Rubber
+        Soul (décembre 1965), puis Revolver (1966), Pet Sounds et
+        Sergeant Pepper's."</em></h2>
+        <p>Comme il est soulevé dans cette citation, <em>Sergeant
+        Pepper's</em> n'est PAS un concept-album au sens strict. L'idée
+        de départ était que les <em>Beatles</em> créent un alter ego
+        fictif qui donnerait un concert mais ce concept n’apparaît que
+        dans les deux premières chansons et la reprise vers la fin
+        et<br />
+        la majorité des chansons n'ont aucun lien narratif entre elles
+        ni avec ce concept de groupe fictif.<br />
+        Mais alors pourquoi est-il quand même considéré comme tel ?</p>
+        <p>Car il a une unité esthétique forte : une cohérence sonore et
+        des productions révolutionnaires. Un enchaînement sans pause
+        entre plusieurs morceaux. Une pochette iconique pensée comme
+        partie intégrante de l'œuvre. Et enfin, une ambition artistique
+        et un contexte qui fait rupture avec la logique commerciale de
+        l'époque. C'est donc un concept-album au sens où "l'album
+        lui-même EST le concept".</p>
+        <p>Dans un entretien avec David Montgomery, Bob Ezrin, célèbre
+        producteur canadien, notamment de Heavy Metal, questionne la
+        nécessité même de la notion d’album concept :</p>
+        <h2
+        id="cela-ne-me-dit-rien-car-cest-superflu.-tous-les-albums-ont-des-concepts-ils-doivent-les-avoir...-peut-être-quil-y-a-quelque-chose-que-vous-ou-quelquun-dautre-pourriez-appeler-un-album-concept-mais-pour-autant-que-je-sache-ce-nest-vraiment-pas-différent-de-nimporte-quel-autre-album.-peut-être-que-ça-raconte-une-histoire-peut-être-que-cest-censé-parler-de-quelque-chose.-je-ne-sais-pas-mais-chaque-album-doit-être-conceptuel-dune-manière-ou-dune-autre-même-si-le-concept-nest-rien-de-plus-quune-collection-des-dernières-chansons-dun-artiste.-...-ils-sont-tous-des-albums-et-ils-sont-en-vinyle-et-viennent-dans-un-joli-morceau-de-carton.-...-quun-album-ait-ou-non-un-récit-une-histoire-ou-un-thème-explicite-na-pas-vraiment-dimportance.-tous-les-albums-sont-conçus-comme-des-paquets."><em>“Cela
+        ne me dit rien car c’est superflu. Tous les albums ont des
+        concepts, ils doivent les avoir…[...] Peut-être qu’il y a
+        quelque chose que vous ou quelqu’un d’autre pourriez appeler un
+        album concept, mais pour autant que je sache, ce n’est vraiment
+        pas différent de n’importe quel autre album. Peut-être que ça
+        raconte une histoire, peut-être que c’est censé parler de
+        quelque chose. Je ne sais pas, mais chaque album doit être
+        conceptuel d’une manière ou d’une autre, même si le concept
+        n’est rien de plus qu’une collection des dernières chansons d’un
+        artiste. [...] Ils sont tous des albums, et ils sont en vinyle,
+        et viennent dans un joli morceau de carton. [...] Qu’un album
+        ait ou non un récit, une histoire ou un thème explicite n’a pas
+        vraiment d’importance. Tous les albums sont conçus comme des
+        paquets”.</em></h2>
+        <p>On peut remarquer aussi que le mot “concept” devant “album”
+        n’existe plus vraiment de nos jours, peut-être pour faciliter le
+        langage, ou bien parce que ce n’est peut-être plus aussi
+        original qu’avant, que le concept n’est plus aussi “concept”
+        dans le sens “idée efficace” ou “novatrice”.<br />
+        Bob Ezrin l’a bien remarqué, ça ne veut plus vraiment dire
+        quelque-chose et encore moins de nos jours.<br />
+        Cependant, la définition proposée dans Wikipédia a également sa
+        valeur : le mot “concept” veut dire dans sa simple définition :
+        une idée générale ; une représentation abstraite d'un objet ou
+        d'un ensemble d'objets ayant des caractères communs. Donc dans
+        la culture musicale actuelle, un album à en sous-texte cette
+        définition là, du concept.</p>
+        <p>Il y a aussi une autre vision des albums concepts qui
+        m'intéresse. Proposée par un chercheur : Alex Kasner.<br />
+        Il distingue trois caractéristiques essentielles de l’album
+        concept :<br />
+        - la narration thématique (la définition Wikipédia s’arrête
+        là),<br />
+        - la virtuosité musicale (Élaboration technique et complexité de
+        la texture musicale au niveau de la composition et de
+        l'interprétation),<br />
+        - la collaboration cross-artistique (Œuvre résultant de
+        l'interaction entre multiples créateurs et disciplines (comme le
+        visuel ou la poésie)).<br />
+        <br />
+        Nous conserverons pour le moment cette définition du
+        concept-album et redéfinirons, en conclusion, ce qu’est le
+        concept-album d’aujourd’hui à partir des recherches et des liens
+        développés tout au long de ce mémoire.</p>
+        <h3 id="streaming"><strong><u>Streaming :</u></strong></h3>
+        <p>Le <em>streaming</em> (sous-entendu streaming audio, mais
+        aussi vidéo) désigne un mode de diffusion et de lecture de
+        musique en continu sur Internet, sans que l’utilisateur ait
+        besoin de télécharger physiquement les fichiers audio sur son
+        appareil. Il s’appuie sur un protocole de transmission en flux
+        continu qui permet d’accéder immédiatement à un contenu musical
+        dès que l’utilisateur en fait la demande.<br />
+        On peut penser à Spotify, Deezer, Apple Music mais aussi à Tidal
+        pour les audiophiles ou SoundCloud. Tout comme Youtube ou même
+        Instagram et TikTok qui hébergent des clips vidéos qui peuvent
+        être des reprises ou des “trends” qui utilisent un son, une
+        musique raccordée à une vidéo faite main, pour parler d’autres
+        choses.</p>
+        <h3 id="survie"><strong><u>Survie :</u></strong></h3>
+        <p>Ici, <em>survie</em> désigne la capacité du concept-album à
+        persister comme forme artistique cohérente malgré la domination
+        du streaming. Le terme met l’accent sur sa continuité et sa
+        présence effective dans le paysage musical contemporain malgré
+        ces contraintes. Cette persistance peut être perçue comme un
+        acte de résistance ou de fidélité à une forme artistique
+        élaborée. De plus, elle s’oppose à la logique de gratification
+        instantanée promue par la plupart des plateformes de
+        streaming.</p>
+        <h3 id="mutation"><strong><u>Mutation :</u></strong></h3>
+        <p>Ici, <em>Mutation</em> renvoie à la transformation du
+        concept-album sous l’effet du streaming ou du moins face à
+        l’industrie musicale : il peut se réinventer dans sa structure,
+        son mode de diffusion et ses stratégies créatives pour rester
+        pertinent, comme accessible, dans un environnement où les
+        formats courts dominent. Contrairement à la survie, il
+        n’applique pas les principales méthodes initiales qui
+        définissent le concept-album, cependant il cherche un nouveau
+        format artistique voisin à ce dernier.</p>
+        <h3 id="format-artistique"><strong><u>Format artistique
+        :</u></strong></h3>
+        <p>Un <em>format artistique</em> désigne la manière structurée
+        et conventionnelle dont une œuvre est conçue, organisée et
+        présentée dans un médium artistique donné. Dans le domaine
+        musical, cela inclut les normes, les règles et les cadres (comme
+        le single, l’EP, le concept-album, la performance, et
+        cetera<em>…</em>). Cela conditionne à la fois la création, la
+        diffusion et la réception de l’œuvre, influençant la façon dont
+        le public expérimente et interprète cette musique. Le format
+        artistique n’est pas neutre : il façonne les choix créatifs, la
+        cohérence narrative ou esthétique d’un projet et sa
+        compatibilité avec les usages culturels et technologiques
+        contemporains.</p>
+        <h3 id="musique-électronique-contemporaine"><strong><u>Musique
+        électronique contemporaine :</u></strong></h3>
+        <p>Par “<em>musique électronique contemporaine”</em>, renvoie à
+        l’ensemble des œuvres musicales produites principalement à
+        l’aide d’outils de production numérique : synthétiseurs,
+        ordinateurs et logiciels. De nos jours, c’est en grande partie
+        de la musique assistée par ordinateur (dit MAO).<br />
+        Ce terme renvoie à une pratique musicale qui repose sur la
+        création et la manipulation de sons par des moyens
+        électroniques, et qui se caractérise souvent par des textures
+        sonores produites ou transformées numériquement. La musique
+        électronique a un grain particulier, où on sent une part de
+        "machine", des patterns répétitifs, un mix presque "trop"
+        parfait et des samples audios qui bouclent.”Electronique” n'est
+        pas qu'une essence de numérique ou d'analogique, c'est avant
+        tout une façon de faire.</p>
+        <p>« Contemporaine » pour désigner les musiques actuelles qui
+        continuent de susciter des réflexions sur les pratiques
+        créatives, économiques et d’écoute dans le monde musical
+        d’aujourd’hui, en particulier à l’ère du streaming.</p>
+        <p>On peut se demander ce qu’implique concrètement “<em>Le
+        concept-album à l’épreuve du streaming</em>”.<br />
+        Eh bien, nous avons deux hypothèses qui vont nous permettre de
+        répondre à la problématique. Voici la première :</p>
+        <h1 id="ère-hypothèse"><strong><u>1ère
+        HYPOTHÈSE</u></strong></h1>
+        <p><strong>Le concept-album comme forme dominante est en train
+        de disparaître ; seules certaines “niches” d’intérêts continuent
+        d’exister et à émerger. Pour le reste, le modèle de type “album”
+        cède largement à la logique du single et de la
+        playlist.</strong><br />
+        <em>&gt; Le concept-album devient un format minoritaire,
+        apprécié par une fraction restreinte d'auditeurs embarqués,
+        engagés et surtout connaisseurs, mais n’a plus la puissance
+        qu’il aurait pu avoir dans un contexte dominant.</em></p>
+        <p>L’idée que l’album et a fortiori le concept-album perdent
+        leur statut de forme artistique dominante dans la musique
+        actuelle n’est pas qu’une simple impression nostalgique ; mais
+        un phénomène sociotechnique observable à travers l’évolution des
+        usages, des stratégies de production et des pratiques d’écoute
+        depuis l’avènement du streaming audio. Dans les années 2000,
+        l’objet « album » constituait encore le principal vecteur de
+        visibilité et d’élaboration esthétique pour un artiste, écouté
+        en majorité sur CD ; aujourd’hui, ce rôle est largement disputé
+        et souvent supplanté par des formats plus fragmentés comme
+        optimisés pour l’écoute instantanée. Par exemple, le transport
+        physique de CDs aux États-Unis est passé de 942.5 millions
+        d’unités au début des années 2000 à moins de 32.9 millions en
+        2024.<br />
+        (Source : RIAA, graphique ci-dessous)</p>
+        <p><img src="media/image2.png"
+        style="width:4.9375in;height:3.4349in" /></p>
+        <p>Ensuite, 73% des personnes déclarent écouter de la musique
+        principalement via des services de streaming audio en 2023
+        (Source : IFPI), reflétant ainsi une disparition massive du
+        marché physique face à la montée du streaming.</p>
+        <p>Les plateformes de streaming audio favorisent, de manière
+        intrinsèque, des écoutes segmentées, centrées sur la découverte
+        de morceaux isolés plutôt que sur l’engagement prolongé avec un
+        projet complet. L’algorithme n’encourage pas l’écoute linéaire
+        d’un album entier : il privilégie les playlists thématiques, les
+        recommandations basées sur des similarités sonores et les « hits
+        » du moments, immédiatement reconnaissables. Par exemple en
+        2023, en France, 80 % de la consommation en streaming audio
+        provient des 100 000 titres les plus écoutés (Source : SNEP)
+        alors qu’il existe plus de 100 millions de morceaux disponible
+        en streaming, ce qui illustre la prédominance des morceaux
+        singuliers dans les usages contemporains. Cette logique de
+        consommation, basée sur la gratification immédiate et la
+        circulation rapide des morceaux, diffuse l’attention de
+        l’auditeur loin de toute expérience immersive ou narrative qui
+        nécessiterait une écoute suivie de plusieurs titres.</p>
+        <p>On n’écoute plus, on consomme la musique. Comme le dit très
+        bien un reportage d’ARTE dans leur format Tracks intitulé
+        “Faut-il réapprendre à écouter de la musique ?”, je cite :</p>
+        <h2
+        id="à-quelques-exceptions-près-si-on-utilise-spotify-ou-apple-music-on-peut-écouter-nimporte-quel-artiste-à-peu-près-nimporte-où-à-peu-près-nimporte-quand.-les-plus-optimistes-dentre-nous-diront-que-la-musique-est-en-train-de-devenir-la-bande-son-de-nos-vies.-mais-on-est-de-plus-en-plus-à-se-demander-si-elle-nest-pas-plutôt-en-passe-de-devenir-un-bruit-de-fond.-102"><em>“À
+        quelques exceptions près, si on utilise Spotify ou Apple Music,
+        on peut écouter n'importe quel artiste, à peu près n'importe où,
+        à peu près n'importe quand. Les plus optimistes d'entre nous
+        diront que la musique est en train de devenir la bande-son de
+        nos vies. Mais on est de plus en plus à se demander si elle
+        n'est pas plutôt en passe de devenir un bruit de fond.”
+        (1”02’)</em></h2>
+        <p>On parle ici d’une écoute passive. On remplit nos oreilles
+        pour remplir notre tête, chasser l’ennui ou la fatigue. Alors la
+        musique ne devient plus que fonctionnelle, l’art disparaît et se
+        soumet aux algorithmes. Par exemple, j'ai pendant longtemps
+        "consommé" de la musique, cela me motivait au quotidien mais je
+        ne pensais plus vraiment à moi même. Alors j’ai saturé, je
+        n’arrivais plus à être créatif, à ressentir une profonde
+        inspiration ou plaisir à découvrir un album qui m’aurait
+        normalement touché. J’ai donc cessé de consommer et j’ai
+        recommencé à écouter. Ne prendre qu’un petit temps dans la
+        journée pour me concentrer sur l’écoute, les sonorités, la
+        structure et les émotions, puis le reste du temps être dans le
+        silence, ou plutôt dans le son ambiant. La musique c’est comme
+        du gâteau, si on en mange toute la journée, chaque minute, on
+        finira par être écoeuré et en perdre le goût. Tandis que si on
+        n’en prend qu’une seule part le soir, on va pouvoir la déguster
+        pleinement.</p>
+        <p>Ce sont les mêmes ressorts économiques qui poussent les
+        plateformes à maximiser le nombre de streams, incitant
+        généralement les artistes à repenser leurs stratégies de
+        sorties. Les singles deviennent les unités de base de la
+        présence musicale. Les artistes, en particulier ceux qui ne
+        disposent pas d’une audience solide et réactive ont d’autant
+        plus intérêt à multiplier les sorties courtes, visibles dans les
+        flux et exploitables individuellement par les algorithmes,
+        plutôt qu’à attendre de travailler plusieurs années pour publier
+        un album cohérent. Ce phénomène se traduit par une
+        multiplication des sorties unitaires, d’EPs, d’éditions étendues
+        ou d’« itérations » continues de projets, conçues pour prolonger
+        la visibilité plutôt que pour soutenir une expérience narrative
+        structurée. Le streaming ne se contente pas seulement de
+        diffuser : il restructure l'industrie et transforme les attentes
+        du public, qui influencent à leur tour les artistes. Cette
+        logique de plateformes centrées sur les chiffres façonne ce qui
+        est valorisé, écouté et produit, au point d’uniformiser
+        l’attention et de rendre difficile l’émergence d’autres formes
+        artistiques. Certaines critiques, comme l’artiste Esperanza
+        Spalding, découvert dans la même émission Tracks, vont plus loin
+        : elle compare cette dynamique à une stratégie de colonisation,
+        où une plateforme prétend finalement <em>connaître et satisfaire
+        les besoins mieux que l’auditeur lui-même</em>, rendant les
+        alternatives artistiques moins visibles ou difficiles à
+        maintenir.<br />
+        Voici ce qu’elle nous dit :</p>
+        <h2
+        id="the-strategy-of-colonizing-is-to-make-all-other-options-of-reliance-unavailable.-thats-the-strategy-and-i-feel-that-strategy-in-the-way-that-the-streaming-platforms-have-um-colonized-the-music-industry.-...-and-so-its-not-a-surprise-to-me-that-the-very-company-would-claim-oh-you-know-well-be-able-to-fill-this-need-better-than-you-can-do-it-for-yourself.-like-that-is-the-spiel-of-colonization.-510"><em>“The
+        strategy of colonizing is to make all other options of reliance
+        unavailable. That's the strategy and I feel that strategy in the
+        way that the streaming platforms have um colonized the music
+        industry. [...] And so it's not a surprise to me that the very
+        company would claim :”oh, you know, we'll be able to fill this
+        need better than you can do it for yourself”. Like that is the
+        spiel of colonization.” (5”10’)</em></h2>
+        <h4 id="traduction"><strong>Traduction :</strong></h4>
+        <h2
+        id="la-stratégie-de-colonisation-est-de-rendre-toutes-les-autres-options-de-dépendance-indisponibles.-cest-ça-la-stratégie-et-je-ressens-cette-stratégie-dans-la-façon-dont-les-plateformes-de-streaming-ont-colonisé-lindustrie-musicale.-....-et-donc-ce-nest-pas-une-surprise-pour-moi-que-la-plateforme-spotify-affirme-oh-tu-sais-nous-serons-mieux-en-mesure-de-répondre-à-ce-besoin-que-tu-ne-peux-le-faire-par-toi-même-.-et-cest-exactement-à-ça-que-ressemble-un-discours-colonial."><em>“La
+        stratégie de colonisation est de rendre toutes les autres
+        options de dépendance indisponibles. C’est ça la stratégie et je
+        ressens cette stratégie dans la façon dont les plateformes de
+        streaming ont colonisé l’industrie musicale. [...]. Et donc ce
+        n’est pas une surprise pour moi que la plateforme [Spotify]
+        affirme : « Oh, tu sais, nous serons mieux en mesure de répondre
+        à ce besoin que tu ne peux le faire par toi-même ». Et c’est
+        exactement à ça que ressemble un discours colonial.”</em></h2>
+        <p>L’observation d’Esperanza Spalding révèle un conditionnement
+        caché par la facilité et l’efficacité numérique au service du
+        capitalisme.<br />
+        Ainsi qu’une disparition progressive des diversités musicales et
+        artistiques.<br />
+        Et si ces nuances disparaissent pour se focaliser sur un public,
+        une tendance et chercher à gagner de l’argent, nous risquons
+        alors de perdre une accessibilité de la musique underground,
+        émergente et inhabituelle, etc. Mais aussi juste moins écouté,
+        comme le dit très bien l’ancien vice-président d’Universal
+        Music, Pascal Nègre dans le documentaire d’ARTE “Comment le
+        streaming a mangé la musique” :</p>
+        <h2
+        id="si-moi-je-paye-10-euros-par-mois-et-que-jécoute-de-la-musique-classique-et-que-moi-jai-un-boulot-jai-autre-chose-à-faire-jécoute-deux-heures-de-musique-par-semaine.-et-que-dans-le-même-temps-il-y-a-le-petit-qui-a-15-ans-qui-lui-écoute-7h-de-musique-par-jour.-dans-les-deux-cas-on-va-payer-10-euros-sauf-que-si-on-fait-une-répartition-au-stream-95-de-largent-que-je-paye-pour-écouter-de-la-musique-classique-il-ira-financer-la-musique-des-moins-de-15-ans.-le-danger-à-terme-cest-quon-ait-que-de-la-musique-pour-les-moins-de-20-ans-3728"><em>"Si
+        moi je paye 10 euros par mois et que j'écoute de la musique
+        classique et que moi j'ai un boulot, j'ai autre chose à faire,
+        j'écoute deux heures de musique par semaine. Et que dans le même
+        temps il y a le petit qui a 15 ans qui lui écoute 7h de musique
+        par jour. Dans les deux cas on va payer 10 euros, sauf que si on
+        fait une répartition au Stream, 95% de l'argent que je paye pour
+        écouter de la musique classique, il ira financer la musique des
+        moins de 15 ans. Le danger à terme, c'est qu'on ait que de la
+        musique pour les moins de 20 ans …" (37”28’)</em></h2>
+        <p>Cette évolution ne se traduit pas simplement par une
+        coexistence de formats, elle redéfinit les frontières mêmes du
+        “succès”. Aujourd’hui, même des albums comptant plusieurs
+        dizaines de millions de streams doivent cette performance à des
+        occurrences individuelles dans des playlists virales plutôt qu’à
+        des parcours d’écoute soutenus. Dans de nombreux cas, des
+        projets qui auraient été autrefois célébrés comme des ensembles
+        cohérents voient leur « impact » réduit à celui de quelques
+        chansons qui s’imposent isolément dans les flux.</p>
+        <p>Cette dynamique de réception et de consommation trouve ses
+        racines dans un cadre économique plus vaste. Nous sommes toustes
+        dans une société de consommation et la musique en fait partie,
+        même si parfois des mouvements, comme celui des Free-parties,
+        prétendent combattre le système capitaliste. Bien que cette
+        logique soit occidentalo-centrée, le streaming audio, comme
+        Internet, contribue aujourd’hui à sa diffusion mondiale,
+        imposant progressivement des modes de production et de
+        consommation similaires.<br />
+        Cette mondialisation des pratiques d'écoute ne se limite pas à
+        une simple question de diffusion géographique. Elle impose
+        également une uniformisation des critères de réussite
+        artistique, redéfinissant ce qui constitue un "succès" dans le
+        domaine musical. Les plateformes de streaming, en devenant les
+        arbitres de la visibilité et de la rentabilité, créent un
+        système où la performance commerciale se mesure selon des
+        métriques précises et inflexibles. Cette standardisation des
+        indicateurs de succès transforme profondément le rapport entre
+        création artistique et viabilité économique, comme l'explique
+        David Stammer dans son analyse des réalités du marché musical
+        contemporain dans “La chanson parfaite existe-t-elle ?” d’ARTE
+        :</p>
+        <h2
+        id="ein-song-muss-auf-den-plattformen-aktuell-erfolgreich-sein-um-ein-kommerzieller-hit-zu-sein.-es-gibt-natürlich-genres-in-denen-das-nicht-so-die-riesige-rolle-spielt.-also-wenn-ich-in-der-elektronischen-musikszene-unterwegs-bin-und-ähm-irgendwie-ein-kleines-venüllabel-habe-dann-kann-ich-da-einen-hit-in-ein-gewissen-in-einem-gewissen-genre-kreieren.-aber-wenn-ich-kommerziell-im-großen-stile-erfolgreich-sein-will-muss-ich-auf-einer-plattform-wie-spotify-groß-und-erfolgreich-sein.-1211"><em>“Ein
+        Song muss auf den plattformen aktuell erfolgreich sein um ein
+        kommerzieller hit zu sein. Es gibt natürlich genres, in denen
+        das nicht so die riesige rolle spielt. Also, wenn ich in der
+        elektronischen musikszene unterwegs bin und ähm irgendwie ein
+        kleines venüllabel habe, dann kann ich da einen Hit in ein
+        gewissen in einem gewissen genre kreieren. Aber wenn ich
+        kommerziell im großen stile erfolgreich sein will, muss ich auf
+        einer plattform wie Spotify groß und erfolgreich sein.”
+        (12”11’)</em></h2>
+        <h4 id="traduction-1"><strong>Traduction :</strong></h4>
+        <h2
+        id="un-titre-doit-marcher-en-streaming-pour-être-un-succès-commercial.-ce-nest-pas-indispensable-pour-tous-les-genres-musicaux-par-exemple-pour-la-musique-électronique.-si-jai-un-petit-label-qui-édite-des-vinyles-je-peux-avoir-du-succès-dans-cette-niche-précise.-mais-si-je-veux-un-vrai-succès-commercial-je-dois-me-démarquer-sur-une-plateforme-comme-spotify."><em>“Un
+        titre doit marcher en streaming pour être un succès commercial.
+        Ce n'est pas indispensable pour tous les genres musicaux, par
+        exemple pour la musique électronique. Si j'ai un petit label qui
+        édite des vinyles, je peux avoir du succès dans cette niche
+        précise. Mais si je veux un vrai succès commercial, je dois me
+        démarquer sur une plateforme comme Spotify.”</em></h2>
+        <p>Plus un artiste génère de streams, plus il devient visible
+        auprès des bookers, programmateurs et promoteurs, ce qui
+        augmente ses chances d'obtenir des dates, des salles plus
+        importantes et un public plus large. Le streaming ne paie pas
+        directement les artistes de façon significative — la
+        rémunération par écoute reste très faible et dépend de nombreux
+        intermédiaires — mais il agit comme une vitrine mondiale qui
+        attire l'attention des acteurs du live, facilite le booking et
+        accélère la croissance de la carrière.</p>
+        <p>Cependant, comme le souligne David Stammer, l'artiste peut
+        aussi connaître du succès dans une niche précise, en marge du
+        streaming, comme certains genres de musique électronique
+        spécifiques, tel que le noise, l'algorave ou d'autres
+        esthétiques qui reposent sur une culture locale. Ce succès
+        alternatif mène également à des programmations, mais celles-ci
+        s'appuient sur de petits organismes, des clubs locaux et surtout
+        sur un public fidèle et initié. Ces structures restent toutefois
+        confrontées aux logiques des marchés musicaux et de
+        l’événementiel, ainsi qu’à une crise actuelle de la politique
+        culturelle, marquée par une réduction des subventions accordées
+        aux petits organismes jugés « peu rentables » ou « non
+        prometteurs », une catégorisation qui touche fréquemment les
+        scènes underground ; en France et dans de nombreux pays
+        occidentaux. Entre 2024 et 2025, selon <em>le Baromètre 2025 des
+        budgets et choix culturels des collectivités territoriales</em>
+        par l’<em>Observatoire des Politiques Culturelles</em> : 42% des
+        collectivités ont diminué les subventions versées aux
+        associations culturelles, contre seulement 11 % entre 2023 et
+        2024, ce qui traduit une nette accélération des coupes dans les
+        aides publiques. (Dans le détail, 68 % des départements, 58 %
+        des régions et 38 % des métropoles ont réduit leurs subventions
+        culturelles à ces associations en 2025.)</p>
+        <p>Ces deux voies de “succès” — visibilité massive ou ancrage
+        dans une niche — posent un choix stratégique pour l'artiste.
+        Soit il produit un album et le lâche dans la "jungle" du
+        streaming en laissant le public se le réapproprier ; l'œuvre ne
+        lui appartient plus vraiment, elle devient celle de ses
+        auditeurs. Soit il décide de "choisir" son public en visant un
+        spectre musical et conceptuel.</p>
+        <p>Comme Stupeflip, qui a développé au fil de ses concept-albums
+        une véritable mythologie : la “Stup-religion” et le “Stup-virus”
+        qui contaminent et fédèrent les auditeurs. Les fans ne se
+        contentent pas d'écouter des morceaux : ils adhèrent à une
+        narration globale, deviennent porteurs du virus, membres d'une
+        communauté initiée à cet univers. Plongeons dans un passage de
+        leur titre “Antidote”, extrait de l’album <em>Stup-virus</em>.
+        🔊<br />
+        Toutefois, Stupeflip a eu l'avantage du timing. Ils ont
+        structuré leur communauté avant que le streaming ne change les
+        règles du jeu. Essayer de faire la même chose aujourd'hui, en
+        partant de zéro, ce serait probablement une tout autre
+        histoire.</p>
+        <p>Le concept-album pourrait être aussi l'art de créer une
+        communauté et de faire vivre son œuvre dans le temps.</p>
+        <p>Cette démarche peut aller plus loin encore : contourner
+        délibérément le streaming en privilégiant des circuits
+        alternatifs — SoundCloud pour les mixs et lives tekno, Bandcamp
+        pour le téléchargement direct, ou publier l'album en un seul
+        fichier audio forçant l'écoute intégrale.<br />
+        <br />
+        Boards of Canada fait partie de cette résistance et joue même
+        avec les circuits alternatifs. Le duo écossais a toujours
+        cultivé une stratégie de rareté et de mystère radicalement
+        opposée à la logique de surexposition du streaming. À leurs
+        débuts, ils produisaient des cassettes dans un cadre informel,
+        auto-éditées, distribuées de façon artisanale à leur entourage,
+        sans ambition de large diffusion. C'est cette méthode qui
+        continue de les inspirer. Leurs albums, espacés de plusieurs
+        années, sont pensés comme des événements : pas de présence sur
+        les réseaux sociaux, très peu d'interviews, aucun concert.
+        Lorsqu'ils sortent <em>Tomorrow's Harvest</em> en 2013, ils
+        orchestrent une campagne énigmatique via des codes cachés dans
+        des vidéos YouTube, sur des vinyles introuvables et même sur
+        Adult Swim — une chasse au trésor qui oblige les fans à
+        reconstituer collectivement l'annonce.<br />
+        Leur musique privilégie le format physique, notamment le vinyle,
+        et chaque album est conçu comme une expérience immersive totale,
+        à écouter du début à la fin dans un environnement propice.
+        Boards of Canada refuse la fragmentation : leurs morceaux ne
+        fonctionnent pleinement que dans le contexte de l'album entier.
+        Même si, plus tard, l’œuvre gagne en visibilité, elle garde en
+        germe ce grain d’intimité.<br />
+        Cette approche crée une communauté de fidèles qui viennent
+        chercher bien plus qu'un morceau viral, mais une œuvre complète,
+        rare, précieuse, à l'opposé de la consommation instantanée du
+        streaming.<br />
+        <br />
+        Au-delà de ces stratégies de diffusions alternatives, c'est
+        parfois la démarche artistique elle-même qui résiste.</p>
+        <p>Car malgré ce contexte, nombreux.ses sont les artistes qui
+        cherchent à rester sur la forme de l’album ou du concept-album,
+        voulant peut-être ainsi lutter contre le système mis en place
+        par le streaming ; ou peut-être est-ce simplement l’envie de
+        partager un projet cohérent sur la durée, une idée qui leur est
+        chère.<br />
+        Burial incarne cette voie. Pour lui, l'album n'est pas une
+        stratégie, c'est une nécessité intime. Je cite un article de
+        <em>THE RINGER</em> (<em>The Augmented Reality of Burial’s
+        ‘Untrue,’ 10 Years Later</em> - 2017) où il parle de son enfance
+        :</p>
+        <h2
+        id="when-the-elusive-electronic-artist-burial-was-a-child-his-older-brother-regaled-him-with-stories-of-the-nights-he-spent-in-the-underground-raves-of-london-in-the-90s-....-burial-...-was-too-young-to-experience-any-of-it-firsthand-but-his-brothers-effusive-depictions-...-became-his-own-memories.-...-in-burials-case-its-also-how-an-entire-world-was-built."><em>"When
+        the elusive electronic artist Burial was a child, his older
+        brother regaled him with stories of the nights he spent in the
+        underground raves of London in the '90s [...]. Burial [...] was
+        too young to experience any of it firsthand, but his brother's
+        effusive depictions [...] became his own memories. [...] in
+        Burial's case, it's also how an entire world was
+        built."</em></h2>
+        <h4 id="traduction-2"><strong>Traduction :</strong></h4>
+        <h2
+        id="lorsque-linsaisissable-artiste-électronique-burial-était-enfant-son-grand-frère-lui-racontait-les-nuits-passées-dans-les-raves-underground-de-londres-des-années-90-....-burial-...-était-trop-jeune-pour-les-vivre-lui-même-mais-les-récits-passionnés-de-son-frère-sont-devenus-ses-propres-souvenirs.-...-dans-le-cas-de-burial-cest-ainsi-quun-monde-entier-sest-construit."><em>"Lorsque
+        l'insaisissable artiste électronique Burial était enfant, son
+        grand frère lui racontait les nuits passées dans les raves
+        underground de Londres des années 90 [...]. Burial [...] était
+        trop jeune pour les vivre lui-même, mais les récits passionnés
+        de son frère sont devenus ses propres souvenirs. [...] dans le
+        cas de Burial, c'est ainsi qu'un monde entier s'est
+        construit."</em></h2>
+        <p>C'est ce rapport secret que sont les souvenirs, presque sacré
+        à la musique qui nourrit encore sa démarche. Burial compose la
+        nuit, seul, avec <em>Sound Forge</em> — un logiciel basique qui
+        ne montre que des formes d'ondes. Pas de séquenceur, pas de
+        preset. Son album éponyme et Untrue sortis en 2006 et 2007 sont
+        pensés comme une expérience nocturne totale, un voyage dans une
+        Londres déserte. Rien de mieux pour illustrer qu’un petit
+        extrait, tiré de son album <em>Burial</em> : “Distant Lights”.
+        🔊 Il n'a jamais fait de concert, refuse les interviews et
+        travaille en marge de l'industrie car selon lui, la musique en
+        perd son sens, comme il le dit dans une des rares interviews
+        qu’il a faite — celle qu'il a accordée à Martin Clark en 2006 et
+        que j'ai découverte sur <em>THE RINGER</em> :</p>
+        <h2
+        id="martin-clark-youre-...-the-opposite-example-of-joe-nice-you-live-here-and-make-the-music-yet-are-an-outsider."><em>"Martin
+        Clark : You're [...] the opposite example [of Joe Nice], you
+        live here and make the music, yet are an outsider.</em></h2>
+        <h2
+        id="burial-to-me-its-about-tunes.-thats-whats-reached-me-and-thats-what-ive-put-back-in.-i-first-got-this-when-i-was-a-kid-listening-to-pirate-radio-in-my-room-at-night-and-buying-records.-even-the-internet-ruins-that-a-bit-for-me-the-hunt-to-find-this.-i-imagine-other-kids-like-this-with-all-types-of-music-all-over-the-world-who-are-also-margin-walkers.-theyre-on-the-outskirts.-they-dont-know-where-its-from-they-just-get-the-music."><em>Burial
+        : To me it's about tunes. That's what's reached me and that's
+        what I've put back in. I first got this when I was a kid,
+        listening to pirate radio in my room at night and buying
+        records. Even the internet ruins that a bit for me, the hunt to
+        find this. I imagine other kids like this with all types of
+        music all over the world who are also margin walkers. They're on
+        the outskirts. They don't know where it's from, they just get
+        the music."</em></h2>
+        <h4 id="traduction-3"><strong>Traduction :</strong></h4>
+        <h2
+        id="martin-clark-tu-es-...-lexemple-inverse-de-joe-nice-tu-vis-ici-tu-fais-de-la-musique-et-pourtant-tu-restes-un-outsider."><em>"Martin
+        Clark : Tu es [...] l'exemple inverse [de Joe Nice] : tu vis
+        ici, tu fais de la musique, et pourtant tu restes un
+        outsider.</em></h2>
+        <h2
+        id="burial-pour-moi-tout-tourne-autour-de-la-musique.-cest-ce-qui-ma-atteint-et-cest-ce-que-jai-réintégré.-ça-a-commencé-quand-jétais-gamin-à-écouter-les-radios-pirates-dans-ma-chambre-la-nuit-et-en-achetant-des-disques.-même-internet-ruine-un-peu-cela-pour-moi-la-chasse-pour-trouver-ça.-jimagine-quil-y-a-dautres-gamins-comme-ça-partout-dans-le-monde-avec-toutes-sortes-de-musiques-et-qui-eux-aussi-explorent-les-marges.-ils-sont-en-périphérie.-ils-ne-savent-pas-doù-ça-vient-ils-captent-juste-la-musique."><em>Burial
+        : Pour moi, tout tourne autour de la musique. C'est ce qui m'a
+        atteint et c’est ce que j’ai réintégré. Ça a commencé quand
+        j'étais gamin, à écouter les radios pirates dans ma chambre la
+        nuit et en achetant des disques. Même Internet ruine un peu cela
+        pour moi, la chasse pour trouver ça. J'imagine qu'il y a
+        d'autres gamins comme ça partout dans le monde, avec toutes
+        sortes de musiques et qui, eux aussi, explorent les marges. Ils
+        sont en périphérie. Ils ne savent pas d'où ça vient, ils captent
+        juste la musique."</em></h2>
+        <p>Il pourrait dire aujourd’hui que le streaming a tendance à
+        flouter, voire effacer les souvenirs de l’artiste, comme si la
+        surface d’écoute — et plus encore, son cadre géographique et
+        culturel — parle pour lui-même, façonnant l’âme de la musique et
+        l’intimité profonde de l’œuvre.</p>
+        <h2
+        id="if-youre-a-londoner-you-join-some-big-history-of-people-whos-lived-here-but-are-long-gone.-so-the-cover-is-south-london-and-when-im-making-a-tune-thats-what-im-thinking-of."><em>“[...]
+        If you’re a Londoner you join some big history of people who’s
+        lived here but are long gone. So the cover is south London, and
+        when I’m making a tune that’s what I’m thinking of.”</em></h2>
+        <h4 id="traduction-4"><strong>Traduction :</strong></h4>
+        <h2
+        id="être-londonien-cest-sinscrire-dans-une-longue-histoire-celle-de-tous-ceux-qui-ont-vécu-ici-et-ceux-qui-sont-partis-depuis-longtemps.-du-coup-la-pochette-représente-le-sud-de-londres-et-quand-je-compose-cest-à-elle-que-je-pense."><em>”
+        [...] Être Londonien, c'est s'inscrire dans une longue histoire,
+        celle de tous ceux qui ont vécu ici et ceux qui sont partis
+        depuis longtemps. Du coup, la pochette représente le sud de
+        Londres, et quand je compose, c'est à elle que je
+        pense.”</em></h2>
+        <p>Pour lui, faire un album, c'est retrouver ce moment d'enfance
+        : écouter seul, dans le noir, découvrir un autre monde mais
+        aussi transmettre à son tour les souvenirs, le récit de son vécu
+        dans Londres et ses raves.<br />
+        <br />
+        Cette ambition qu’a Burial et bien d’autres artistes est
+        récompensée par le résultat même de leur travail et les moments
+        de vie passés à l'élaborer : une expérience préférable à celle
+        de courir après les chiffres et statistiques des plateformes de
+        streaming.<br />
+        <br />
+        D’ailleurs, concernant ces statistiques, nous pouvons aussi
+        parler de l’artiste Valentin Hansen avec son concept-album
+        <em>Crisis (The Worthless Album)</em>, sorti en 2021, qui
+        questionne la valeur des morceaux produits et le fait que cette
+        valeur soit définie par un tiers comme Spotify. Alors il a
+        trouvé un moyen de contourner ce non-choix et d’imposer sa
+        propre valeur : il découpe ses morceaux en une succession de
+        pistes de 29 secondes, juste avant la comptabilisation du stream
+        fixée à 30 secondes, refusant ainsi la rémunération. Il nous dit
+        :</p>
+        <h2
+        id="si-je-fais-comme-ça-alors-je-peux-décider-moi-même-certes-ça-ne-vaut-rien-mais-cest-une-décision-personnelle.-dans-faut-il-réapprendre-à-écouter-de-la-musique-darte"><em>“Si
+        je fais comme ça, alors je peux décider moi-même” certes ça ne
+        vaut rien mais c’est une décision personnelle”. dans “Faut-il
+        réapprendre à écouter de la musique ?” d’ARTE</em></h2>
+        <p>Ce n’est pas le seul artiste à jouer avec les règles du
+        streaming : en 2014, le groupe Vulfpeck a sorti
+        <em>Sleepify</em>, un concept-album constitué uniquement de dix
+        pistes silencieuses de 30 secondes et a encouragé ses fans à
+        lancer l’album en boucle pendant leur sommeil. Voici un très
+        court extrait. 🔊<br />
+        … Voilà, un silence et une démarche qui a accumulé suffisamment
+        d’écoutes pour générer près de 20 000 $ de royalties avant que
+        Spotify ne retire l’album de sa plateforme 7 semaines après sa
+        mise en ligne, alléguant une violation de ses conditions
+        d’utilisation ; preuve que le système de rémunération peut être
+        retourné contre lui-même. Mais là l’objectif était justement
+        d'obtenir des royalties pour financer une tournée plutôt que de
+        ne pas être rémunéré par choix.</p>
+        <p>Ces deux derniers projets évoqués, luttent contre le
+        streaming non pas par la musicalité ou l'esthétique sonore, mais
+        par le détournement même du système. Leur résistance réside dans
+        la structure de l'album : une exploitation ironique des règles
+        des plateformes pour en révéler l'absurdité et enfin en tirer
+        profit.</p>
+        <p>Il existe une autre forme de survie du concept-album, plus
+        discrète, nichée dans la sphère ou l'espace sonore de
+        l'expérimental et de la musique indépendante : celle qui ne
+        détourne pas le streaming mais l'ignore, en construisant des
+        œuvres dont la nature même échappe à la fragmentation.<br />
+        L'artiste allemand Alva Noto, ou Carsten Nicolai de son vrai
+        nom, est venu à la musique électronique expérimentale par
+        accident. Formé en architecture et paysagisme, il a connu une
+        crise créative qui a tout changé. Dans une interview pour
+        <em>Electronic Sound</em> en 2018, il nous dit :</p>
+        <h2
+        id="i-was-bored-my-architectural-drawings-were-too-static.-i-felt-depressed-so-i-started-experimenting-with-sound-and-oscillators."><em>"I
+        was bored ! My architectural drawings were too static. I felt
+        depressed, so I started experimenting with sound and
+        oscillators."</em></h2>
+        <h4 id="traduction-5"><strong>Traduction :</strong></h4>
+        <h2
+        id="je-mennuyais-mes-dessins-darchitecture-étaient-trop-statiques.-je-me-sentais-déprimé-alors-jai-commencé-à-expérimenter-avec-le-son-et-les-oscillateurs."><em>"Je
+        m'ennuyais ! Mes dessins d'architecture étaient trop statiques.
+        Je me sentais déprimé, alors j'ai commencé à expérimenter avec
+        le son et les oscillateurs."</em></h2>
+        <p>Cette quête d'un médium moins statique l'a mené vers la
+        glitch music — une musique faite de craquements, de fréquences
+        extrêmes, de grilles mathématiques. Son premier album,
+        <em>Prototypes</em>, sorti en 2000, ne fonctionne pas comme un
+        ensemble de "chansons" : il s'agit de collages sonores composés
+        de “bruits électriques amplifiés”, de "clicks", d'"artefacts",
+        de "pulsations", de drones, de silences calculés — un travail
+        microscopique sur le son, sur la texture, sur la structure, ce
+        qui en fait davantage une suite minimaliste qu'un album
+        traditionnel.<br />
+        Cette exploration radicale du son reste au cœur de toutes ses
+        créations. Comme son album <em>Univrs</em>, sorti en 2011, où
+        chaque piste explore une fréquence spécifique du spectre sonore
+        dans une démarche quasi-scientifique, ou sa série d'albums
+        <em>HYbr:ID</em> (2021, 2023 et 2024), construits comme des
+        architectures sonores où chaque élément dialogue avec
+        l'ensemble, formant un système complexe qui ne peut être
+        fragmenté sans perdre son sens. Immergeons-nous tout de même
+        dans "Oval Random" issu du premier album de la série
+        <em>HYbr:ID</em> sorti en 2021. 🔊<br />
+        Dans une interview pour le magazine allemand <em>Beat</em> en
+        2011, découverte sur <em>Fifteen Questions</em>, il définit
+        clairement sa philosophie :</p>
+        <h2
+        id="what-i-want-to-express-...-is-that-we-are-not-necessarily-interested-in-selling-a-commercial-product-en-masse-but-that-we-are-actually-interested-in-selling-an-artistic-position.-of-course-its-also-a-product-but-we-really-see-it-more-as-a-point-of-view.-...-we-naturally-operate-in-a-kind-of-niche.-its-music-that-is-not-mainstream-its-not-music-that-is-on-the-radio-every-day.-its-music-that-requires-something-more-in-terms-of-prior-knowledge-...-about-music-or-visual-arts.-...-there-is-a-whole-variety-of-people-who-are-not-only-primarily-interested-in-the-consumption-of-a-pop-song-but-who-are-also-interested-in-a-process-of-how-something-like-this-comes-about-who-is-behind-it-what-ideas-are-behind-it-what-kind-of-biographies-are-behind-it...-thats-what-its-really-about."><em>"What
+        I want to express [...] is that we are not necessarily
+        interested in selling a commercial product en masse, but that we
+        are actually interested in selling an artistic position. Of
+        course, it's also a product, but we really see it more as a
+        point of view. [...] We naturally operate in a kind of niche.
+        It's music that is not mainstream, it's not music that is on the
+        radio every day. It's music that requires something more in
+        terms of prior knowledge [...] about music or visual arts. [...]
+        There is a whole variety of people who are not only primarily
+        interested in the consumption of a pop song, but who are also
+        interested in a process of how something like this comes about:
+        Who is behind it, what ideas are behind it, what kind of
+        biographies are behind it... That's what it's really
+        about."</em></h2>
+        <h4 id="traduction-6"><strong>Traduction :</strong></h4>
+        <h2
+        id="ce-que-je-veux-exprimer-...-cest-que-nous-ne-sommes-pas-nécessairement-intéressés-par-la-vente-dun-produit-commercial-en-masse-mais-que-nous-sommes-réellement-intéressés-par-la-vente-dune-position-artistique.-bien-sûr-cest-aussi-un-produit-mais-nous-le-voyons-vraiment-davantage-comme-un-point-de-vue.-...-nous-opérons-naturellement-dans-une-sorte-de-niche.-cest-de-la-musique-qui-nest-pas-grand-public-ni-de-la-musique-qui-passe-à-la-radio-tous-les-jours.-cest-une-musique-qui-demande-quelque-chose-de-plus-en-termes-de-connaissances-préalables-...-sur-la-musique-ou-les-arts-visuels.-...-il-y-a-toute-une-variété-de-personnes-qui-ne-sintéressent-pas-seulement-à-la-consommation-dune-chanson-pop-mais-qui-sintéressent-aussi-au-processus-de-comment-quelque-chose-comme-ceci-naît-qui-est-derrière-quelles-idées-sont-derrière-quel-genre-de-biographies-sont-derrières...-cest-vraiment-de-ça-dont-il-sagit."><em>"Ce
+        que je veux exprimer [...] c'est que nous ne sommes pas
+        nécessairement intéressés par la vente d'un produit commercial
+        en masse, mais que nous sommes réellement intéressés par la
+        vente d'une position artistique. Bien sûr, c'est aussi un
+        produit, mais nous le voyons vraiment davantage comme un point
+        de vue. [...] Nous opérons naturellement dans une sorte de
+        niche. C’est de la musique qui n’est pas grand public, ni de la
+        musique qui passe à la radio tous les jours. C'est une musique
+        qui demande quelque chose de plus en termes de connaissances
+        préalables [...] sur la musique ou les arts visuels. [...] Il y
+        a toute une variété de personnes qui ne s'intéressent pas
+        seulement à la consommation d'une chanson pop, mais qui
+        s'intéressent aussi au processus de comment quelque chose comme
+        ceci naît : Qui est derrière, quelles idées sont derrière, quel
+        genre de biographies sont derrières... C'est vraiment de ça dont
+        il s'agit."</em></h2>
+        <p>Cette approche place délibérément Alva Noto en marge du
+        marché musical dominant. Ses albums exigent une écoute
+        attentive, souvent accompagnée de performances audiovisuelles où
+        le son sculpte l'image en temps réel. Ils s'adressent à un
+        public restreint : connaisseurs et curieux de musique
+        expérimentale, amateurs d'art sonore, auditeurs prêts à
+        s'immerger dans des univers abstraits et exigeants.<br />
+        <br />
+        Alva Noto illustre bien cette niche qu'est la musique
+        électronique expérimentale. Au sein de ce milieu marginal
+        existent évidemment des nuances : certains artistes poussent
+        l'expérimentation encore plus loin — le harsh noise de Merzbow,
+        attention les oreilles 🔊<em>(Sedonis A - Sedonis)</em>, les
+        longues dérives ambient de Tim Hecker <em>(Sunset Key Melt -
+        Shards)</em> 🔊, ou certaines improvisations live-coding “from
+        scratch” — tandis que d'autres se situent à la frontière,
+        flirtant avec des formes plus accessibles. Mais dans tous les
+        cas, il s'agit d'un art qui interroge : interroge les
+        possibilités techniques du son, questionne les conventions du
+        langage musical et défie les habitudes d'écoute.</p>
+        <p>Or, cette dimension de questionnement, de recherche,
+        d'exigence intellectuelle et sensorielle entre en contradiction
+        frontale avec la logique des plateformes de streaming. Comme
+        nous l’avions dit plus tôt : Spotify, Deezer, Apple Music — ces
+        services sont conçus pour le divertissement, pour une écoute
+        fluide, pour des morceaux qui "fonctionnent" immédiatement, qui
+        se consomment sans effort. Les algorithmes favorisent ce qui
+        retient l'attention rapidement, ce qui génère de l'engagement
+        mesurable, ce qui se prête au zapping. Une piste de glitch music
+        de sept minutes faite de silences et de fréquences aiguës ? Elle
+        sera systématiquement skippée, pénalisée puis invisibilisée.</p>
+        <p>Le concept-album expérimental se heurte ainsi à une double
+        barrière : non seulement il demande une écoute intégrale dans un
+        environnement de fragmentation, mais en plus il requiert une
+        attention soutenue dans un système conçu pour la consommation
+        passive. Il ne peut exister que dans les marges — sur Bandcamp,
+        dans les labels indépendants, lors de performances live ou dans
+        les galeries d'art contemporain.</p>
+        <p>Le concept-album devient alors un format minoritaire,
+        apprécié par une fraction restreinte d'auditeurs embarqués,
+        engagés et surtout connaisseurs, mais qui n'a plus la puissance
+        qu'il aurait pu avoir dans un contexte dominant. Là où un
+        concept-album rock des années 70 pouvait toucher un large public
+        tout en gardant son ambition artistique, l'œuvre d'Alva Noto
+        assume pleinement sa position de niche. Elle ne cherche pas à
+        conquérir les playlists algorithmiques, mais à exister comme
+        proposition radicale dans les marges de l'industrie musicale
+        tout comme les albums critiques de Valentin Hansen ou
+        Vulfpeck.<br />
+        <br />
+        C'est une résistance par l'exigence : créer des œuvres totales
+        qui refusent d'emblée la logique du single, au risque de rester
+        confidentielles.<br />
+        <br />
+        Il existe toutefois une survie du concept-album en dehors de ces
+        niches confidentielles, notamment grâce au rap. Longtemps
+        relégué aux marges de l'industrie musicale, le rap s'est
+        progressivement imposé comme l'un des genres les plus écoutés
+        sur les plateformes de streaming. Et paradoxalement, c'est dans
+        ce genre désormais mainstream que le concept-album trouve un
+        nouveau souffle.<br />
+        <br />
+        Des artistes comme Laylow illustrent parfaitement ce phénomène.
+        Avec <em>Trinity</em> puis <em>L'Étrange Histoire de
+        Mr. Anderson</em>, il construit de véritables univers narratifs
+        et visuels qui transcendent le simple album : chaque projet
+        raconte une histoire, développe une esthétique cohérente et
+        invite l'auditeur à une immersion totale. Ces albums
+        fonctionnent comme des œuvres globales, où chaque morceau
+        s'inscrit dans une continuité narrative.<br />
+        <br />
+        De même, Gorillaz, groupe virtuel à la croisée du hip-hop, de
+        l'électro et du rock, perpétue depuis plus de vingt ans une
+        démarche conceptuelle radicale : des personnages fictifs, une
+        mythologie évolutive, des albums pensés comme des chapitres
+        d'une saga transmédiale. Leur succès prouve qu'un large public
+        peut encore adhérer à cette vision ambitieuse de l'album, bien
+        qu'ils aient commencé avant que le streaming domine nos méthodes
+        d'écoute.<br />
+        <br />
+        À une échelle plus underground, l'album <em>PRETTY
+        DOLLCORPSE</em> sorti en 2025 et porté par FEMTOGO, Ptite Sœur
+        et Neophron, illustre une autre forme de persistance du
+        concept-album dans le rap contemporain. Le projet ne repose pas
+        sur une narration linéaire, mais sur une cohérence émotionnelle
+        et esthétique forte, traversée par les thèmes du trauma, du
+        corps, de la dissociation et de la violence symbolique. Les
+        morceaux fonctionnent comme des fragments narratifs d'un même
+        état mental, reliés par une production abrasive et une
+        atmosphère continue. Écoutons un extrait de “PUKE SOMETHING”, le
+        titre phare de leur album. 🔊<br />
+        <br />
+        Ces concept-albums rap ressemblent fortement à ceux du rock
+        d'avant les années 90 : la dimension narrative reste l'élément
+        structurant principal. On retrouve donc cette logique classique
+        du concept-album — l'œuvre comme récit global. On peut ainsi
+        établir un lien fort entre les concept-albums rock et rap, avec
+        toutefois une différence majeure : le rock pratique
+        majoritairement une narration fictive, là où le rap ancre sa
+        narration dans le réel de l'artiste et dans son
+        militantisme.<br />
+        <br />
+        Ceci dit, on constate que la narration demeure l'un des fils
+        conducteurs les plus puissants à travers les âges. "Puissant" en
+        termes de portée auprès du public et d'accessibilité. On
+        pourrait alors dire que les concept-albums mainstreams sont ceux
+        qui ont comme axe principal la narration. Mais peut-être est-ce
+        simplement parce qu'il y a une voix, un chant ou un texte qui
+        nous parle directement, plutôt que des sonorités qu'il faut
+        interpréter comme une narration. Ces dernières demandent plus
+        d'attention et de réflexion — ce qui est, là encore, contraire
+        au système mis en place par le streaming.</p>
+        <p>Les artistes peuvent donc faire vivre un concept-album au
+        contact de leur public, formant une communauté qui résiste à la
+        logique de marchandisation généralisée. Burial, Alva Noto et
+        bien d'autres redéfinissent la "durabilité" de l'œuvre : l'album
+        n'est plus un simple produit, mais un espace sensible, un "monde
+        sonore". Il ne s'adresse plus au plus grand nombre, mais à des
+        auditeurs prêts à l'engagement, à la patience, à l'écoute
+        active. En ce sens, le concept-album peut survivre, non en
+        cherchant à plaire massivement, mais en cultivant une forme de
+        raréfaction, de fidélité et d'intensité — une véritable
+        libération artistique.</p>
+        <p>Toutefois, cette survie s'accompagne d'une nuance importante
+        : le rap, devenu genre mainstream, permet à certains
+        concept-albums narratifs de toucher un public plus large.
+        Laylow, Gorillaz ou FEMTOGO prouvent que l'ambition conceptuelle
+        peut encore exister dans le circuit commercial, à condition de
+        s'appuyer sur une narration accessible et une voix qui parle
+        directement. Mais même dans ces cas de succès, le concept-album
+        se heurte aux pratiques d'écoute fragmentées : comme nous
+        l'avions évoqué plus tôt, le grand public s'approprie le
+        concept-album comme un album classique, pioche des morceaux
+        isolés selon les recommandations algorithmiques, écoute en mode
+        aléatoire, ignore l'ordre établi par l'artiste. La conception
+        globale se fragmente, l'œuvre perd sa cohérence narrative. Seule
+        une minorité d'auditeurs engagés expérimente réellement le
+        projet tel qu'il a été pensé. Cette exception confirme donc la
+        règle : dès qu'on s'éloigne de la narration explicite vers
+        l'abstraction sonore — comme chez Alva Noto ou Burial — le
+        concept-album redevient incompatible avec une grande
+        audience.</p>
+        <p>Ainsi, pour l'essentiel de la musique expérimentale, le
+        concept-album ne perdure que dans les milieux underground, plus
+        ou moins loin des grands marchés musicaux et des méthodes
+        employées par les plateformes de streaming. Cette
+        marginalisation a des conséquences concrètes : la quasi-totalité
+        des revenus de ces artistes provient de la prestation —
+        concerts, performances, expositions — qui demande beaucoup de
+        temps. Ils doivent donc se produire davantage en public pour
+        subvenir à leurs besoins, ce qui réduit d'autant le temps
+        consacré à la création. Un cercle vicieux se forme : condamnés à
+        multiplier les performances pour survivre, les artistes
+        underground disposent de moins de temps pour produire, ce qui
+        les maintient encore plus en retrait d'un monde de production
+        déjà difficile d'accès.<br />
+        <br />
+        Le concept-album comme forme dominante est donc bien en train de
+        disparaître. Seules certaines niches d'intérêt continuent
+        d'exister — et parfois percent dans le rap mainstream, mais au
+        prix d'une fragmentation de l'écoute qui trahit l'intention
+        initiale. Pour le reste, le modèle "album" cède largement à la
+        logique du single et de la playlist. La première hypothèse se
+        vérifie : le concept-album survit, mais transformé, fragmenté,
+        relégué aux marges ou dénaturé dans le mainstream.</p>
+        <h1 id="ème-hypothèse"><strong><u>2ème
+        HYPOTHÈSE</u></strong></h1>
+        <p><strong>Dans le contexte du streaming et de la culture du
+        single, le concept-album ne disparaît pas mais mute vers des
+        formes d’“album-œuvre” plus large.</strong><br />
+        <em>&gt; un concept-album pertinent ne peut pleinement exister
+        que si son écoute implique une dimension performative ou
+        immersive :</em><br />
+        <em>concert, spatialisation, installation ou performance ;
+        c’est-à-dire un moment partagé, contextuel, incarné et hors d’un
+        simple flux audio.</em></p>
+        <p>Si la première hypothèse pose la disparition relative du
+        concept-album en tant que forme dominante, cette deuxième
+        hypothèse propose que ce format ne s'éteint pas, mais se
+        transforme profondément. Comme mentionné plus tôt, le rôle
+        traditionnel du concept-album — telle une suite linéaire de
+        pistes à écouter intégralement — est de moins en moins
+        compatible avec les pratiques imposées par les plateformes de
+        streaming. Pourtant, loin d'être voué à l'extinction, la logique
+        conceptuelle trouve de nouveaux terrains d'expression qui
+        dépassent le simple objet "album" pour s'étendre vers des formes
+        hybrides d'album-œuvre.</p>
+        <p>Dans cette mutation, le streaming n'est pas seulement une
+        contrainte : il agit comme un catalyseur de réinvention. Les
+        artistes contemporains explorent des manières alternatives
+        d'articuler une narration ou une cohérence esthétique en y
+        intégrant des modalités d'écoute, de réception et de
+        participation qui ne tiennent plus uniquement dans un
+        enchaînement linéaire de titres. Certains projets déploient des
+        expériences immersives ou transmédiatiques qui associent
+        musique, visuel, performance ou espaces virtuels pour prolonger
+        l'univers narratif au-delà des seules plateformes audio.</p>
+        <p>Cette transformation se manifeste de plusieurs manières.
+        D'abord, certains artistes intègrent des éléments narratifs ou
+        immersifs qui dépendent de contextes d'écoute spécifiques,
+        rendant l'œuvre pertinente hors du cadre strictement audio du
+        streaming. C'est le cas des performances live, des installations
+        sonores, des albums binauraux ou spatialisés, et des espaces
+        virtuels. Illustrons ces formes avec des exemples concrets.</p>
+        <h3 id="la-performance-live-spectacle"><strong><u>La Performance
+        Live &amp; Spectacle :</u></strong></h3>
+        <p>La performance live représente peut-être la forme la plus
+        évidente de cette mutation : l'album ne disparaît pas, il se
+        métamorphose en événement ancré dans le moment “T” ainsi que le
+        réel. <em>Oniri 2070</em>, spectacle évolutif imaginé par la
+        compagnie Organic Orchestra, illustre parfaitement cette
+        transformation. J'ai eu la chance d'assister à leur performance
+        lors de la biennale <em>EXPERIMENTA</em> à Grenoble en 2020, et
+        ce voyage imaginaire a profondément marqué mon esprit. <em>Oniri
+        2070</em> est un spectacle politique, sonore et visuel,
+        itinérant et autonome en énergie — une trame cinématographique
+        et narrative qui donne l'impression de vivre un film
+        incarné.</p>
+        <p>Le projet repose sur quatre piliers indissociables :</p>
+        <ul>
+        <li><p>Une musique live créée par EZRA, au croisement de
+        l'ambient et de la prog-électronique.</p></li>
+        <li><p>Une création visuelle par Alexandre Machefel, mêlant
+        macrophotographie, objets aux formes simples, matières et
+        lumières hors du commun, composée en temps réel puis
+        vidéo-projetée.</p></li>
+        <li><p>Des entretiens documentaires et poésies avec la voix de
+        Juliette Guignard, nous contant un récit de voyage, de nouveaux
+        paysages et de rencontres.</p></li>
+        <li><p>Les pédaleurs — celleux qui alimentent énergétiquement
+        tout le matériel — donnant l'impression physique d'avancer dans
+        l'histoire.</p></li>
+        </ul>
+        <p>Comme il est décrit dans un article de L’unijambiste :</p>
+        <h2
+        id="melant-matiere-concrete-et-univers-abstrait-qui-allegorisent-ce-que-les-temoignages-nous-content.-nous-faisons-la-connaissance-dhabitants-de-larchipel-qui-ont-construit-de-nouvelles-facons-de-faire-cite-certains-sur-leau-dautres-vivent-sur-terre-et-ils-nous-invitent-a-vivre-lexperience-sensible-et-immersive-de-nos-reves-futurs."><em>"[...]
+        mêlant matière concrète et univers abstrait qui allégorisent ce
+        que les témoignages nous content. Nous faisons la connaissance
+        d’habitants de l’archipel qui ont construit de nouvelles façons
+        de faire cité, certains sur l’eau, d’autres vivent sur terre, et
+        ils nous invitent à vivre l’expérience sensible et immersive de
+        nos rêves futurs."</em></h2>
+        <p><em>Oniri 2070</em> fonctionne comme un concept-album car il
+        raconte toujours la même histoire — celle de cet archipel en
+        2070 — et repose sur une composition musicale et une dramaturgie
+        construites en amont. Même si le live comporte des parts
+        d'improvisation, les fondations restent les mêmes. Le projet a
+        été pensé dans sa globalité : narration construite autour de
+        témoignages, outils (instruments et logiciels) développés
+        spécifiquement, scénographie et univers visuel indispensables au
+        récit. Et surtout, ce concept radical de faire une tournée à
+        vélos et de réutiliser ces derniers pour alimenter la
+        performance.</p>
+        <p>Ce que révèle <em>Oniri 2070</em>, c'est l'incompatibilité
+        fondamentale entre la performance et le streaming. Même si le
+        spectacle est techniquement décomposé en plusieurs parties
+        musicales, la narration exige d'être suivie dans l'ordre. Mais
+        surtout, c'est une expérience qui ne peut exister qu'en présence
+        : voir les pédaleurs générer l'énergie fait partie intégrante de
+        l'histoire, le mouvement de la scénographie et des visuels donne
+        l'impression d'aller toustes ensemble vers cet archipel et ses
+        paysages. L'œuvre n'existe pas dans le son seul, mais dans la
+        totalité de l'expérience sensorielle et collective.</p>
+        <p>Cela soulève une question : et si le concept-album survit en
+        se transformant en performance live, ne rejoint-il pas
+        paradoxalement ses origines ? Avant l'enregistrement, la musique
+        n'existait que dans le moment de sa performance. Le streaming a
+        poussé cette logique d'ubiquité et de répétabilité à l'extrême —
+        écouter n'importe quoi, n'importe où, n'importe quand. En
+        réaction, le concept-album contemporain opère un retour
+        dialectique : il se réincarne en événement unique, éphémère,
+        irréductible à sa captation. L'album-œuvre performatif devient
+        ainsi l'antithèse du streaming — non pas en le combattant
+        frontalement, mais en occupant un territoire que le système
+        consumériste imposé par le streaming ne peut coloniser : un
+        moment vécu, une communion d’écoute, un espace d’expérience
+        incarnée et symbolique.</p>
+        <h3 id="linstallation-sonore"><strong><u>L’Installation Sonore
+        :</u></strong></h3>
+        <p>Un exemple particulièrement significatif est le <em>Sound Lab
+        2025</em>, une installation immersive organisée par la LAS Art
+        Foundation au Kraftwerk Berlin. Ce projet réunit plusieurs
+        artistes de la scène électronique expérimentale — dont Kara-Lis
+        Coverdale, Marco Donnarumma et Aïsha Devi — qui présentent des
+        pièces audio spécialement composées pour ce lieu emblématique.
+        Chaque œuvre explore des thématiques conceptuelles fortes, comme
+        la physique quantique ou les relations entre corps, technologie
+        et perception. Mais surtout, ces compositions ne sont pas
+        pensées comme de simples pistes diffusées n'importe où : elles
+        sont intrinsèquement liées à l'architecture du Kraftwerk — qui
+        devient le lien fort, la structure qu'on pourrait qualifier
+        d'album — ainsi qu'à une diffusion multicanale ou ambisonique et
+        à une temporalité d'écoute profonde.</p>
+        <p>Ce qui distingue ces installations du streaming, c'est la
+        dimension incarnée de l'expérience. L'auditeur ne peut pas
+        simplement "lancer" l'œuvre sur Spotify en fond sonore : il doit
+        se déplacer physiquement, habiter le lieu, accepter une
+        temporalité plus lente. L'écoute devient un acte engagé, presque
+        rituel, où le corps entier participe. Le son circule autour et à
+        travers l'auditeur, créant une immersion que la stéréo ou même
+        le binaural en casque ne peuvent reproduire.</p>
+        <p>Aïsha Devi l'exprime parfaitement à propos de son œuvre
+        <em>Superconductivity Healing Tech™️</em> présentée au <em>Sound
+        Lab</em> :</p>
+        <h2
+        id="superconductivity-healing-tech-is-an-attunement-transforming-the-listener-into-a-superconductor-dissipating-electrical-resistance-enhancing-light-resonance-and-generating-gravity-cancellation-it-is-transcendental-a-subatomic-and-energetic-therapy."><em>"Superconductivity
+        Healing Tech™️ is an attunement, transforming the listener into
+        a superconductor, dissipating electrical resistance, enhancing
+        light resonance and generating gravity cancellation; it is
+        transcendental – a subatomic and energetic therapy."</em></h2>
+        <h4 id="traduction-7"><strong>Traduction :</strong></h4>
+        <h2
+        id="superconductivity-healing-tech-est-une-harmonisation-transformant-lauditeur-en-supraconducteur-dissipant-la-résistance-électrique-améliorant-la-résonance-lumineuse-et-générant-lannulation-de-la-gravité-cest-une-thérapie-transcendantale---une-thérapie-subatomique-et-énergétique."><em>"Superconductivity
+        Healing Tech™️ est une harmonisation, transformant l’auditeur en
+        supraconducteur, dissipant la résistance électrique, améliorant
+        la résonance lumineuse et générant l’annulation de la gravité ;
+        c’est une thérapie transcendantale - une thérapie subatomique et
+        énergétique."</em></h2>
+        <p>L'installation sonore représente peut-être la forme la plus
+        décentrée de cette mutation du concept-album vers l'album-œuvre.
+        Elle déplace totalement l'écoute hors du cadre domestique ou
+        mobile pour l'inscrire dans un lieu physique dédié. L'album ne
+        se contente plus d'être un objet sonore à consommer passivement
+        : il devient une expérience sensorielle et contemplative qui
+        réinvestit le corps de l'auditeur.</p>
+        <h3 id="lalbum-binaural-ou-spatialisé"><strong><u>L’Album
+        Binaural ou Spatialisé :</u></strong></h3>
+        <p>Contrairement aux installations qui exigent un espace
+        physique dédié, ces projets restent accessibles dans un cadre
+        domestique — mais leur dimension immersive ne se révèle
+        pleinement qu'à travers une écoute spatialisée au casque ou sur
+        un système son adapté. La spatialisation sonore transforme ainsi
+        l’espace sonore et non le réel, opérant une mutation perceptive
+        plutôt que physique : l'auditeur n'a pas besoin de se déplacer
+        dans l'espace, c'est l'espace qui se déploie autour de lui.<img
+        src="media/image1.png"
+        style="width:4.88622in;height:3.20053in" /></p>
+        <p><em>Oxymore</em> de Jean-Michel Jarre, sorti en 2022,
+        illustre cette hybridité : premier album commercial de cette
+        envergure entièrement conçu, composé et mixé en audio spatial
+        360° dans les studios d'Innovation de Radio France. Comme
+        l'explique l'artiste :</p>
+        <h2
+        id="placer-des-sons-à-360-degrés-dans-lespace-comme-des-objets-autour-de-soi-est-une-manière-complètement-différente-de-composer-qui-révolutionne-la-conception-la-production-et-la-diffusion-de-la-musique-de-demain.-source-radio-france-jean-michel-jarre-annonce-lalbum-oxymore-extrait-par-les-inrockuptibles."><em>“Placer
+        des sons à 360 degrés dans l'espace comme des objets autour de
+        soi est une manière complètement différente de composer, qui
+        révolutionne la conception, la production et la diffusion de la
+        musique de demain.” Source : Radio France « Jean-Michel Jarre
+        annonce l’album “OXYMORE” » extrait par Les
+        Inrockuptibles.</em></h2>
+        <p>Cette approche soulève une question ontologique fondamentale
+        : quelle est la version "authentique" de l'œuvre ? L'album
+        existe simultanément en stéréo (streaming classique) et en
+        binaural sur Tidal et Apple Music, et en Dolby Atmos. Chaque
+        format propose une expérience différente du même matériau
+        musical. En version stéréo, l'architecture tridimensionnelle —
+        où les sons circulent et se déplacent autour de l'auditeur —
+        s'effondre en un plan frontal. L'œuvre devient ainsi plurielle
+        et conditionnelle : elle n'existe pas de manière fixe, mais se
+        révèle différemment selon le dispositif d'écoute mobilisé.<br />
+        <br />
+        Ce paradoxe révèle toute la tension des albums spatialisés :
+        universellement accessibles en apparence, rarement expérimentés
+        dans leur pleine dimension. Car si Tidal et Apple Music
+        proposent l'audio spatial, ces plateformes restent largement
+        minoritaires face aux géants Spotify et Youtube Music (Source :
+        ARCOM 2025, Graphique représentatif ci-contre). Alors, la grande
+        majorité des auditeurs découvre donc <em>Oxymore</em> dans sa
+        version stéréo aplatie, ignorant l'architecture
+        tridimensionnelle pour laquelle l'œuvre a été pensée. Cette
+        réalité explique pourquoi les albums pleinement spatialisés
+        restent si rares dans l'écosystème du streaming : faute
+        d'infrastructures de diffusion adaptées et démocratisées, ces
+        expériences immersives continuent de privilégier les espaces
+        physiques dédiés — installations sonores, projections en
+        planétarium, événements dans des lieux d'écoute équipés.<br />
+        <br />
+        Disponible partout en streaming, <em>Oxymore</em> ne peut
+        pourtant déployer son essence conceptuelle que dans des
+        conditions d'écoute spécifiques. C’est pourquoi <em>Oxymore</em>
+        ne s'arrête pas à cette dimension sonore : il se prolonge dans
+        un espace virtuel interactif qui pousse la mutation du
+        concept-album encore plus loin.</p>
+        <h3 id="lespace-virtuel"><strong><u>L’Espace Virtuel
+        :</u></strong></h3>
+        <p>Cette extension prend corps dans <em>Oxyville</em>, un
+        métavers développé par Jean-Michel Jarre. Décrit par l'artiste,
+        comme <em>« une métropole virtuelle dédiée aux concerts live et
+        à la musique [...] un vivier de nouvelles expériences musicales,
+        ainsi qu'un moyen de démocratiser de nouveaux outils de
+        production pour les jeunes créateurs »</em> ; cet espace permet
+        d'assister à des concerts en temps réel dans un environnement
+        immersif accessible à toustes.</p>
+        <p><em>Oxyville</em> crée ainsi une forme d'accessibilité
+        inverse au streaming. Là où Spotify favorise l'écoute fragmentée
+        et passive — chacun·e dans sa bulle, à son rythme, déconnecté·e
+        des autres —, le métavers exige présence, temporalité synchrone
+        et engagement collectif. L'auditeur n'est plus un simple
+        consommateur de flux audio, mais devient spectateur actif d'un
+        événement partagé, incarné par un avatar dans un espace commun.
+        L'expérience se rapproche du concert live ou du festival, tout
+        en s'affranchissant des contraintes géographiques et économiques
+        de la musique live traditionnelle. Quand l'œuvre ne se donne
+        plus à écouter mais à habiter ? Dans <em>Oxyville</em>, le
+        concept-album ne se limite plus à une séquence linéaire de
+        pistes — il devient un espace-temps, un territoire virtuel où la
+        musique se déploie dans une architecture navigable. L'auditeur y
+        entre comme on entre dans un bâtiment, s'y déplace, y rencontre
+        d'autres présences. L'œuvre musicale retrouve ainsi une
+        dimension rituelle et communautaire que le streaming avait
+        dissoute.</p>
+        <p>On peut se dire alors que le concept-album peut survivre à
+        l'ère du streaming en renonçant à sa forme originelle — l'objet
+        album — pour se réincarner en expérience événementielle,
+        réintroduisant la contrainte temporelle et spatiale (même
+        virtuelle) que le numérique avait justement abolie.</p>
+        <p>Ensuite, la mutation passe par des formats où la musique
+        n’est plus simplement livrée comme une collection figée de
+        pistes, mais comme une œuvre évolutive ou contextuelle. Certains
+        artistes adoptent des stratégies de « projet évolutif » où la
+        musique se déploie en séries d’albums — comme on l'a vu avec
+        Stupeflip ou Alva Noto — mais aussi en épisodes ou extensions
+        successives, brouillant les frontières entre single, EP et album
+        tout en gardant une cohérence artistique sous-jacente.<br />
+        Ce modèle, rendu possible par la flexibilité du numérique,
+        prolonge l’idée de récit et d’univers tout en s’adaptant à
+        l’écologie attentionnelle du streaming. De même, des démarches
+        transmédiatiques témoignent de cette mutation du format :
+        l'usage combiné de supports visuels, de narrations parallèles
+        telles que :</p>
+        <h3 id="le-site-web-interactif"><strong><u>Le site web
+        interactif :</u></strong></h3>
+        <p>L'album <em>Object and Environment</em> du musicien moscovite
+        Andrey Lee illustre parfaitement cette approche. Sorti en 2020,
+        ce projet mêlant dub, krautrock et ambient des années 60 a été
+        conçu comme ce qu'il appelle une "substance vivante placée dans
+        un environnement web". En collaboration avec Readymag, Andrey
+        Lee a créé un site interactif où chaque piste s'accompagne
+        d'animations géométriques abstraites qui réagissent à la
+        musique. Comme l'explique l'artiste sur le Blog de Readymag
+        :</p>
+        <h2
+        id="beginning-work-i-did-not-expect-this-album-would-go-beyond-standard-listening.-but-when-my-work-was-finished-i-realized-these-nine-tracks-definitely-needed-a-concept-to-shift-how-they-are-perceived."><em>“Beginning
+        work, I did not expect this album would go beyond standard
+        listening. But when my work was finished, I realized these nine
+        tracks definitely needed a concept to shift how they are
+        perceived.”</em></h2>
+        <h4 id="traduction-8"><strong>Traduction :</strong></h4>
+        <h2
+        id="au-début-je-ne-mattendais-pas-à-ce-que-cet-album-dépasse-lécoute-standard.-mais-une-fois-le-travail-terminé-jai-réalisé-que-ces-neuf-pistes-avaient-définitivement-besoin-dun-concept-pour-transformer-la-façon-dont-elles-sont-perçues."><em>"Au
+        début, je ne m'attendais pas à ce que cet album dépasse l'écoute
+        standard. Mais une fois le travail terminé, j'ai réalisé que ces
+        neuf pistes avaient définitivement besoin d'un concept pour
+        transformer la façon dont elles sont perçues.”</em></h2>
+        <p>Le site devient un véritable jeu d'exploration : des formes
+        colorées évoquant les boutons d'une table de mixage donnent
+        accès aux différentes pistes, la navigation s'inspire des
+        lecteurs audio traditionnels, mais l'expérience transforme
+        l'écoute en voyage visuel. Le designer Stas Aki précise :</p>
+        <h2
+        id="we-did-not-challenge-ourselves-to-make-the-ux-as-simple-or-friendly-as-possible-to-some-extent-this-is-an-adventure-game.-one-in-which-the-viewer-assumes-the-role-of-a-protagonist-driven-by-exploration."><em>“We
+        did not challenge ourselves to make the UX as simple or friendly
+        as possible: to some extent, this is an adventure game. One in
+        which the viewer assumes the role of a protagonist driven by
+        exploration.”</em></h2>
+        <h4 id="traduction-9"><strong>Traduction :</strong></h4>
+        <h2
+        id="nous-navons-pas-cherché-à-rendre-lux-aussi-simple-ou-conviviale-que-possible-il-sagit-dans-une-certaine-mesure-dun-jeu-daventure.-un-jeu-dans-lequel-le-spectateur-assume-le-rôle-dun-protagoniste-animé-par-lexploration."><em>"Nous
+        n'avons pas cherché à rendre l'UX aussi simple ou conviviale que
+        possible : il s'agit dans une certaine mesure d'un jeu
+        d'aventure. Un jeu dans lequel le spectateur assume le rôle d'un
+        protagoniste animé par l'exploration.”</em></h2>
+        <p>L'album n'est plus un objet passif mais un territoire à
+        parcourir.<br />
+        Néanmoins, cette forme d’album-œuvre révèle aussi sa fragilité :
+        le site interactif <em>Object and Environment</em> n’est
+        aujourd’hui plus accessible. Cette disparition souligne une
+        limite majeure de ces formes d’album-œuvre en ligne : leur
+        dépendance à des infrastructures techniques et économiques
+        instables. Là où un album peut traverser le temps, l’œuvre web,
+        elle, reste souvent éphémère — ce qui pose la question de la
+        mémoire et de la conservation de ces mutations du concept-album
+        à l’ère numérique.</p>
+        <h3 id="le-court-métrage"><strong><u>Le court métrage
+        :</u></strong></h3>
+        <p>Le projet Compost Collaps, artiste-personnage venu du 22ème
+        siècle, pousse cette logique encore plus loin. Au-delà de ses
+        albums et performances live (jouées sur une batterie fabriquée à
+        partir de matériaux et déchets récupérés — bidons, tubes,
+        plaques métalliques), Compost Collaps développe un univers
+        narratif complet à travers <em>Les Contes de la Post
+        Collaps</em>, une série de court-métrages qui racontent
+        l'histoire de ce musicien du futur venu témoigner d'un monde,
+        qu’il décrit comme <em>« post-collaps, post-capitaliste,
+        post-patriarcaliste »</em>, où la techno survit sans électricité
+        ni haute technologie. Écoutons sa <em>techlow-music</em> avec un
+        extrait de “Platonic”, tiré de l’EP <em>Chapelle 2120</em>.
+        🔊</p>
+        <p>Ces court-métrages ne sont pas de simples visuels
+        accompagnant la musique, comme un clip, mais une construction
+        d’une narration projective, un récit de science-fiction
+        politique où la musique devient résistance. Dans l’interview de
+        Tsugi en août 2025, Compost Collaps déclare :</p>
+        <h2
+        id="jai-remarqué-quà-votre-époque-pas-mal-de-gens-sont-soit-complètement-désespérés-de-lavenir-et-qui-se-disent-que-tout-est-foutu-...-mais-qui-ne-font-rien-pour-éviter-ça-soit-des-gens-qui-pensent-que-la-technologie-va-tout-résoudre-alors-quon-sait-quelle-va-tout-défoncer.-moi-jarrive-en-disant-que-le-futur-nest-pas-comme-ça.-il-est-beaucoup-plus-juste-et-équitable-pour-tous-les-humains."><em>"J'ai
+        remarqué qu'à votre époque, pas mal de gens sont soit
+        complètement désespérés de l'avenir et qui se disent que tout
+        est foutu [...] mais qui ne font rien pour éviter ça ; soit des
+        gens qui pensent que la technologie va tout résoudre, alors
+        qu’on sait qu’elle va tout défoncer. Moi, j'arrive en disant que
+        le futur n'est pas comme ça. Il est beaucoup plus juste et
+        équitable pour tous les humains.”</em></h2>
+        <p>L'album devient ainsi un manifeste politique incarné, qui
+        existe simultanément en musique, en performance, en narration
+        visuelle et en discours idéologique. Avec sa série de
+        courts-métrages, Compost Collaps s’éloigne du format contraint
+        du clip unique pour installer une narration sérielle, plus
+        diffuse, qui laisse le temps aux idées de se construire sans
+        chercher à tout condenser dans une seule forme.</p>
+        <h3 id="le-clip"><strong><u>Le clip :</u></strong></h3>
+        <p>Si les courts-métrages narratifs comme ceux de Compost
+        Collaps, à la limite du clip, perpétuent une certaine ambition
+        artistique du format vidéo, force est de constater que le clip
+        musical traditionnel traverse une crise profonde. Comme le
+        souligne le vidéaste François de la chaîne <em>Monte le Son</em>
+        dans <em>“<em>Mais où sont passés les clips ?</em>”</em> :</p>
+        <h2
+        id="le-clip-cétait-un-terrain-dexpérimentation.-les-budgets-nétaient-pas-forcément-tous-élevés-mais-justement-cétait-une-contrainte-qui-poussait-à-être-un-peu-plus-créatif-et-à-bricoler-des-solutions-et-puis-ça-a-pu-faire-émerger-des-artistes-aussi."><em>"Le
+        clip, c'était un terrain d'expérimentation. Les budgets
+        n'étaient pas forcément tous élevés, mais justement, c'était une
+        contrainte qui poussait à être un peu plus créatif et à bricoler
+        des solutions, et puis ça a pu faire émerger des artistes
+        aussi."</em></h2>
+        <p>Cette époque semble révolue. Le groupe OK Go, plus connu pour
+        ses clips-concepts que pour sa musique, incarnait cette logique
+        où le plaisir de la création visuelle primait sur l'efficacité
+        marketing. Aujourd'hui, et depuis la grande vague du streaming,
+        la donne a radicalement changé.</p>
+        <h2
+        id="le-truc-cest-quaujourdhui-les-labels-y-mettent-moins-dargent-dans-des-œuvres-et-plus-dans-des-stratégies-marketing-qui-sont-pensées-pour-les-réseaux-sociaux-et-donc-centrées-autour-de-lartiste-qui-devient-lui-même-créateur-de-contenu-dun-contenu-qui-doit-être-facilement-identifiable-et-déclinable."><em>"Le
+        truc, c'est qu'aujourd'hui, les labels y mettent moins d'argent
+        dans des œuvres et plus dans des stratégies marketing qui sont
+        pensées pour les réseaux sociaux et donc centrées autour de
+        l'artiste qui devient lui-même créateur de contenu, d'un contenu
+        qui doit être facilement identifiable et déclinable."</em></h2>
+        <p>Cette mutation transforme profondément le rapport entre
+        musique et image. Le clip comme œuvre audiovisuelle autonome,
+        fruit d'une collaboration entre musicien et réalisateur, cède la
+        place à un flux constant de contenus promotionnels standardisés
+        : extraits de 15 secondes pour TikTok, stories Instagram, vidéos
+        "behind the scenes" ou faux hasards filmés dans la rue.
+        L'artiste n'est plus simplement interprète ou créateur musical :
+        il devient community manager de sa propre marque, produisant en
+        permanence du contenu "engageant" pour nourrir l'algorithme en
+        oubliant presque son objectif qui est d’être streamé.</p>
+        <p>Cette logique entre en contradiction frontale avec l'idée
+        même du concept-album. Là où le concept-album demande cohérence
+        narrative, temporalité longue et attention soutenue, le
+        marketing des réseaux sociaux exige fragmentation, immédiateté
+        et rotation permanente. Le clip de trois minutes pensé comme
+        extension visuelle d'un univers musical se dilue en dizaines de
+        micro-contenus décontextualisés, optimisés pour capter
+        l'attention en quelques secondes.</p>
+        <h2
+        id="est-ce-quon-veut-vraiment-que-ces-plateformes-et-les-gens-qui-les-dirigent-aient-le-monopole-sur-la-gestion-de-nos-relations-sociales-sur-notre-accès-à-la-culture-et-est-ce-quen-tant-que-musiciens-créateurs-journalistes-vidéastes-...-on-ne-va-pas-être-amené-à-devoir-bricoler-nos-propres-alternatives-aussi"><em>"Est-ce
+        qu'on veut vraiment que ces plateformes et les gens qui les
+        dirigent aient le monopole sur la gestion de nos relations
+        sociales, sur notre accès à la culture ? Et est-ce qu'en tant
+        que musiciens, créateurs, journalistes, vidéastes, [...], on ne
+        va pas être amené à devoir bricoler nos propres alternatives
+        aussi ?"</em></h2>
+        <p>C'est précisément cette question qui motive les mutations
+        dont nous parlons : les performances live, les installations,
+        les métavers, les courts-métrages narratifs sont autant de
+        tentatives pour "bricoler des alternatives" — des espaces où
+        l'œuvre peut exister hors de la logique extractive des
+        plateformes, où le concept-album peut se déployer sans être
+        immédiatement fragmenté et marchandisé.<br />
+        <br />
+        Toutefois, il serait inexact de prononcer la disparition du clip
+        musical. Ce format reste aussi présent sur Youtube qu’en 2010,
+        mais le problème, c'est que cette plateforme n'est plus vraiment
+        adaptée à nos méthodes de consommation musicale actuelles.
+        YouTube exige une intention active : ouvrir l'application ou le
+        navigateur, chercher un titre, regarder. C'est précisément cette
+        dimension visuelle qui crée le paradoxe. Là où l'écoute musicale
+        contemporaine est devenue essentiellement mobile, multitâche et
+        décontextualisée, le clip demande qu'on s'arrête, qu'on fixe un
+        écran. Il impose une forme d'engagement que la majorité des
+        usages quotidiens de la musique ne permettent plus.<br />
+        C'est devenu un espace pour fans, pour curieux, pour moments
+        dédiés — et c’est là qu’on revient à la première hypothèse :
+        celle d’une niche plutôt qu’une forme dominante. Certains
+        artistes continuent néanmoins à y investir de l'ambition
+        créative, conscients que cette niche compte. Car si le clip
+        touche moins de monde, il touche peut-être mieux.<br />
+        <br />
+        Il existe néanmoins des exceptions notables : certains artistes
+        mainstream produisent encore des clips ambitieux qui
+        fonctionnent comme de véritables œuvres audiovisuelles. Mais
+        cette possibilité reste réservée à une poignée d'artistes déjà
+        reconnus non seulement pour leur musique, mais surtout pour leur
+        direction artistique forte. Les labels acceptent alors
+        d'investir, considérant que le risque financier est minimal face
+        à une base de fans déjà engagée.</p>
+        <p>Orelsan avec son dernier album <em>La Fuite en Avant</em> où
+        ses multiples clips fonctionnent en miroir avec son film
+        <em>Yoroï</em>, créant un univers narratif mêlant cinéma et
+        musique. Billie Eilish et son clip qui a marqué le monde :
+        “Happier Than Ever”, réalisé par elle-même, illustre
+        visuellement la transformation émotionnelle du morceau, passant
+        d’une performance intime dans une pièce — à une scène
+        cathartique noyée par l’eau. Ou Theodora et son clip “Des
+        Mythos”, une mini-fiction surréaliste qui étend son univers
+        sonore dans une fusion d’animation 2D et de prises de vues.</p>
+        <p>Mais soulignons-le : ces réussites demeurent l'exception.
+        Elles sont rendues possibles par le capital symbolique et
+        commercial déjà accumulé par ces artistes. Pour un musicien
+        émergent ou un projet underground, produire un tel clip relève
+        aujourd'hui de l'exploit — financièrement inaccessible,
+        stratégiquement risqué dans un écosystème qui privilégie la
+        multiplication de contenus courts au détriment d'œuvres longues
+        et coûteuses.</p>
+        <p>Pour en revenir à l'usage combiné de supports visuels, il
+        existe également des supports d'interaction communautaire qui
+        transforment l'album en expérience participative. Tel que
+        <em>Soundhunters</em>, projet imaginé par les frères Blies,
+        Marion Guth et François Le Gall et diffusé sur Arte en 2015. Ce
+        projet invite le public à "sampler le monde" en enregistrant des
+        sons du quotidien via une application mobile, puis à les remixer
+        pour créer de la musique collective. Documentaire,
+        webdocumentaire avec des artistes internationaux, plateforme
+        interactive et album musical se complètent pour former un
+        écosystème où l'œuvre musicale devient un territoire partagé
+        plutôt qu'un objet figé.<br />
+        L'album global n'émane plus d'un créateur unique mais devient
+        processus collaboratif ouvert. La musique n'est plus donnée à
+        consommer mais à co-créer. Ainsi, <em>Soundhunters</em> nous
+        permet d’écouter réellement ce que nous enregistrons, de prendre
+        conscience des sons qui nous entourent et de prêter attention
+        aux contributions des autres participants, créant une sensation
+        d’appartenance à une communauté d’écoute et de création.</p>
+        <p>La bande-dessinée peut également devenir support d'une
+        démarche conceptuelle musicale. Krystal Zealot, collectif
+        d'artistes réels, a créé la bande-son des albums <em>Lou !
+        Sonata 1</em> et <em>2</em> de Julien Neel. Dans la première BD,
+        Lou emménage dans la ville de Tygre afin d'y poursuivre ses
+        études. Ses péripéties vont être accompagnées de la bande son de
+        Krystal Zealot, où les morceaux sont organisés chronologiquement
+        comme une dimension supplémentaire au visuel. Dans le second
+        tome, Lou organise le <em>Dead Dung Fest</em>, un festival de
+        musique. Krystal Zealot a composé les morceaux de tous les
+        groupes fictifs qui s'y produisent — chanson française, rap,
+        tribal, électro — créant ainsi une véritable bande originale
+        sorti en vinyle avec pochettes illustrées, poster et bracelet du
+        festival. Cela incite naturellement l’auditeur à suivre l’ordre
+        d’écoute proposé pendant sa lecture : l’expérience devient une
+        exploration synchronisée du récit et du son. Peut-être que, par
+        la suite, lorsqu’il reviendra écouter ces morceaux de façon plus
+        passive, il le fera encore selon cet ordre, car ses souvenirs de
+        lecture auront formaté sa manière d’écouter ce projet.<br />
+        <br />
+        Ces formats transmédiatiques transforment le projet musical en
+        un espace narratif immersif à plusieurs entrées plutôt qu’en une
+        expérience d’écoute isolée. Dans ce cadre, l’auditeur n’est plus
+        seulement destinataire passif de musique, mais acteur d’une
+        expérience qui s’articule autour d’un univers plus vaste.</p>
+        <p>Cette transformation est particulièrement nette dans la
+        musique électronique contemporaine, où l’usage des outils
+        numériques, de la spatialisation sonore, et de la scénographie
+        live favorise des formes de concept-album qui ne peuvent être
+        pleinement appréhendées qu’en contexte. Le projet ISAM d'Amon
+        Tobin, sorti en 2011, est un exemple frappant.</p>
+        <p>ISAM ne se limite pas à un album de musique électronique
+        expérimentale. L'œuvre sonore est déjà radicale : Tobin a
+        enregistré des sons du quotidien — une chaise qui grince, des
+        ampoules qui s'entrechoquent, des souffles d'air — qu'il a
+        ensuite manipulés via un Continuum Fingerboard. Mais comme
+        l'explique l'artiste lui-même, en 2015, sur sa propre chaîne
+        Youtube dans <em>In Conversation With Amon Tobin</em> :</p>
+        <h2
+        id="it-wasnt-like-i-sat-down-and-thought-oh-how-can-i-make-the-biggest-spectacle-i-can-make-it-was-more-that-i-had-a-record-that-couldnt-be-performed-by-musicians.-and-it-wasnt-a-dj-oriented-record.-so-i-couldnt-really-take-it-out-to-clubs-...-i-had-to-think-of-a-different-way-to-do-it."><em>"It
+        wasn't like I sat down and thought, 'Oh, how can I make the
+        biggest spectacle I can make?' It was more that I had a record
+        that couldn't be performed by musicians. And it wasn't a
+        DJ-oriented record. So, I couldn't really take it out to clubs
+        [...] I had to think of a different way to do it."</em></h2>
+        <h4 id="traduction-10"><strong>Traduction :</strong></h4>
+        <h2
+        id="ce-nest-pas-comme-si-je-métais-dit-comment-puis-je-créer-le-plus-grand-spectacle-possible-cétait-plutôt-comme-si-javais-un-disque-qui-ne-pouvait-pas-être-joué-par-des-musiciens.-et-ce-nétait-pas-non-plus-un-disque-pour-les-djs.-donc-je-ne-pouvais-pas-lemmener-dans-les-clubs-...-jai-dû-réfléchir-à-une-autre-façon-de-le-faire."><em>"Ce
+        n'est pas comme si je m'étais dit : 'Comment puis-je créer le
+        plus grand spectacle possible ?' C'était plutôt comme si j'avais
+        un disque qui ne pouvait pas être joué par des musiciens. Et ce
+        n'était pas non plus un disque pour les DJs. Donc, je ne pouvais
+        pas l'emmener dans les clubs [...] J'ai dû réfléchir à une autre
+        façon de le faire."</em></h2>
+        <p>Cette "autre façon" a pris la forme d'une structure
+        monumentale de cubes blancs — 7,6 mètres de large, 2,5 tonnes —
+        sur laquelle du mapping vidéo 3D en temps réel transformait
+        l'architecture en vaisseau spatial, en circuit électronique
+        géant, en paysages cosmiques. Tobin jouait caché dans le cube
+        central en tulle, manipulant simultanément les visuels à la
+        Kinect et la musique sur contrôleurs, devenant littéralement le
+        pilote d'un vaisseau en mutation.<br />
+        Le spectacle racontait un voyage spatial de 80 minutes : la
+        structure décolle, Tobin apparaît dans un pod d'hyper-sommeil
+        (décrit par Xite, à la création visuel), traverse des
+        hallucinations sonores et visuelles, puis sort du cockpit à la
+        fin en combinaison spatiale. L'œuvre devient une expérience
+        totale, à mi-chemin entre le concert, le cinéma et
+        l'installation artistique.</p>
+        <p>Et comme le note un fan sur Discogs : <em>« Si vous n'avez
+        pas vu le spectacle, cet album n'a probablement pas beaucoup de
+        sens.</em> <em>».</em> L'album seul, sur Spotify, devient
+        presque incompréhensible — une collection de textures sonores
+        abstraites. 🔊 L'enregistrement audio n'est qu'une trace
+        fragmentaire, un artefact incomplet de l'expérience totale. Sur
+        Spotify, ISAM existe techniquement, mais dans un état de latence
+        : les pistes sont là, mais l'œuvre ne s'active pas. Elle attend
+        son contexte performatif pour devenir pleinement
+        signifiante.</p>
+        <p>Cette démarche relève d'une philosophie artistique claire.
+        Tobin précise :</p>
+        <h2
+        id="making-music-for-me-is-really-really-special.-its-something-that-i-really-really-care-about.-i-try-not-to-corrupt-it-with-thoughts-of-how-can-i-make-it-more-palatable-...-how-can-i-make-it-more-like-a-business.-...-it-becomes-entertainment-really-...-its-very-different-from-doing-something-thats-a-real-labor-of-love-which-may-or-may-not-be-accepted-by-people.-and-thats-what-this-is-to-me.-its-a-labor-of-love."><em>"Making
+        music for me is really really special. It's something that I
+        really really care about. I try not to corrupt it with thoughts
+        of how can I make it more palatable [...] how can I make it more
+        like a business. [...] It becomes entertainment really [...]
+        It's very different from doing something that's a real labor of
+        love which may or may not be accepted by people. And that's what
+        this is to me. It's a labor of love."</em></h2>
+        <h4 id="traduction-11"><strong>Traduction :</strong></h4>
+        <h2
+        id="faire-de-la-musique-est-vraiment-très-spécial-pour-moi.-cest-quelque-chose-qui-me-tient-vraiment-à-cœur.-jessaie-de-ne-pas-le-corrompre-avec-des-pensées-du-type-comment-puis-je-la-rendre-plus-accessible-...-comment-en-faire-un-business.-...-sinon-ça-devient-du-divertissement-...-cest-très-différent-de-faire-quelque-chose-qui-est-un-véritable-travail-damour-qui-peut-ou-non-être-accepté-par-les-gens.-et-cest-ça-isam-pour-moi.-un-travail-damour."><em>"Faire
+        de la musique est vraiment très spécial pour moi. C'est quelque
+        chose qui me tient vraiment à cœur. J'essaie de ne pas le
+        corrompre avec des pensées du type 'comment puis-je la rendre
+        plus accessible' [...] 'comment en faire un business'. [...]
+        [sinon] Ça devient du divertissement [...] C'est très différent
+        de faire quelque chose qui est un véritable travail d'amour, qui
+        peut ou non être accepté par les gens. Et c'est ça [ISAM] pour
+        moi. Un travail d'amour."</em></h2>
+        <p>Revenons sur ce qu’il affirme ici et plus tôt. Selon lui, un
+        tel projet ne peut être envisagé ni en club ni en streaming :
+        d’une part en raison de son exigence et de sa complexité sonore,
+        mais surtout parce qu’il s’agit d’un concept-album profondément
+        narratif, structuré de manière strictement chronologique.
+        Fragmentée, hors de son cadre, l’œuvre devient illisible et perd
+        son sens, qui ne peut émerger qu’au sein du dispositif du
+        spectacle numérique.<br />
+        Les concerts audiovisuels immersifs ou les expériences en
+        réalité augmentée redonnent à l’œuvre une dimension corporelle
+        et situationnelle, une « performativité » qui ancre la narration
+        dans un moment partagé, loin d’une expérience personnelle et
+        décontextualisée propre au streaming.</p>
+        <p>Alors, plutôt que de s’effacer, le concept-album se déplace :
+        il se détache de la linéarité figée pour s’intégrer dans des
+        expériences sonores, visuelles et interactives qui obligent
+        l’auditeur à repenser la relation entre œuvre et réception. Il
+        ne s’agit plus de publier une succession de pistes, mais de
+        proposer un moment esthétique complet, où la musique est un
+        élément d’un récit plus large, souvent performatif, incorporé à
+        des espaces physiques ou virtuels.</p>
+        <p>Cette mutation n’abolit pas la cohérence interne qui
+        caractérisait le concept-album traditionnel, mais la redéfinit :
+        l’unité ne se mesure plus seulement par la succession des
+        pistes, mais par l’engagement global du public dans un univers
+        commun ; qu’il soit scénique, narratif, visuel ou interactif.
+        Ces dispositifs pluridisciplinaires mobilisent paradoxalement
+        des stratégies de captation attentionnelle comparables à celles
+        du streaming — stimulation multi-sensorielle, “saturation”
+        perceptive — mais les détournent vers un art total qui exige
+        engagement et durée, transformant l'addiction algorithmique au
+        flux rapide en immersion contemplative. Les techniques
+        qu’emploient les plateformes de streaming, consiste aussi à
+        mettre le public au centre, mais contrairement à ce type
+        d’album-oeuvre, le public n’est pas guidé, ni plongé dans une
+        ambiance ou un cadre global.</p>
+        <p>Cette métamorphose pose une question essentielle : à quel
+        moment un concept-album cesse-t-il d'être lui-même pour devenir
+        un autre format artistique ? Lorsque la version audio devient
+        secondaire, voire accessoire — simple souvenir ou documentation
+        d'une expérience vécue —, peut-on encore parler de
+        "concept-album" au sens traditionnel ?</p>
+        <p>D'après les transformations que nous avons observées, la
+        réponse semble être non. L'œuvre n'habite plus le format album :
+        elle l'utilise comme l'une de ses composantes parmi d'autres —
+        visuels, scénographie, spatialisation, narration incarnée,
+        communication. Le streaming peut héberger cette composante
+        audio, mais il ne pourra jamais contenir l'œuvre dans son
+        intégralité. Les albums-œuvres survivent en tant qu'entités
+        "concept" et "album", mais enrichies de leurs expressions
+        artistiques élargies (performance, installation,
+        transmédialité). En revanche, sur le streaming seul, ne subsiste
+        que l'album au sens traditionnel — une trace appauvrie de ce que
+        l'œuvre est véritablement.</p>
+        <p>Tous ces album-oeuvres partagent cette caractéristique : ils
+        sont "difficiles d'accès" — parfois techniquement, mais surtout
+        attentionnellement. Ils demandent un engagement, une sortie du
+        flux, une présence. Ils exigent que nous nous déplacions —
+        physiquement vers un lieu, temporellement vers un moment précis,
+        cognitivement vers un état d'attention soutenue. Ils refusent la
+        consommation passive au profit d'une participation active. Ils
+        transforment l'auditeur en spectateur, en visiteur, en habitant
+        d'un espace-temps dédié ou même en acteur. Cette exigence les
+        rend incompatibles avec la logique du streaming, qui promet
+        justement l'inverse : l'accès sans effort, la musique comme fond
+        sonore, la consommation sans contrainte.</p>
+        <p>À ce titre, comme on l’a vu avec le clip, ces mutations
+        sembleraient toutes rentrer dans la première hypothèse : celle
+        de la disparition du concept-album comme forme dominante,
+        réfugié dans les pratiques de niche. Ainsi, les courts-métrages
+        comme Compost Collaps, les sites web interactifs tel que
+        <em>Object and Environment</em>, les espaces virtuels comme
+        <em>Oxyville</em>, les albums spatialisés, les performances
+        qu’on a illustré avec <em>Oniri 2070,</em> les installations
+        sonores, et autres formes d'albums-œuvres se révèlent eux aussi
+        être de niche.</p>
+        <p>Mais c'est précisément là que réside le paradoxe de cette
+        deuxième hypothèse. Car si ces formes sont effectivement des
+        niches, elles ne signent pas pour autant la mort du
+        concept-album — elles incarnent sa mutation nécessaire. C'est
+        l'impossibilité même du streaming à saisir l'œuvre entière qui
+        garantit la survie du concept-album, non pas comme objet sonore
+        autonome, mais comme projet transmédiatique et performatif qui
+        ne peut pleinement exister que dans son moment partagé,
+        contextuel et incarné.</p>
+        <p>Le concept-album ne meurt pas : il mute vers des formes qui,
+        par essence, échappent à la logique du flux. Ces niches ne sont
+        donc pas des refuges de défaite, mais des territoires de
+        résistance où l'œuvre peut encore exister pleinement, hors de la
+        fragmentation algorithmique.</p>
+        <p>La deuxième hypothèse se vérifie donc, mais avec cette nuance
+        cruciale : oui, le concept-album mute vers des formes
+        d'album-œuvre plus larges. Cependant ces mutations ne lui
+        redonnent pas sa position dominante. Elles confirment sa survie,
+        mais une survie transformée, nichée, exigeante — et peut-être,
+        précisément pour cela, plus fidèle à son essence originelle
+        d'œuvre totale qui refuse d'être consommée par morceaux.</p>
+        <h1 id="conclusion"><strong><u>CONCLUSION</u></strong></h1>
+        <p>Nous voilà au terme de ce parcours. La problématique posée
+        était la suivante : Le concept-album à l'épreuve du streaming —
+        survie ou mutation d'un format artistique dans la musique
+        électronique contemporaine ?</p>
+        <p>La réponse n'est ni l'un ni l'autre exclusivement, mais les
+        deux simultanément.<br />
+        <br />
+        Mais avant de développer notre réponse, précisons pourquoi cette
+        question se pose avec une acuité particulière dans la musique
+        électronique. Contrairement au rock, la musique électronique n'a
+        jamais eu besoin de l'industrie traditionnelle pour exister :
+        nativement numérique, elle est née dans les marges, dans les
+        home studios, dans les clubs et raves underground. Notamment
+        dans les communautés noires, afro-américaines, queer et jeunes
+        des quartiers populaires. Avec l'exemple même de la techno de
+        Détroit.<br />
+        Ainsi, la musique électronique aurait dû être la mieux armée
+        face au streaming.</p>
+        <p>Or, c'est précisément le contraire. Parce qu'elle est déjà
+        numérique, la musique électronique a été la première absorbée,
+        fragmentée, algorithmisée par les plateformes. Souvent sans
+        paroles explicites pour guider l'écoute, sans figures vocales
+        pour créer de l'identification immédiate, elle dépend
+        entièrement de l'immersion, de la texture, de l'architecture
+        sonore — précisément ce que le streaming détruit. C’est aussi
+        pour cela que le rap ou la pop moderne reste une exception
+        surtout avec des projets récents comme <em>PRETTY
+        DOLLCORPSE</em>. Alors, un morceau d'Alva Noto écouté en fond
+        sur Spotify devient du bruit ou un album de Burial en lecture
+        aléatoire perd toute sa cohérence émotionnelle.</p>
+        <p>C'est pourquoi la musique électronique cristallise de manière
+        exemplaire la crise du concept-album : elle en révèle la
+        dimension purement structurelle, sonore, expérientielle — celle
+        que le streaming ne peut pas capturer.</p>
+        <p>Le streaming a profondément transformé le paysage musical.
+        D'un côté, il offre une accessibilité sans précédent : n'importe
+        quel artiste peut diffuser sa musique instantanément, partout
+        dans le monde. Cette démocratisation est particulièrement
+        flagrante dans la musique électronique. Mais cette accessibilité
+        est un paradis toxique. Car cette ouverture apparente
+        s'accompagne d'une standardisation insidieuse dans la création.
+        Le streaming impose ses propres règles : durées optimisées,
+        accroches immédiates, formatage pour les playlists. Plus
+        d'artistes signifie plus de compétition — mais une compétition
+        qui ne se joue plus sur l'originalité esthétique ou l’identité
+        sonore, mais sur la communication, sur la visibilité
+        algorithmique et sur la capacité à exister dans les flux des
+        réseaux sociaux. Ces plateformes valorisent massivement ce qui
+        plaît au plus grand nombre, effaçant des fils d'actualité les
+        artistes alternatifs, ceux qui ne font peut-être pas partie d'un
+        groupe ou genre établi, ceux qui osent partager un album-concept
+        exigeant.</p>
+        <p>Résultat : moins de diversité en surface, dans ce qui est
+        immédiatement accessible au public. Les nuances existent encore,
+        des propositions radicales émergent tous les jours — mais elles
+        nous demandent de chercher plus profondément, de sortir des
+        recommandations algorithmiques, d'aller fouiller dans les marges
+        et souvent loin d’un support numérique.<br />
+        <br />
+        Cette marginalisation pose une question économique brutale :
+        peut-on vivre de la création de concept-albums aujourd'hui
+        ?<br />
+        La réponse est glaçante pour la majorité des artistes : non, pas
+        seulement de l'album.<br />
+        Le modèle hybride s'impose : Bandcamp pour les sorties (revenus
+        minimes), des concerts pour survivre (l'essentiel des revenus),
+        des financements participatifs pour les projets ambitieux
+        (Kickstarter, Patreon) et souvent un travail alimentaire à côté.
+        Burial a gardé l'anonymat pendant des années en partie parce
+        qu'il ne vivait pas de sa musique. Alva Noto peut se permettre
+        sa radicalité car il vend aussi des œuvres visuelles dans des
+        galeries d'art. La compagnie Organic Orchestra doit constamment
+        tourner pour financer ses créateurs et futurs production. Ce
+        modèle est-il durable ? Oui, mais au prix d'une précarité
+        assumée et d'un rythme de production ralenti. Les artistes
+        conceptuels produisent moins, prennent plus de temps entre
+        chaque sortie.<br />
+        Certains trouvent des voies hybrides : résidences artistiques,
+        commandes institutionnelles, collaborations avec des musées ou
+        festivals. Le concept-album devient alors un art subventionné,
+        comme le théâtre ou la danse contemporaine. Ce n'est pas un
+        échec, c'est une reconnaissance : certaines formes d'art ne
+        peuvent pas être rentables dans une logique de marché pur.</p>
+        <p>Là où les concept-albums nous touchent le plus, c'est
+        précisément quand ils font le pas de se rapprocher du public
+        autrement. Quand ils s'ouvrent à des pratiques qui viennent
+        chercher notre attention : l'immersion live, de nouveaux espaces
+        d'écoute, des techniques de communication inattendues et des
+        formes transmédiatiques. Le concept-album survit alors là où il
+        parvient à capter notre attention de manière active, non par des
+        stratégies marketing manipulatrices, mais par une proposition
+        artistique suffisamment forte pour nous faire sortir de l'écoute
+        passive. La scène expérimentale pour la magie de la technique,
+        YouTube pour les clips, les installations sonores pour
+        l'expérimentation spatiale, les métavers pour des performances
+        virtuelles et sociales, Bandcamp pour les sorties indépendantes
+        — bref, ces niches ne sont pas des refuges par défaut, mais des
+        espaces où l'engagement volontaire remplace la consommation
+        automatisée. Le concept-album ne meurt pas : il se redéfinit
+        comme une expérience qui exige — et mérite notre vive
+        présence.</p>
+        <p>Alors, le concept-album survit, mais transformé et
+        marginalisé. Il n'est plus une forme dominante de création
+        musicale, mais un territoire de résistance artistique.
+        Résistance contre la marchandisation généralisée, contre la
+        fragmentation du contenu créatif, contre la logique extractive
+        des plateformes.</p>
+        <p>Ainsi peut distinguer trois trajectoires distinctes :</p>
+        <p><u>Trajectoire 1 — Disparition pure :</u> Certains
+        concept-albums disparaissent effectivement, incapables de
+        s'adapter. Ce sont ceux qui dépendaient d'un contexte industriel
+        et médiatique aujourd'hui obsolète : albums vendus en masse dans
+        les grandes surfaces, diffusés à la radio, promus par MTV. Ces
+        albums-là n'existent plus dans leur forme dominante.</p>
+        <p><u>Trajectoire 2 — Survie fragmentée dans le mainstream :</u>
+        D'autres survivent en apparence (Stupeflip, Laylow, Orelsan ou
+        Gorillaz) mais sont consommés de manière fragmentée par le grand
+        public. L'œuvre existe intégralement, mais seule une minorité
+        l'expérimente comme telle. Le concept-album devient alors un
+        double objet : playlist pour les masses, œuvre totale pour les
+        initiés et fans.</p>
+        <p><u>Trajectoire 3 — Mutation ou déplacement dans les niches
+        :</u> Enfin, certains mutent vers des formes qui échappent
+        structurellement au streaming (performances, installations,
+        transmédialité). Ils renoncent à la forme album traditionnelle
+        pour garantir la cohérence de l'expérience. C'est la voie
+        d'<em>Oniri 2070</em>, d<em>'ISAM,</em> d'<em>Oxyville</em> ou
+        de <em>Krystal Zealot</em>. De plus, certains projets poussent
+        l’exigence si loin dans la seule matière sonore qu’ils
+        deviennent eux aussi des formes minoritaires, souvent défendues
+        principalement en live — comme l’expérimental d’Alva Noto,
+        Merzbow ou Tim Hecker.</p>
+        <p>Ces trois trajectoires coexistent. Elles ne se contredisent
+        pas : elles cartographient les différentes manières dont le
+        concept-album négocie sa survie à l'ère du streaming.</p>
+        <p>Burial compose seul la nuit pour retrouver ce rapport secret
+        à la musique. Alva Noto vend une position artistique plutôt
+        qu'un produit de masse. Organic Orchestra pédale pour alimenter
+        leur performance en énergie. Compost Collaps fabrique des
+        instruments à partir de déchets pour incarner un futur
+        post-capitaliste. Ces gestes ne sont pas anecdotiques : ils
+        incarnent un refus, une autre manière de faire exister la
+        musique.</p>
+        <p>À l'issue de ce parcours, nous pouvons redéfinir le
+        concept-album à l'ère du streaming. Comme le soulignait Bob
+        Ezrin, tous les albums ont un concept — mais tous ne sont pas
+        des concept-albums. La distinction réside dans l'intention
+        structurante : le concept-album refuse d'être une simple
+        collection de pistes et s'affirme comme œuvre totale.</p>
+        <p>Le concept-album contemporain n'est plus un objet, mais une
+        position artistique : celle de créer une expérience cohérente,
+        immersive et sensible à un certain type d’auditeur ; mais
+        surtout qui résiste à la fragmentation. Ce n'est pas seulement
+        un ensemble de pistes liées, mais une manière de délivrer des
+        sonorités, un visuel, un vécu, un message, une recherche —
+        mettant sur le même plan l'esthétique et la structure de
+        l'œuvre.</p>
+        <p>Pensé en amont, il fait preuve d'une architecture artistique
+        et temporelle qui s'articule autour de 6 axes, qui bien souvent
+        fusionnent :</p>
+        <ol type="1">
+        <li><p>Des outils personnels, une originalité dans leur
+        utilisation et dans la construction sonore — qui produisent
+        souvent, par elles-mêmes, le sens (Oniri 2070 avec ses logiciels
+        de live, samplings et objets d’itinérance ; ou Compost Collaps
+        avec ses instruments fabriqués à partir de déchets et de
+        recherches acoustiques).</p></li>
+        <li><p>Les sonorités comme concept — où la texture, la
+        temporalité et le sound-design même définissent le propos sans
+        narration explicite.</p></li>
+        <li><p>Le fil conducteur — narration, trame, message ou simple
+        cohérence émotionnelle et esthétique.</p></li>
+        <li><p>La communication vivante — ancrée dans le processus
+        créatif, au-delà de la publicité (la mythologie de Stupeflip ou
+        le mystère de Boards Of Canada).</p></li>
+        <li><p>La scénographie — performance ou installation comme
+        partie intégrante, non ajout “cosmétique” de la post-production
+        (<em>ISAM d’Amon Tobin ou le Sound Lab 2025 au
+        Kraftwerk</em>).</p></li>
+        <li><p>Les choix de diffusion — qui conditionnent l'expérience
+        ou même en fait partie comme <em>Crisis (The Worthless
+        Album)</em> de Valentin Hansen. (Diffusion : streaming,
+        Bandcamp, vinyle, installation, etc…)</p></li>
+        </ol>
+        <p>Ce qui unifie ces axes, c'est le refus de la fragmentation.
+        Le concept-album affirme que l'œuvre ne peut exister pleinement
+        que comme totalité — que l'écoute d'un morceau isolé passe à
+        côté de l'essentiel. À l'ère du streaming qui atomise tout, il
+        déclare : <em>"je ne suis pas une playlist, je suis un
+        monde.".</em></p>
+        <p>Cette position peut s'incarner dans des formats multiples :
+        album audio linéaire, performance, installation, projet
+        transmédiatique, espace virtuel, mais elle demeure
+        fondamentalement une résistance à la logique du streaming. C'est
+        pourquoi le concept-album contemporain survit transformé dans
+        les niches : non par échec, mais parce que son essence même —
+        l'exigence d'attention totale — le rend structurellement
+        incompatible avec la consommation passive que favorise le
+        système mis en place par les plateformes.</p>
+        <p>La question qui demeure est celle-ci : acceptons-nous que le
+        streaming et ses plateformes aient le monopole sur notre accès à
+        la musique, sur la définition même de ce qu'est "écouter" ? Ou
+        sommes-nous prêts à "bricoler nos propres alternatives", comme
+        le suggère François de <em>Monte Le Son.</em> Ces alternatives,
+        justement, commencent à se dessiner. Elles ne remplaceront pas
+        le streaming, mais elles créent des espaces parallèles où le
+        concept-album peut respirer.</p>
+        <p><u>Sur le plan des plateformes :</u> Bandcamp a prouvé qu'un
+        modèle équitable était possible (85% des revenus pour l'artiste,
+        pas d'algorithme imposé, possibilité d'acheter en <em>lossless,
+        CD</em> ou vinyle). Des plateformes comme Resonate expérimentent
+        le stream-to-own (on paie par écoute jusqu'à posséder le
+        fichier). Des initiatives décentralisées comme Audius ou Catalog
+        explorent la blockchain pour redonner le contrôle aux
+        artistes.</p>
+        <p><u>Sur le plan des lieux :</u> Les tiers-lieux culturels se
+        multiplient sur le long terme — salles dédiées à l'écoute
+        immersive, planétariums reprogrammés pour des concerts
+        spatialisés, friches industrielles transformées en espaces
+        d'installations sonores. Oniri 2070 tourne en autonomie
+        énergétique, créant ses propres circuits hors des grandes salles
+        institutionnelles.</p>
+        <p><u>Sur le plan du financement :</u> Le crowdfunding
+        (Kickstarter, Ulule) permet de pré-financer des projets
+        ambitieux. Le mécénat participatif (Patreon, Tipeee) crée des
+        communautés qui soutiennent durablement un artiste. Les
+        résidences artistiques, les commandes publiques, les fonds
+        régionaux offrent des alternatives aux logiques de marché.</p>
+        <p><u>Sur le plan des pratiques :</u> Des collectifs organisent
+        des "listening parties" où on écoute collectivement un album du
+        début à la fin, dans le noir, sans téléphone. Tel que l’espace
+        d’écoute Mino situé à Paris, imaginé par Terrence Nguea. Des
+        clubs programmant des "slow sets" de deux heures minimum. Ou
+        bien des festivals comme Meakusma ou Nyege Nyege privilégient
+        les formats longs et l'expérimentation.</p>
+        <p>Ces alternatives existent. Elles ne sont pas utopiques, elles
+        sont déjà là, dans les marges. La question n'est pas de les
+        inventer, mais de les faire grandir, de les rendre visibles, de
+        les soutenir — financièrement, médiatiquement, politiquement.
+        Cela implique des choix concrets : désabonnement de Spotify pour
+        Bandcamp, soutien aux labels indépendants, fréquentation des
+        lieux alternatifs, partage des découvertes hors algorithmes.
+        Bricoler nos alternatives, c'est donc aussi choisir où va notre
+        argent, notre temps, notre attention. Même si ces pratiques
+        demandent souvent plus d’investissement de la part des
+        auditeurs, elles tendent à être plus justes pour les artistes et
+        contribuent à un écosystème musical plus durable.</p>
+        <p>Le concept-album à l'ère du streaming pose finalement une
+        question bien plus vaste : quel rapport voulons-nous entretenir
+        avec la musique ? Consommation passive et illimitée, ou
+        engagement actif et choisi ? Flux constant, ou moments dédiés ?
+        Algorithmes, ou curation humaine ? Playlists fragmentées, ou
+        œuvres intégrales ?<br />
+        Mais alors, pourquoi au fond, est-ce important ? Pourquoi
+        défendre le concept-album face au flux ?<br />
+        Parce qu'il incarne une forme d'attention et de rapport au temps
+        que nous sommes en train de perdre collectivement. Le
+        concept-album demande ce que le philosophe Bernard Stiegler
+        appelait une "attention profonde" (source : IRI Centre Pompidou
+        - <em>Ecologie de l’attention</em>) : la capacité à se
+        concentrer durablement, à suivre un développement long, à
+        accepter les moments lents ou difficiles d'une œuvre et en ayant
+        confiance à ce qu'ils nous mènent quelque part.<br />
+        Cette capacité n'est pas qu'esthétique, elle est cognitive et
+        politique. Une société qui ne sait plus écouter un album entier
+        est une société qui ne sait plus lire un livre entier, suivre un
+        raisonnement complexe ou construire une pensée longue. Le
+        streaming nous entraîne à l'hyper-attention : réactivité
+        immédiate, papillonnage constant, gratification instantanée.
+        Cette forme d'attention convient parfaitement au système
+        capitaliste et consumériste des plateformes de streaming, qui a
+        besoin de notre disponibilité permanente, de notre incapacité à
+        nous concentrer sur autre chose que le flux qu'il nous
+        fournit.</p>
+        <p>Défendre le concept-album, c'est donc défendre une forme de
+        résistance cognitive. C'est affirmer qu'il existe d'autres
+        temporalités, d'autres modes d'existence que l'urgence
+        permanente. C'est préserver des espaces où l'œuvre peut se
+        déployer lentement, où l'auditeur peut se perdre, où le sens
+        n'est pas immédiat mais se construit progressivement. Ce n'est
+        pas de la nostalgie. C'est un enjeu d'écologie de
+        l'attention.</p>
+        <p>Ce qui nous mène à dire que la survie du concept-album ne
+        dépend pas seulement des artistes. Elle dépend aussi de nous,
+        auditeurs…<br />
+        D’ailleurs, soyons honnêtes : ce "nous" est un fantasme
+        d'universalité. Tous les publics ne sont pas égaux face au
+        concept-album.<br />
+        Il y a d'abord une dimension générationnelle évidente. Ceux qui
+        ont grandi avec le CD, le vinyle, l'habitude d'écouter un album
+        du début à la fin ont développé des modes d'écoute que la
+        <em>Gen-Z</em> n'a presque jamais connus. Ce n'est pas un
+        jugement de valeur : c'est un fait anthropologique. On n'écoute
+        pas de la même manière quand on a été formé par MTV ou par
+        l'algorithme YouTube.<br />
+        Il y a ensuite une dimension culturelle. Apprécier un album
+        d'Alva Noto demande des références, une éducation musicale ou au
+        moins une curiosité cultivée. Puis, le concept-album
+        expérimental actuel reste éloigné d'une culture de militantisme,
+        de combat social, de message. Il est plutôt plongé dans un
+        confort, un privilège culturo-social qui permet d’ouvrir
+        d'autres questionnements moins urgents et peut-être plus
+        subjectifs mais tout de même nécessaires au monde de l’art.
+        L’expérimental devient alors un marqueur de distinction
+        culturelle, accessible à ceux qui ont le temps, les moyens et
+        l'éducation pour le comprendre comme le pratiquer. Est-il
+        élitiste par essence ? Non. Le devient-il dans ce contexte ?
+        Oui, inévitablement.<br />
+        Enfin, il y a une dimension économique : se déplacer pour une
+        installation, payer un concert, acheter un vinyle sur Bandcamp
+        ou Discogs, s'équiper pour l'audio spatial — tout cela a un
+        coût. Le concept-album comme expérience immersive devient un
+        luxe de classe moyenne culturelle. Les playlists Spotify
+        restent, elles, accessibles gratuitement. Cette stratification
+        sociale de l'écoute musicale n'est pas nouvelle, mais le
+        streaming l'a accentué. Il faut l'assumer : défendre le
+        concept-album, c'est aussi défendre un certain capital culturel.
+        La question est de savoir comment démocratiser l'accès à ces
+        expériences, plutôt que de prétendre qu'elles sont spontanément
+        universelles.</p>
+        <p>Du coup la survie du concept-album dépend de notre volonté —
+        ou non — de lui faire une place dans nos vies. Car au fond, le
+        concept-album ne demande qu'une chose : du temps, de
+        l’attention. Du temps pour l'écouter. De l’attention pour le
+        comprendre.<br />
+        À l'ère du streaming, ce temps est devenu un luxe et notre
+        attention une marchandise.<br />
+        <br />
+        Mais alors que nous réserve l'avenir ? Trois scénarios se
+        dessinent.</p>
+        <p><u>Scénario 1 — L'accélération :</u> Le streaming poursuit sa
+        logique jusqu'au bout. Les morceaux deviennent encore plus
+        courts (format TikTok), l'écoute encore plus fragmentée. Le
+        concept-album devient un format purement muséal, conservé dans
+        des institutions culturelles mais absent de la création
+        vivante.</p>
+        <p><u>Scénario 2 — Le retour relatif :</u> Une fatigue
+        généralisée face au flux constant provoque une réaction. De
+        nouveaux modèles émergent (plateformes alternatives, réseaux
+        décentralisés, retour massif au vinyle). Le concept-album
+        redevient économiquement viable pour un plus grand nombre
+        d'artistes. On observe déjà des signaux faibles : explosion de
+        Bandcamp pendant le Covid, succès des festivals d'écoute
+        immersive, renaissance du vinyle chez les jeunes
+        générations.</p>
+        <p><u>Scénario 3 — La coexistence :</u> Comme aujourd’hui, les
+        deux mondes continuent d'exister en parallèle — un mainstream du
+        flux, une underground de l'œuvre totale. Le concept-album ne
+        redevient jamais dominant, mais se stabilise dans des niches
+        suffisamment larges pour être viables. C'est le scénario le plus
+        probable : une fragmentation permanente du paysage musical en
+        écosystèmes parallèles qui ne se parlent plus.</p>
+        <p>Quel que soit le scénario, une chose est certaine : le
+        concept-album tel qu'il a existé de 1960 aux années 2000 ne
+        reviendra pas. La question n'est plus de savoir s'il survivra,
+        mais sous quelle forme il se métamorphosera.</p>
+        <p>Merci d’avoir accordé votre attention et votre écoute
+        soutenue jusqu’ici, vous avez permis à un mémoire de niche —
+        d’exister pleinement.</p>
+        <h1 id="corpus"><strong><u>CORPUS</u></strong></h1>
+        <h3 id="discographie-artiste---titre"><strong><u>DISCOGRAPHIE
+        (ARTISTE - TITRE)</u></strong></h3>
+        <h3 id="section"></h3>
+        <p><a
+        href="https://www.youtube.com/watch?v=vNwYtllyt3Q"><u>Brian Eno
+        -</u> <em><u>Ambient 1: Music for Airports
+        (1978)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=G2nlDhJffqo"><u>Stupeflip
+        -</u> <em><u>Stup Virus (Full Album)</u></em></a> &gt; <a
+        href="https://www.youtube.com/watch?v=G_cdKPMcjiQ"><u>Stupeflip
+        -</u> <em><u>The Antidote (Clip Officiel)
+        (2017)</u></em></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=McjFepEpcBE"><u>Boards
+        Of Canada -</u> <em><u>Tomorrow's Harvest
+        (2013)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=swQdVtt0saA"><u>Burial</u>
+        <em><u>- Burial Full Album (2006)</u></em></a> &gt; <a
+        href="https://www.youtube.com/watch?v=TI0KM5Gv9Qw"><u>Burial -
+        Distant Lights</u></a></p>
+        <p><a
+        href="https://www.youtube.com/playlist?list=OLAK5uy_lmlhbSWYim_6LOr-FoRQn4pQO7UXD661Y"><u>Valentin
+        Hansen -</u> <em><u>Crisis (The Worthless Album)
+        (2021)</u></em></a></p>
+        <p><a
+        href="https://en.wikipedia.org/wiki/Sleepify"><u>Vulfpeck</u>
+        <em><u>- Sleepify (2014)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=PcE87ENNsc0&amp;list=PLf7rZhL0Ht8CreMPLJjhcEMUm7L1UMkyR"><u>Alva
+        Noto -</u> <em><u>Prototypes (Full Album)
+        (2000)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=n44cUnCYxio&amp;list=PLcXnKMtHDb6XSv-C8WvddI2xFBNtlIqmk"><u>Alva
+        Noto -</u> <em><u>Univrs (Full Album) (2011)</u></em></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=OEBZuKxUrwE"><u>Alva
+        Noto</u> <em><u>- HYbr:ID I (2021)</u></em></a> <em>&gt; <a
+        href="https://www.youtube.com/watch?v=y5X_fr3BUoQ"><u>HYbr:ID
+        oval random</u></a></em><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=JcSYv5ZU6fc&amp;list=OLAK5uy_kNAksfhzHE4JCnvazExapn5RQSuqqXCGc"><u>Merzbow
+        -</u> <em><u>Sedonis (2025)</u></em></a> <em>&gt; <a
+        href="https://www.youtube.com/watch?v=JcSYv5ZU6fc"><u>Sedonis -
+        Sedonis A</u></a></em><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=shcDdFyQhpo"><u>Tim
+        Hecker –</u> <em><u>Shards (2025)</u></em></a> <em>&gt; <a
+        href="https://www.youtube.com/watch?v=26jeWB9Aw8c"><u>Shards -
+        Sunset Key Melt</u></a></em><a
+        href="https://www.youtube.com/watch?v=26jeWB9Aw8c"><br />
+        </a><br />
+        <a
+        href="https://youtube.com/playlist?list=PL9wD8KBXVf27Bc4YV_aO2CNveyUW-s6Hw&amp;si=RnAYkRtdz2IejnYr"><u>Laylow
+        -</u> <em><u>TRINITY (Full Album) (2020)</u></em></a></p>
+        <p><a
+        href="https://youtube.com/playlist?list=PLSBWvYm8t6uaWC_hnnT3ZXRmX0IDe6jTU&amp;si=4QwR1wrkl_TRofw1"><u>Laylow
+        -</u> <em><u>L'Étrange Histoire de Mr.Anderson (Full Album)
+        (2021)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/channel/UCfIXdjDQH9Fau7y99_Orpjw"><u>Gorillaz</u></a></p>
+        <p><a
+        href="https://youtube.com/playlist?list=PLMlvj4iB79KqeXTKXquQToJut5KIXeBoq&amp;si=K7YYeTYvnztFhzfb"><u>Ptite
+        Soeur, neophron, FEMTOGO -</u> <em><u>PRETTY DOLLCORPSE | FULL
+        ALBUM (2025)</u></em></a> <em>&gt; <a
+        href="https://www.youtube.com/watch?v=_EFEoDrJXD8"><u>PRETTY
+        DOLLCORPSE - PUKE SOMETHING</u></a></em><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=TZzCm-c22U8"><em><u>Oniri
+        2070 (Extraits) (2020)</u></em></a><br />
+        <br />
+        <a
+        href="https://youtube.com/playlist?list=OLAK5uy_kjVBlpD5huIBoJkUMpHL94IPOHjBKoodo&amp;si=EaAlmJ8yD9bLDIzd"><u>Jean-Michel
+        Jarre -</u> <em><u>OXYMORE (2022)</u></em></a><br />
+        <br />
+        <a
+        href="https://compostcollaps.bandcamp.com/album/chapelle-2120"><u>Compost
+        Collaps</u> <em><u>- EP Chapelle 2120 (2024)</u></em></a> &gt;
+        <a href="https://www.youtube.com/watch?v=QiWlcyocBpY"><em><u>EP
+        Chapelle 2120 - Platonic (Episode 3)</u></em></a></p>
+        <p><a
+        href="https://www.youtube.com/watch?v=u1ZB_rGFyeU"><em><u>OK Go
+        - I Won't Let You Down - Official Video (2014)</u></em></a></p>
+        <p><a
+        href="https://www.youtube.com/playlist?list=PL-VkrKgMVOOo7UYmIwn9S9tJAwaMcelrJ"><u>Orelsan
+        - Album "<em>La fuite en avant” (2025)</em></u></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=5GJWxDKyk3A"><u>Billie
+        Eilish -</u> <em><u>Happier Than Ever</u></em> <u>(Official
+        Music Video) (2021)</u></a></p>
+        <p><a
+        href="https://www.youtube.com/watch?v=zhgFR2L2reE"><u>THEODORA
+        -</u> <em><u>DES MYTHOS (2026)</u></em></a><br />
+        <br />
+        <a
+        href="https://youtube.com/playlist?list=PLn-iPwAQm7Gx3aTN72JjUkNXT3VB1eJDI&amp;si=RbwEwfIU-xLG-Lh-"><u>Krystal
+        Zealot -</u> <em><u>Lou ! Sonata, Vol. 1
+        (2020)</u></em></a><br />
+        <br />
+        <a
+        href="https://youtube.com/playlist?list=PLn-iPwAQm7Gx9-9d-_NmgzDy6Id4BRiIC&amp;si=dbwjzmTXiXlGN2l_"><u>Krystal
+        Zealot -</u> <em><u>Lou ! Sonata, Vol. 2
+        (2023)</u></em></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=XqyEZ0GwS3E"><u>Amon
+        Tobin -</u> <em><u>ISAM Live | Official Full Set HD
+        (2011)</u></em></a></p>
+        <h3
+        id="bibliographie"><strong><u>BIBLIOGRAPHIE</u></strong></h3>
+        <p><a
+        href="https://www.amacad.org/publication/daedalus/pioneers-concept-album"><em><u>Pioneers
+        of the Concept Album</u></em> <u>- Todd Decker - Daedalus
+        (2013)</u></a></p>
+        <p><a
+        href="http://www.camionblanc.com/detail-livre-anthologie-de-l-ambient-d-eric-satie-a-moby-nappes-aeroports-et-paysages-sonores-497.php"><em><u>L'Anthologie
+        de L'ambient</u></em> <em><u>- D'Éric Satie à Moby : nappes,
+        aéroports et paysages sonores -</u></em> <u>Olivier BERNARD |
+        Camion blanc</u><br />
+        </a></p>
+        <p><a
+        href="https://lemotetlereste.com/musiques/electro100nouvelleedition/"><em><u>ELECTRO
+        100, Les albums essentiels des musiques électroniques</u></em>
+        <u>- Olivier PERNOT | Le mot est le reste</u><br />
+        </a></p>
+        <p><em>Sons &amp; Lumières</em> - Centre Pompidou</p>
+        <h3 id="section-1"></h3>
+        <h3 id="vidéos"><strong><u>VIDÉOS</u></strong></h3>
+        <h3 id="section-2"></h3>
+        <p><a
+        href="https://www.youtube.com/watch?v=sOvJJWJKrzg"><em><u>Faut-il
+        réapprendre à écouter de la musique ?</u></em> <u>| Tracks |
+        ARTE</u></a></p>
+        <p><a
+        href="https://www.youtube.com/watch?v=hn-QNz_zGgw"><em><u>Comment
+        le streaming a mangé la musique</u></em> <u>| ARTE</u></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=MjGGlSd96HE"><em><u>La
+        chanson parfaite existe-t-elle ?</u></em> <u>| 42, la réponse à
+        presque tout | ARTE</u></a></p>
+        <p><a href="https://www.youtube.com/watch?v=WRIQ-cj_cMA"><u>Cie
+        Organic Orchestra -</u> <em><u>ONIRI 2070 -</u></em>
+        <em><u>Présentation du projet</u></em></a><br />
+        <br />
+        <a href="https://www.youtube.com/watch?v=JNtLdBbLvjw"><em><u>À
+        propos</u></em> <em><u>d’Oniri</u></em> <em><u>2070</u></em>
+        <u>- La Nouvelle Vague de Saint-Malo</u></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=d2QdAIyMhwQ"><u>Compost</u>
+        <u>Collaps</u> <u>-</u> <em><u>KOTEKAN (Episode
+        1)</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/shorts/Bwr_ZidlNUg"><em><u>“Mais
+        où sont passés les clips ?” - Monte le Son</u></em></a><br />
+        <br />
+        <a
+        href="https://www.youtube.com/watch?v=WKZYbtj4Xxg"><em><u>Comment
+        les artistes survivent-ils à Spotify &amp; Co ?</u></em> <u>|
+        Tracks | ARTE</u></a><br />
+        <br />
+        <em><a href="https://www.youtube.com/watch?v=oxVVm75k_8Q"><u>In
+        Conversation With Amon Tobin</u></a></em></p>
+        <h3 id="articles"><strong><u>ARTICLES</u></strong></h3>
+        <h3 id="section-3"></h3>
+        <p><a
+        href="https://fr.wikipedia.org/wiki/Album-concept"><u>Wikipédia
+        -</u> <em><u>Album-concept</u></em></a><br />
+        <br />
+        <a
+        href="https://www.hiresaudio.online/the-rise-and-fall-of-the-compact-disc/"><u>RIAA
+        -</u> <em><u>The Rise and Fall of the Compact
+        Disc</u></em></a></p>
+        <p><a
+        href="https://snepmusique.com/wp-content/uploads/2023/12/12-2023-IFPI-Engaging-With-Music-2023-FR.pdf"><u>Rapport
+        de</u> <u>l’IFPI</u> <u>:</u> <em><u>l’écoute de la musique dans
+        le monde est de plus en plus importante et les modes de
+        consommation de plus en plus divers.</u></em></a><br />
+        <br />
+        <a
+        href="https://www.larevuedudigital.com/wp-content/uploads/2024/03/DP-SNEP-2024-12-03_Final.pdf"><u>SNEP</u>
+        <em><u>- LA PRODUCTION MUSICALE FRANÇAISE EN 2023, CROISSANCE ET
+        NOUVEAUX CHALLENGES</u></em></a></p>
+        <p><a
+        href="https://www.observatoire-culture.net/barometre-budgets-choix-culturels-collectivites-territoriales-2025/"><em><u>Baromètre
+        sur les budgets et choix culturels des collectivités
+        territoriales</u></em> <u>: volet national 2025</u></a><br />
+        <br />
+        <a href="https://fr.wikipedia.org/wiki/Stupeflip"><u>Wikipédia
+        -</u> <em><u>Stupeflip</u></em></a><br />
+        <br />
+        <a
+        href="https://en.wikipedia.org/wiki/Boards_of_Canada"><u>Wikipédia
+        -</u> <em><u>Boards of Canada</u></em></a><br />
+        <br />
+        <a href="https://fr.wikipedia.org/wiki/Burial"><u>Wikipédia
+        -</u> <em><u>Burial</u></em></a><br />
+        <br />
+        <a
+        href="https://www.theringer.com/2017/11/03/music/burial-untrue-10-year-anniversary"><u>THE
+        RINGER -</u> <em><u>The Augmented Reality of Burial’s ‘Untrue,’
+        10 Years Later</u></em></a> <em>&gt; <a
+        href="https://blackdownsoundboy.blogspot.com/2006/03/soundboy-burial.html"><u>Interview
+        de Burial</u></a></em> par Martin Clark (Blackdown)<br />
+        <br />
+        <a
+        href="https://www.electronicsound.co.uk/features/long-reads/alva-noto/"><u>Alva
+        Noto -</u> <em><u>Electronic Sound</u></em></a><br />
+        <br />
+        <a
+        href="https://fr.wikipedia.org/wiki/Carsten_Nicolai#:~:text=Carsten%20Nicolai%2C%20aussi%20connu%20sous,nombreuses%20collaborations%20avec%20Ryuichi%20Sakamoto."><u>Wikipédia
+        - Carsten Nicolai (Alva Noto)</u></a><br />
+        <br />
+        <a
+        href="https://www.15questions.net/interview/alva-noto-interview-about-mathematics-music-and-reshaping-world-through-art/page-1/"><u>FIFTEEN
+        QUESTIONS -</u> <em><u>Alva Noto Interview about the Mathematics
+        of Music and Reshaping the World through Art</u></em></a><br />
+        <br />
+        <a
+        href="https://www.unijambiste.com/works/oniri-2070/"><em><u>Oniri
+        2070</u></em> <u>- L’unijambiste</u></a><br />
+        <br />
+        <a
+        href="https://www.las-art.foundation/programme/sound-lab"><u>Sound
+        Lab 2025 - Kraftwerk Berlin /</u> <em><u>Exploring the creative
+        application of quantum technologies through
+        sound</u></em></a><br />
+        <br />
+        <a
+        href="https://www.lesinrocks.com/musique/jean-michel-jarre-annonce-lalbum-oxymore-487223-22-07-2022/"><em><u>Jean-Michel
+        Jarre annonce l’album “OXYMORE”</u></em> <u>- Les Inrockuptibles
+        - 202<em>2</em></u></a> <em>&gt; <a
+        href="https://www.radiofrance.fr/francemusique/evenements/journee-jean-michel-jarre-le-vendredi-21-octobre-sur-france-musique-4717880"><u>Source
+        : Radio France - France Musique</u></a></em><br />
+        <br />
+        <a
+        href="https://fr.wikipedia.org/wiki/Oxymore_(album)"><u>Wikipédia
+        -</u> <em><u>Oxymore (album)</u></em></a><br />
+        <br />
+        <a
+        href="https://blog.readymag.com/abstract-shapes-go-on-a-web-journey-behind-the-scenes-of-an-audio-visual-album-by-andrey-lee-14d0dc349074/"><em><u>Abstract
+        shapes go on a web journey: behind the scenes of an audio-visual
+        album by Andrey Lee × Readymag</u></em></a><br />
+        <br />
+        <a
+        href="https://www.tsugi.fr/compost-collaps-la-techlow-100-recup-interview/"><em><u>Compost
+        Collaps, la ‘techlow’ 100%</u></em> <em><u>recup</u></em> <u>|
+        Interview par TSUGI</u></a><br />
+        <br />
+        <a
+        href="https://fr.wikipedia.org/wiki/Soundhunters"><u>Wikipédia
+        -</u> <em><u>Soundhunters</u></em></a></p>
+        <p><a
+        href="https://xitelabs.com/portfolio/amon-tobin/"><em><u>Amon
+        Tobin ISAM WORLD TOUR</u></em> <u>- Xite Labs (Content Creation,
+        Interactive Design, VJ)</u></a><br />
+        <br />
+        <a
+        href="https://www.iri.centrepompidou.fr/evenement/ecologie-de-lattention-2/"><u>IRI
+        du Centre Pompidou - Bernard Stiegler et Igor Galligo -</u>
+        <em><u>Ecologie de l’attention</u></em></a><br />
+        <br />
+        <a href="https://lyl.live/show/meakusma"><u>Meakusma Festival
+        (Musique Indépendante &amp; Expérimentale)</u></a></p>
+        <h3 id="thèses"><strong><u>THÈSES</u></strong></h3>
+        <h3 id="section-4"></h3>
+        <p><a
+        href="https://hugoribeiro.com.br/area-restrita/Shuker-Popular_Music_Culture-The_Key_Concepts.pdf"><em><u>Roy
+        Shuker - Popular Music : The Key Concepts, Routledge, 2002 (ISBN
+        0-415-28425-2)</u></em></a></p>
+        <p><a
+        href="https://theses.hal.science/tel-05058148v1/file/KUZMINA_Iuliia3.pdf"><em><u>Julia
+        Kuzmina. Histoire et sémiologie narrative des albums concepts :
+        les exemples des corpus québécois et français de 1968 à
+        1987.</u></em></a><br />
+        Littératures. Université Polytechnique Hauts-de-France;
+        Université de Sherbrooke (Québec, Canada), 2025. Français.</p>
+        <h1
+        id="remerciements"><strong><u>REMERCIEMENTS</u></strong></h1>
+        <p>Je remercie l’ensemble des enseignants de la mention Création
+        Numérique de l’École Supérieure d’Art et Design de
+        Saint-Étienne, et plus particulièrement David-Olivier Lartigaud,
+        qui m’a accompagné tout au long de mes recherches en tant que
+        directeur de mémoire et a su m’aider à clarifier mes réflexions
+        lorsque celles-ci devenaient difficiles à formuler.</p>
+        <p>Je remercie également ma mère, mon frère et mes amis pour
+        leur soutien, leur aide précieuse dans la recherche et
+        l’écriture, ainsi que pour leurs encouragements constants. Ainsi
+        qu’à Claude AI pour son aide à la reformulation de certains
+        passages.</p>
+        <p>Enfin, je tiens à remercier Christophe Leclerc pour avoir
+        accepté et soutenu un format de mémoire singulier, pensé sous la
+        forme d’un podcast.</p>
+    
+</body>
+</html>

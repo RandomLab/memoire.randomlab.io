@@ -1,0 +1,275 @@
+/* ----------------------------- */
+/* ==reset */
+/* ----------------------------- */
+/* base font-size corresponds to 10px and is adapted to rem unit */
+html {
+	font-size: 100%;
+}
+/* Style général pour tous les boutons du lecteur */
+/* Boutons audio stylés */
+/* Taille fixe et centrage pour tous les boutons du lecteur */
+.audio-player button {
+               /* largeur fixe */
+  height: 50px;               /* hauteur fixe */
+  display: flex;
+  justify-content: center;    /* centre horizontalement */
+  align-items: center;        /* centre verticalement */ :contentReference[oaicite:0]{index=0}
+  background-color: #dedede;     /* gris simple */
+  border: none;
+  color: black;
+  font-size: 22px;           /* taille de l’icône */
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 0;                 /* pas de padding qui modifierait la taille */
+  box-sizing: border-box;     /* évite découpage du contenu si padding/border */ :contentReference[oaicite:1]{index=1}
+
+}
+.audio-player button .icon {
+  width: 50px; 
+  font-size: 24px;
+ transform: translate(1.7%,-4.5%);
+ }
+
+/* Style pour l’état PLAY */
+.audio-player button.play {
+  background-color: #ccc;
+}
+
+/* Style pour l’icône PLAY *différent* si besoin */
+.audio-player button.play .icon {
+  font-size: 24px; /* taille pour play */
+}
+
+/* Style pour l’état PAUSE */
+.audio-player button.pause {
+  background-color: #ccc;
+}
+
+/* Style pour l’icône PAUSE *différent* si besoin */
+.audio-player button.pause .icon {
+  font-size: 32px; /* par exemple légèrement plus petit */
+ transform: translateY(-9%);
+}
+
+.audio-player button .iconshort {
+  width: 30px;
+  font-size: 24px;
+  transform: translateY(-6%);       /* garantit qu’on centre vraiment le glyphe */
+}
+
+/* Option : effet survol */
+.audio-player button:hover {
+  background-color: #bbb;
+}
+
+/* Option : mettre les boutons sans texte bleu */
+.audio-player button:focus {
+  outline: none;
+}
+.audio-player {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+body {
+	background-color: #fff;
+	color: #000;
+	font-family: "Century Gothic", arial, sans-serif;
+	font-size: 1em; /* equiv 14px */
+	line-height: 1; /* adapt to your design */
+	
+}
+
+/* font-sizing for content */
+/* preserve vertical-rythm, thanks to http://soqr.fr/vertical-rhythm/ */
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details, 
+figure, 
+hgroup {
+	font-size: 1em; /* normal */
+	line-height: 1.5;
+	margin: 1.5em 0 0 0;
+}
+em, i, .italic {
+	font-style: italic;
+	transform: skewX(-6deg); 
+	display: inline-block;
+}
+h1, .h1-like {
+	font-size: 2em; /* titre */
+	font-weight: bold;
+	line-height: 1em;
+	text-decoration: underline;
+	margin: 3em 0 0 0;
+
+}
+h2, .h2-like {
+	font-size: .75em; /* citation */
+	font-weight: normal;
+	font-style: italic;
+	line-height: 1.25em;
+	margin: 1.5em 8em 0 8em;
+	transform: skewX(-6deg); 
+	display:flex;
+}
+h3, .h3-like {
+	font-size: 1.5714em; /* sous titre */
+	font-weight: normal;
+	line-height: .25em;
+	margin: 2em 0 0 0;
+}
+h4, .h4-like {
+	font-size: .75em; /* traduction */
+	font-weight: bold;
+	line-height: 1.5em;
+	margin: 2em 8em 0 8em;
+}
+h5, .h5-like {
+	font-size: 10.2857em; /* equiv 18px */
+	font-weight: normal;
+	line-height: 1.1667em;
+	margin:  1.1667em 0 0 0;
+}
+h6, .h6-like {
+	font-size: 10.1429em; /* equiv 16px */
+	font-weight: normal;
+	line-height: 1.3125em;
+	margin:  1.3125em 0 0 0;
+}
+
+/* alternate font-sizing */
+.smaller {
+	font-size: .7143em; /* equiv 10px */
+	line-height: 2.1em;
+}
+.small {
+	font-size: .8571em; /* equiv 12px */
+	line-height: 1.75em;
+}
+.big {
+	font-size: 1.1429em; /* equiv 16px */
+	line-height: 1.3125em;
+}
+.bigger {
+	font-size: 1.2857em; /* equiv 18px */
+	line-height: 1.1667em;
+}
+.biggest {
+	font-size: 1.4286em; /* equiv 20px */
+	line-height: 1.05em;
+}
+
+/* soft reset */
+html,
+body,
+textarea,
+figure,
+label {
+	margin: 7%;
+	padding: 1px;
+}
+ul,
+ol {
+	padding-left: 2em;
+}
+code, 
+pre,
+samp {
+	white-space: pre-wrap;
+	font-family: consolas, 'DejaVu Sans Mono', courier, monospace;
+}
+code { line-height: 1em; }
+table { margin-bottom: 1.5em; }
+
+/* avoid top margins on first content element */
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+	margin-top: 0;
+}
+
+/* avoid margins on nested elements */
+li p,
+li ul,
+li ol {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* HTML5 tags */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+	display: block;
+}
+
+/* max values */
+img, table, td, blockquote, code, pre, textarea, input, video {
+	max-width: 100%;
+}
+
+/* you shall not pass */
+div, textarea, table, td, th, code, pre, samp {
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+}
+
+/* pictures */
+img {
+	float: left;
+	width: auto;
+	height: auto;
+	vertical-align: auto;
+	margin-top: 1em;
+	margin-right: 1em; /* pour éviter que le texte soit collé à l'image */
+	margin-bottom: .1em; /* pour espacer du texte en dessous */
+}
+a img { border: 0; }
+
+/* scripts */
+body > script {display: none !important;}
+
+/* skip-links */
+.skip-links {
+	position: absolute;
+}
+.skip-links a {
+	position: absolute;
+	left: -9999px;
+	padding: 0.5em;
+	background: #000;
+	color:#fff;
+	text-decoration: none;
+}
+.skip-links a:focus {
+	position: static;
+}

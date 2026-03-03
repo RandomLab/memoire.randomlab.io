@@ -1,0 +1,372 @@
+@media print {
+
+    /* règle pour la page */
+
+    @page {
+      margin: 20mm 30mm 20mm 30mm;
+      size: 210mm 297mm;
+    }
+
+    @page {
+        @top-right {
+            content: "Présence fantôme - L'intégration des machines sur scène";
+            height: 10mm;
+            text-align: center;
+            font-family: "Syne";
+            font-size: 9pt;
+
+        }
+
+        @bottom-right {
+            content: counter(page);
+            height: 10mm;
+            text-align: center;
+            width: 10mm;
+            font-family: "Syne";
+            font-size: 15pt;
+        }
+    }
+
+    /* global */
+
+    html {
+        padding: 0;
+        margin: 0;
+        /* font-size: 11pt;
+        line-height: 1.5; */
+    }
+
+    body {
+        background-color: white;
+        color: black;
+        font-family: "AmiAmie";
+        font-weight: lighter;
+    }
+
+    /* élements ignorés */
+
+    .titre-fixe {
+        display: none;
+    }
+
+    .video-container {
+        display: none;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    /* général */
+
+    #main {
+        max-width: 100%;
+    }
+
+    #main figure {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #main figure figcaption {
+        color: black;
+        margin: 2mm 0 0 0;
+        font-size: 11pt;
+        text-align: center;
+        font-family: "AmiAmie";
+    }
+
+    #main figure figcaption .source-img {
+        color: black;
+        font-size: 8pt;
+        margin: 0;
+    }
+
+    #main figure img {
+        width: 100%;
+    }
+
+    #main blockquote {
+        font-family: "AmiAmie";
+        font-size: 13pt;
+        line-height: 1.5;
+        margin: 10mm 0 0 0;
+    }
+
+    #main blockquote .signature {
+        font-size: 8pt;
+        text-align: right;
+    }
+
+    #chapitre\:6 #citation{
+        width: 56%;
+        /* background-color: yellow; */
+    }
+
+    #chapitre\:4 #citation{
+        width: 53%;
+        /* background-color: yellow; */
+    }
+
+    #chapitre\:2 #citation:last-child{
+        page-break-before: always;
+    }
+
+    /* header */
+
+    #header {
+        width: 100%;
+        margin-top: 110mm;
+        margin-bottom: 0mm;
+        page-break-after: always;
+        text-align: center;
+    }
+
+    #header h1 {
+        font-size: 40pt;
+        line-height: 0.9;
+        font-family: "Syne";
+        font-weight: normal;
+        margin: 0mm;
+    }
+
+    #header h2{
+        font-family: "Syne";
+        font-weight: normal;
+        font-size: 15pt;
+    }
+
+    #header p {
+        text-align: left;
+        font-size: 25pt;
+        line-height: 1.3;
+        margin: 5mm 0 0 0;
+        padding: 0;
+    }
+
+    #header #couv-pdf{
+        font-family: "Syne";
+        margin-top: 100mm;
+    }
+
+    #header #couv-pdf p{
+        font-size: 8pt;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    /* sommaire */
+
+    #sommaire {
+        list-style: none;
+        margin: 110mm 0 10mm 0;
+        padding: 0;
+        font-size: 18pt;
+        line-height: 1.3;
+        font-family: "Syne";
+        /* text-transform: uppercase; */
+        text-align: left;
+    }
+    
+    #sommaire h1{
+        font-family: "Syne";
+        margin-bottom: 5mm;
+        /* text-transform: uppercase; */
+        font-weight: normal;
+    }
+
+    #sommaire a {
+        text-decoration: none;
+        color: black;
+    }
+
+    /* chapitre */
+
+    section[content] h2  {
+        font-size: 20pt;
+        font-family: "Syne";
+        font-weight: normal;
+        /* text-transform: uppercase; */
+        margin: 10mm 0 3mm 0;
+        padding: 0;
+        page-break-before: always;
+    }
+
+    section[content] h3 {
+        font-size: 15pt;
+        margin: 15mm 0 5mm 0;
+        font-family: "Syne";
+        font-weight: normal;
+    }
+
+    section[content] h4{
+        font-family: "Syne";
+        font-size: 13pt;
+        font-weight: normal;
+        margin: 20mm 0 0 0;
+    }
+
+    section[content] h3:first-of-type {
+        margin: 10mm 0 0mm 0;
+    }
+
+    /* #chapitre\:2 h3 {
+        margin: 15mm 0 5mm 0;
+        page-break-before: always;
+    } */
+
+    #chapitre\:6 h3{
+        /* color: green; */
+        font-family: "AmiAmie";
+        /* font-style: italic; */
+        font-weight: lighter;
+    }
+
+    section[content] p {
+        font-size: 13pt;
+        line-height: 1.5;
+        margin: 4mm 0 0 0;
+        padding: 0;
+    }
+
+    section[content] #image {
+        margin-top: 10mm;
+        margin-bottom: 10mm;
+        padding: 0;
+        text-align: center;
+    }
+
+    /* section[content] #image img{
+        width: 80%;
+        display: inline-block;
+    } */
+
+
+    section[content] #image .portrait{
+        width: 70%;
+        display: inline-block;
+    }
+
+    section[content] #image .img-petite{
+        width: 50%;
+    }
+
+    section[content] sup {
+        font-size: 9pt;
+        font-family: "Syne";
+    }
+
+    section[content] sup a {
+        color: black;
+        text-decoration: none;
+    }
+
+    section[content] #citation {
+        /* page-break-before: always; */
+        margin-bottom: 10mm;
+        width: 80%;
+        margin: 10mm auto 10mm auto;
+        font-size: 11pt;
+    }
+
+    #chapitre\:6 h3 {
+        page-break-before: always;
+    }
+
+    #chapitre\:6 h3:first-of-type {
+        page-break-before: avoid;
+    }
+
+    #chapitre\:1 h3:last-of-type{
+        /* color: red; */
+        page-break-before: always;
+    }
+
+    #chapitre\:7 {
+        border-bottom: 0.2mm solid black;
+        padding: 0 0 10mm 0;
+    }
+
+    /* notes */
+
+    #notes {
+        margin: 0mm 0 10mm 0;
+        padding: 10mm 0 0 0;
+        width: 100%;
+        font-family: "AmiAmie";
+        page-break-before: always;
+    }
+
+    #notes h3{
+        text-transform: uppercase;
+    }
+
+    #notes ol {
+        margin: 0;
+        padding: 0 0 0 5mm;
+    }
+
+    #notes ol li {
+        padding: 0 5mm 0 10mm;
+        margin: 2mm 0 2mm 0;
+        font-size: 9pt;
+        line-height: 1.3;
+    }
+
+    #notes ol li p {
+        margin: 0 0 3mm 0;
+        padding: 0 5mm 0 3mm;
+    }
+
+    #notes ol li a {
+        color: black;
+    }
+
+    #notes h4, #notes h3{
+        font-family: "Syne";
+        font-weight: normal;
+    }
+
+    /* annexe */
+
+    #annexe {
+        page-break-before: always;
+        margin: 0mm 0 10mm 0;
+        padding: 10mm 0 0 0;
+        width: 100%;
+        /* border-top: 0.2mm solid black; */
+    }
+
+    #annexe article h2 {
+        font-family: "Syne";
+        font-weight: normal;
+        font-size: 11pt;
+        margin: 0 0 3mm 0;
+        padding: 0 0 0 0;
+    }
+
+    #annexe article li {
+        margin: 0 0 5mm 0;
+        padding: 0 5mm 0 0;
+        font-size: 9pt;
+        line-height: 1.3;
+    }
+
+    #annexe article a {
+        color: black;
+    }
+
+    /* remerciements */
+
+    #chapitre\:8{
+        margin-top: 120mm;
+    }
+
+    #chapitre\:8 p{
+        /* color: red; */
+        font-size: 11pt;
+        width: 80%;
+    }
+}
