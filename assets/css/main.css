@@ -46,12 +46,21 @@ body {
     width: 100%;
 }
 
+
+
+/* contenu */
+
+.content {
+    grid-area: main;
+    margin-top: 50px;
+}
+
 /* navigation */
 
-.navigation {
+.content .navigation {
     grid-area: header;
     position: fixed;
-    height: 50px;
+    height: 100px;
     background: white;
     display: flex;
     flex-direction: row;
@@ -61,15 +70,8 @@ body {
     padding: 0 20px 0 0;
 }
 
-.navigation li {
+.content .navigation li {
     /* display: inline-block; */
-}
-
-/* contenu */
-
-.content {
-    grid-area: main;
-    margin-top: 50px;
 }
 
 .content .header {
@@ -111,6 +113,14 @@ li {
 
 h1 {
     margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
 }
 
 /* mobile */
