@@ -4,6 +4,8 @@
 $(document).ready(function () {
 
     $("#content").DataTable({
+        order: [[0, 'asc']],
+        destroy: true,
         paging: false,
         language: {
             "decimal":        "",
