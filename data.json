@@ -3,118 +3,164 @@
     {
       "name": "Maelys Bard",
       "title": "Gouf temporel",
-      "year": 2024
+      "year": 2024,
+      "html": "2024/maelys-bard",
+      "pdf":""
     },
     {
       "name": "Héloïse Debrand",
       "title": "Des internets locaux et ornés, soutenables énergétiquement pas visuellement",
-      "year": 2024
+      "year": 2024,
+      "html": "2024/heloise-debrand",
+      "pdf": ""
     },
     {
       "name": "Julien Dzviga",
       "title": "L'épitexte du jeu vidéo",
-      "year": 2024
+      "year": 2024,
+      "html": "2024/julien-dzviga",
+      "pdf": ""
     },
     {
       "name": "Si Keting",
       "title": "Research on VJ Practices in the Chinese Context",
-      "year": 2024
+      "year": 2024,
+      "html": "2024/si-keting",
+      "pdf": ""
     },
     {
       "name": "Alféa Morelli",
       "title": "Transition de genre, de la pop à l'hyperpop",
-      "year": 2024
+      "year": 2024,
+      "html": "2024/alfea-morelli",
+      "pdf": ""
     },
     {
       "name": "Erwan Acas",
       "title": "Aperçu de la notion de Cyborg, contexte d'apparition et déclinaison contemporaine",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/erwan-acas",
+      "pdf": "2025/erwan-acas/erwan-acas-apercu-de-la-notion-de-cyborg.pdf"
     },
 
     {
       "name": "Haïk GH Arakelian",
       "title": "À Propos du Tapis Arménien",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/haik-gh-arakelian/",
+      "pdf": "2025/haik-gh-arakelian/haik-gh-arakelian-a-propos-du-tapis-armenien.pdf"
     },
     {
       "name": "Sarah Boutière",
       "title": "Présence fantôme",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/sarah-boutiere/",
+      "pdf": "2025/sarah-boutiere/presence_fantome-SarahBoutiere.pdf"
     },
     {
       "name": "Benoît Fage",
       "title": "Au travers des Manifestes numériques",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/benoit-fage/",
+      "pdf": "2025/benoit-fage/benoit-fage-au-travers-des-manifestes-numeriques.pdf"
     },
     {
       "name": "Pablo Haddadou",
       "title": "XYZ",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/pablo-haddadou/",
+      "pdf": "2025/pablo-haddadou/pablo-haddadou-xyz.pdf"
     },
     {
       "name": "Ludovic Hohl",
       "title": "L'outil jeu vidéo",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/ludovic-hohl/",
+      "pdf": "2025/ludovic-hohl/Hohl_Ludovic_Mémoire_2024_2025.pdf"
     },
     {
       "name": "Gabriel Lecurieux",
       "title": "Anima Aether EsCopia",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/gabriel-lecurieux/",
+      "pdf": "2025/gabriel-lecurieux/gabriel-lecurieux-anima-aether-escopia.pdf"
     },
     {
       "name": "Maxence Mardargent",
       "title": "Tu prendrais bien un cookie ?",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/maxence-mardargent/",
+      "pdf": "2025/maxence-mardargent/maxence-mardargent-tu-prendrais-bien-un-cookie.pdf"
     },
     {
       "name": "Yutin Xie",
       "title": "Human.zip: Ego Compression in Digital Culture ?",
-      "year": 2025
+      "year": 2025,
+      "html": "2025/yutin-xie/",
+      "pdf": "2025/yutin-xie/yuting-xie-Ego-Compression-in-Digital-Culture.pdf"
     },
     {
       "name": "Doan Faron",
       "title": "Sur la notion d'environnement dans le jeu vidéo",
-      "year": 2026
+      "year": 2026,
+      "html": "2026/doan-faron/",
+      "pdf": "2026/doan-faron/doan-faron-sur-lanotion-denvironnement.pdf"
     },
     {
       "name": "Akin Gulfidan",
       "title": "Visualisation comme application de l’information: Perte et génération d’informations à travers des pratiques visuelles",
-      "year": 2026
+      "year": 2026,
+      "html": "",
+      "pdf": "2026/akin-gulfidan/visualisation-information-akin-gulfidan.pdf"
     },
     {
       "name": "Viktoriia Karetnyk",
       "title": "L'héritage du ruban de Saint-Étienne : d'un artisanat en voie de disparition à l'art numérique",
-      "year": 2026
+      "year": 2026,
+      "html": "",
+      "pdf": "2026/viktoriia-karetnyk/viktoriia-karetnyk-heritage-du-ruban.pdf.pdf"
     },
     {
       "name": "Xcaret Castillo Sanchez",
       "title": "Au-delà du Miquiztli",
-      "year": 2026
+      "year": 2026,
+      "html": "2026/xcaret-castillo-sanchez/",
+      "pdf": "2026/xcaret-castillo-sanchez/xcaret-castillo-sanchez-audela-du-miquiztli.pdf"
     },
     {
       "name": "Ezéchiel Sene-Boileau",
       "title": "Vers un nouveau design des récompenses musicales dans le jeu vidéo",
-      "year": 2026
+      "year": 2026,
+      "html": "2026/ezechiel-sene/",
+      "pdf": "2026/ezechiel-sene/ezechiel-sene-boileau-vers-un-nouveau-design-fr.pdf"
     },
     {
       "name": "Gaspard Smilovici",
       "title": "Références et Easter Eggs : Mythologies communautaires sujets à l'évolution de leurs supports",
-      "year": 2026
+      "year": 2026,
+      "html": "",
+      "pdf": "2026/gaspard-smilovici/gaspard-smilovici-easter-eggs.pdf"
     },
     {
       "name": "Julie Rollet",
       "title": "Stress et paillettes",
-      "year": 2026
+      "year": 2026,
+      "html": "2026/julie-rollet/",
+      "pdf": "2026/julie-rollet/julie-rollet-stress-et-paillettes.pdf"
     },
     {
       "name": "Arthur Quet",
       "title": "Métamorphoses du concept-album",
-      "year": 2026
+      "year": 2026,
+      "html": "2026/arthur-quet/",
+      "pdf": ""
     },
     {
       "name": "Caroline Merel",
       "title": "Dans ces eaux troubles, les neuf yeux de Google Street View",
-      "year": 2026
+      "year": 2026,
+      "html": "",
+      "pdf": "2026/caroline-merel/caroline-merel-les-neuf-yeux.pdf"
     }
     
   ]

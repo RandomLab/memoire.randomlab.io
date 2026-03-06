@@ -1,0 +1,25 @@
+{
+  "students": [
+        {
+        "name": "Maelys Bard",
+        "title": "Gouf temporel",
+        "year": 2024,
+        "html": "2024/maelys-bard",
+        "pdf": ""
+        },
+        {
+        "name": "Héloïse Debrand",
+        "title": "Des internets locaux et ornés, soutenables énergétiquement pas visuellement",
+        "year": 2024,
+        "html": "",
+        "pdf": ""
+        },
+        {
+        "name": "Julien Dzviga",
+        "title": "L'épitexte du jeu vidéo",
+        "year": 2024,
+        "html": "",
+        "pdf": ""
+        }
+    ]
+}

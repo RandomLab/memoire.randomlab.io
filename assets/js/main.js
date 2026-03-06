@@ -8,6 +8,27 @@ $(document).ready(function() {
                     { data: 'name' },
                     { data: 'title' },
                     { data: 'year' },
+                    { 
+                        data: 'html',
+                        render: function(data) {
+                            console.log(data)
+                            if (data === "") {
+                                return "";
+                            } else {
+                                return `<a href="${data}/" target="_blank">👁</a>`;
+                            }
+                        }
+                    },
+                    { 
+                        data: 'pdf',
+                        render: function(data) {
+                            if (data === "") {
+                                return "";
+                            } else {
+                                return `<a href="${data}" target="_blank">🕮</a>`;
+                            }
+                        }
+                    }
                 ],
                 // pageLength: 10,
                 // lengthMenu: [5, 10, 25, 50],
@@ -28,10 +49,10 @@ $(document).ready(function() {
                 }
             });
 
-            // $('#dataTable').on('error.dt', function(e, settings, techNote, message) {
-            //     console.error('DataTable error:', message);
-            //     $('#error').text('Error loading data. Make sure data.json exists in the same directory as this HTML file.').show();
-            // });
+            $('#dataTable').on('error.dt', function(e, settings, techNote, message) {
+                console.error('DataTable error:', message);
+                $('#error').text('Error loading data. Make sure data.json exists in the same directory as this HTML file.').show();
+            });
 });
 
 
