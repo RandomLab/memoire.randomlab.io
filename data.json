@@ -1,0 +1,121 @@
+{
+  "students": [
+    {
+      "name": "Maelys Bard",
+      "title": "Gouf temporel",
+      "year": 2024
+    },
+    {
+      "name": "Héloïse Debrand",
+      "title": "Des internets locaux et ornés, soutenables énergétiquement pas visuellement",
+      "year": 2024
+    },
+    {
+      "name": "Julien Dzviga",
+      "title": "L'épitexte du jeu vidéo",
+      "year": 2024
+    },
+    {
+      "name": "Si Keting",
+      "title": "Research on VJ Practices in the Chinese Context",
+      "year": 2024
+    },
+    {
+      "name": "Alféa Morelli",
+      "title": "Transition de genre, de la pop à l'hyperpop",
+      "year": 2024
+    },
+    {
+      "name": "Erwan Acas",
+      "title": "Aperçu de la notion de Cyborg, contexte d'apparition et déclinaison contemporaine",
+      "year": 2025
+    },
+
+    {
+      "name": "Haïk GH Arakelian",
+      "title": "À Propos du Tapis Arménien",
+      "year": 2025
+    },
+    {
+      "name": "Sarah Boutière",
+      "title": "Présence fantôme",
+      "year": 2025
+    },
+    {
+      "name": "Benoît Fage",
+      "title": "Au travers des Manifestes numériques",
+      "year": 2025
+    },
+    {
+      "name": "Pablo Haddadou",
+      "title": "XYZ",
+      "year": 2025
+    },
+    {
+      "name": "Ludovic Hohl",
+      "title": "L'outil jeu vidéo",
+      "year": 2025
+    },
+    {
+      "name": "Gabriel Lecurieux",
+      "title": "Anima Aether EsCopia",
+      "year": 2025
+    },
+    {
+      "name": "Maxence Mardargent",
+      "title": "Tu prendrais bien un cookie ?",
+      "year": 2025
+    },
+    {
+      "name": "Yutin Xie",
+      "title": "Human.zip: Ego Compression in Digital Culture ?",
+      "year": 2025
+    },
+    {
+      "name": "Doan Faron",
+      "title": "Sur la notion d'environnement dans le jeu vidéo",
+      "year": 2026
+    },
+    {
+      "name": "Akin Gulfidan",
+      "title": "Visualisation comme application de l’information: Perte et génération d’informations à travers des pratiques visuelles",
+      "year": 2026
+    },
+    {
+      "name": "Viktoriia Karetnyk",
+      "title": "L'héritage du ruban de Saint-Étienne : d'un artisanat en voie de disparition à l'art numérique",
+      "year": 2026
+    },
+    {
+      "name": "Xcaret Castillo Sanchez",
+      "title": "Au-delà du Miquiztli",
+      "year": 2026
+    },
+    {
+      "name": "Ezéchiel Sene-Boileau",
+      "title": "Vers un nouveau design des récompenses musicales dans le jeu vidéo",
+      "year": 2026
+    },
+    {
+      "name": "Gaspard Smilovici",
+      "title": "Références et Easter Eggs : Mythologies communautaires sujets à l'évolution de leurs supports",
+      "year": 2026
+    },
+    {
+      "name": "Julie Rollet",
+      "title": "Stress et paillettes",
+      "year": 2026
+    },
+    {
+      "name": "Arthur Quet",
+      "title": "Métamorphoses du concept-album",
+      "year": 2026
+    },
+    {
+      "name": "Caroline Merel",
+      "title": "Dans ces eaux troubles, les neuf yeux de Google Street View",
+      "year": 2026
+    }
+    
+  ]
+}
