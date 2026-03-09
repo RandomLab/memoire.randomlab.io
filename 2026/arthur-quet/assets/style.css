@@ -228,6 +228,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, nav, sectio
 	display: block;
 }
 
+nav {
+	margin: 0;
+	padding: 0;
+}
+
 /* max values */
 img, table, td, blockquote, code, pre, textarea, input, video {
 	max-width: 100%;
@@ -272,4 +277,24 @@ body > script {display: none !important;}
 }
 .skip-links a:focus {
 	position: static;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 900px) {
+
+	html,
+	body,
+	textarea,
+	figure,
+	label {
+		margin: 5px;
+		padding: 0;
+	}
+
+	html {
+		font-size: 90%;
+	}	
+
+	nav {
+		margin: 120px 0 0 0;
+	}
 }

@@ -25,7 +25,7 @@ $(document).ready(function() {
                             if (data === "") {
                                 return "";
                             } else {
-                                return `<a href="${data}" target="_blank">🕮</a>`;
+                                return `<a href="${data}" target="_blank">&#9998;</a>`;
                             }
                         }
                     }
