@@ -1,6 +1,6 @@
 body{
-	margin-right: 15%;
-	margin-left: 15%;
+/* 	margin-right: 15%;
+	margin-left: 15%; */
 	font-family: monospace;
 	font-size: x-large;
 	text-indent: 0%;
@@ -15,11 +15,11 @@ a:hover{
 	color:rgb(141, 182, 0);	
 }
 
-dl.toc2{
+/* dl.toc2{
 	top: 40;
 	left: 40;
 	position:fixed;
-}
+} */
 
 .dropdown{
   display: none;
@@ -30,6 +30,18 @@ dl.toc2{
 dt:hover .dropdown{
   display:block;
 }
+
+
+.sommaire {
+	display: block;
+	position: fixed;
+	top: 0;
+}
+
+.container {
+		margin: 0 0 0 0;
+		padding: 0 15% 0 15%;
+	}
 
 h1{
 	text-align: center;
@@ -46,15 +58,19 @@ h2{
 h3{
 	text-align: center;
 }
-h3.sommaire{
+/* h3.sommaire{
 	top: 10;
 	left: 40;
 	position:fixed;
 }
+ */
 p{
-	margin-right: 250px;
+/* 	margin-right: 250px;
 	margin-left: 250px;
-	letter-spacing: 0px;
+ */	
+
+	font-size: 1rem;
+	 letter-spacing: 0px;
 	line-height: 1.5;
 	text-align: justify;
 }
@@ -63,4 +79,25 @@ figure p img{
 	position:relatif;
 	display:block;
 	max-width:100%;
+}
+
+@media only screen and (min-width: 1px) and (max-width: 900px) {
+
+	.sommaire {
+		display: none;
+	}
+
+
+	.container {
+		margin: 0 0 0 0;
+		padding: 0 10px 0 10px;
+	}
+
+	p {
+		font-size: 20px;
+	}
+
+	h1, h2 {
+		font-size: 30px;
+	}
 }
